@@ -97,7 +97,15 @@
   function featuredCard(platform,index){
     const name=content.platformName(platform),description=content.platformDescription(platform),logo=platformLogo(platform);
     const category=content.categoryLabel(platform.categoryId)||'';
-    return `<a class="featured-course-card" href="${esc(detailUrl(platform))}" data-id="${esc(platform.id)}"><div class="featured-course-art"><span class="featured-badge">${esc(index===0?'★':category)}</span>${logo?`<img src="${esc(logo)}" alt="${esc(name)}" loading="lazy">`:''}</div><div class="featured-course-body"><h3 data-edit-kind="platform" data-edit-id="${esc(platform.id)}" data-edit-field="name">${esc(name)}</h3><p data-edit-kind="platform" data-edit-id="${esc(platform.id)}" data-edit-field="description">${esc(description)}</p><div class="featured-meta"><span>${esc(category)}</span><strong>★</strong></div></div></a>`;
+    const pricing=typeof translatePricing==='function'?translatePricing(platform.pricingModel):(platform.pricingModel||'');
+    const certificate=platform.certificateAvailable&&typeof getText==='function'?getText('withCertificate'):'';
+    const explore=typeof getText==='function'?getText('landingExploreCta'):'';
+    const languages=Array.isArray(platform.languageIds)?platform.languageIds.map(id=>content.languageLabel(id)).filter(Boolean).slice(0,2):[];
+    const officialCount=Number.isFinite(Number(platform.officialCount))?new Intl.NumberFormat(currentLang||'ar').format(Number(platform.officialCount)):'';
+    const languageMeta=languages.length?`<span><span aria-hidden="true">◉</span>${esc(languages.join(' · '))}</span>`:'';
+    const countMeta=officialCount?`<span><span aria-hidden="true">▦</span>${esc(officialCount)}</span>`:'';
+    const certificateBadge=certificate?`<span class="featured-status-badge certificate">${esc(certificate)}</span>`:'';
+    return `<a class="featured-course-card" href="${esc(detailUrl(platform))}" data-id="${esc(platform.id)}"><div class="featured-course-art"><div class="featured-course-badges"><span class="featured-status-badge pricing">${esc(pricing)}</span>${certificateBadge}</div>${logo?`<img src="${esc(logo)}" alt="${esc(name)}" loading="lazy">`:''}<span class="featured-course-category">${esc(category)}</span></div><div class="featured-course-body"><h3 data-edit-kind="platform" data-edit-id="${esc(platform.id)}" data-edit-field="name">${esc(name)}</h3><p data-edit-kind="platform" data-edit-id="${esc(platform.id)}" data-edit-field="description">${esc(description)}</p><div class="featured-course-stats">${languageMeta}${countMeta}</div><div class="featured-course-footer"><span class="featured-course-cta">${esc(explore)}<span aria-hidden="true">↗</span></span><span class="featured-course-rank" aria-hidden="true">0${index+1}</span></div></div></a>`;
   }
 
   function renderFeatured(platforms){

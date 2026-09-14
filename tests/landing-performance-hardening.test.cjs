@@ -6,7 +6,7 @@ const stability=fs.readFileSync('css/branding.css','utf8');
 
 test('landing reserves critical dynamic geometry before data hydration',()=>{
   assert.match(css,/\.landing-copy\s*\{[^}]*min-height:/);
-  assert.match(css,/#landingCategoryGrid\s*\{[^}]*min-height:/);
+  assert.match(css,/\.home-category-grid\s*\{[^}]*min-height:/);
   assert.match(css,/\.landing-heading\s*\{[^}]*min-height:/);
 });
 

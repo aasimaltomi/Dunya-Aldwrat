@@ -1,8 +1,8 @@
 {
   "version": 1,
   "theme": {
-    "primary": "#008000",
-    "secondary": "#7c3aed",
+    "primary": "#4f46e5",
+    "secondary": "#6d5dfc",
     "background": "#f7f8fc",
     "surface": "#ffffff",
     "text": "#15162a",

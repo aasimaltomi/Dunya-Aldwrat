@@ -2,57 +2,14 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const { validateDesign } = require('../js/design-runtime.js');
 
 const ROOT = path.join(__dirname, '..');
 const PAGES = ['index.html', 'explore.html', 'platform.html'];
 
-const DEFAULT_DESIGN = {
-  version: 1,
-  theme: {
-    primary: '#4f46e5',
-    secondary: '#7c3aed',
-    background: '#f7f8fc',
-    surface: '#ffffff',
-    text: '#15162a',
-    mutedText: '#6b7087',
-    border: '#e4e6f0',
-  },
-  typography: {
-    baseSize: 16,
-    headingScale: 1.25,
-    bodyWeight: 400,
-    headingWeight: 800,
-  },
-  shape: {
-    cardRadius: 22,
-    buttonRadius: 14,
-    borderWidth: 1,
-  },
-  spacing: {
-    sectionGap: 84,
-    cardGap: 16,
-    contentMaxWidth: 1240,
-  },
-  layout: {
-    textAlign: 'start',
-    sectionOrder: [
-      'landingHero',
-      'courseCategories',
-      'problemSection',
-      'aboutProject',
-      'whySection',
-      'howItWorks',
-      'landingStats',
-      'developerSection',
-      'landingCta',
-    ],
-    hiddenSections: [],
-  },
-};
-
-test('design.json matches the compiled public defaults', () => {
+test('design.json is a valid editor-produced public design document', () => {
   const design = JSON.parse(fs.readFileSync(path.join(ROOT, 'design.json'), 'utf8'));
-  assert.deepEqual(design, DEFAULT_DESIGN);
+  assert.deepEqual(validateDesign(design), design);
 });
 
 test('shared design stylesheet maps only safe design variables with fallbacks', () => {

@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'landing.css'), 'utf8');
+const css = fs.readFileSync(path.join(__dirname, '..', 'css', 'platform-card-theme.css'), 'utf8');
 
 test('homepage dark mode uses dark Explore-like surfaces with readable category cards', () => {
   assert.match(css, /html\[data-theme="dark"\] \.home-light-shell\{[^}]*background:#0b0d16/);

@@ -137,3 +137,61 @@ html[data-theme="dark"] .featured-course-card{background:#171a2e;border-color:#2
   .featured-course-card{min-height:0;grid-template-rows:138px 1fr}.featured-course-art{height:138px}.featured-course-body{padding:1rem}.featured-course-body h3{font-size:1rem}.featured-course-body p{font-size:.72rem}.featured-course-stats>span{font-size:.6rem}
 }
 @media(prefers-reduced-motion:reduce){.featured-course-card,.learning-platform-card,.hero-category-chip{transition:none!important}.featured-course-card:hover,.learning-platform-card:hover,.hero-category-chip:hover{transform:none!important}}
+.developer-feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100%;
+}
+
+.developer-feature-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.developer-feature-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.developer-feature-heading small {
+  color: #5b5cf6;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.developer-feature-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.developer-feature-text {
+  margin: 0;
+  line-height: 1.9;
+}
+
+.developer-feature-quote {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(120, 130, 170, 0.2);
+}
+
+.developer-feature-quote .testimonial-quote {
+  display: block;
+  font-size: 2rem;
+  color: #a5b4fc;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.developer-feature-quote p {
+  margin: 0 0 0.75rem;
+  line-height: 1.9;
+}
+
+.developer-feature-quote strong {
+  font-weight: 800;
+}

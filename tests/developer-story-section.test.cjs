@@ -77,7 +77,7 @@ test('developer name uses a blue-violet gradient pill instead of the previous ye
 
 test('union president message appears after the developer cards with portrait and localized copy', () => {
   const html = read('index.html');
-  const copy = read('js/home-copy-overrides.js');
+  const presidentCopy = read('js/union-president-message.js');
   const css = read('css/developer-story.css');
 
   const quoteCardIndex = html.indexOf('developer-quote-card');
@@ -88,13 +88,14 @@ test('union president message appears after the developer cards with portrait an
   assert.ok(html.includes('data-i18n="unionPresidentTitle"'));
   assert.ok(html.includes('data-i18n="unionPresidentMessage"'));
   assert.ok(html.includes('data-i18n="unionPresidentSignature"'));
+  assert.ok(html.includes('js/union-president-message.js'));
 
-  assert.ok(copy.includes("unionPresidentTitle:'كلمة رئيس الاتحاد'"));
-  assert.ok(copy.includes("unionPresidentSignature:'رئيس اتحاد شباب الأمة'"));
-  assert.ok(copy.includes("unionPresidentTitle:'Message from the Union President'"));
-  assert.ok(copy.includes("unionPresidentSignature:'President of Ummah Youth Union'"));
-  assert.ok(copy.includes("unionPresidentTitle:'Birlik Başkanının Mesajı'"));
-  assert.ok(copy.includes("unionPresidentSignature:'Ümmet Gençleri Birliği Başkanı'"));
+  assert.ok(presidentCopy.includes("unionPresidentTitle:'كلمة رئيس الاتحاد'"));
+  assert.ok(presidentCopy.includes("unionPresidentSignature:'رئيس اتحاد شباب الأمة'"));
+  assert.ok(presidentCopy.includes("unionPresidentTitle:'Message from the Union President'"));
+  assert.ok(presidentCopy.includes("unionPresidentSignature:'President of Ummah Youth Union'"));
+  assert.ok(presidentCopy.includes("unionPresidentTitle:'Birlik Başkanının Mesajı'"));
+  assert.ok(presidentCopy.includes("unionPresidentSignature:'Ümmet Gençleri Birliği Başkanı'"));
 
   assert.ok(css.includes('.union-president-message{'));
   assert.ok(css.includes('.union-president-photo{'));

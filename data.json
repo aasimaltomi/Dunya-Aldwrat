@@ -431,7 +431,7 @@
           "tr": "IBM Skills Build"
         }
       },
-      "freeCertificate": false,
+      "freeCertificate": true,
       "displayOrder": 3,
       "platformType": "",
       "featured": false,

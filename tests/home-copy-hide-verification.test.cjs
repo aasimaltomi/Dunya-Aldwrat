@@ -67,12 +67,11 @@ test('homepage uses the approved copy in Arabic, English, and Turkish', () => {
   ]) assert.match(copy, new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
 });
 
-test('design runtime loads presentation helpers only on relevant pages', () => {
-  const runtime = read('js/design-runtime.js');
+test('site runtime loads presentation helpers only on relevant pages', () => {
+  const runtime = read('js/site-runtime.js');
 
   assert.match(runtime, /js\/home-copy-overrides\.js/);
   assert.match(runtime, /js\/verification-ui-cleanup\.js/);
   assert.match(runtime, /home-light-shell/);
-  assert.match(runtime, /explore\.html/);
-  assert.match(runtime, /platform\.html/);
+  assert.match(runtime, /explore\|platform/);
 });

@@ -22,23 +22,29 @@ test('developer section keeps stable translated story and quote markup', () => {
   assert.ok(html.includes('css/developer-story.css'));
 });
 
-test('developer section copy is present in Arabic English and Turkish', () => {
+test('developer section copy is present in Arabic English and Turkish with no old academic-officer wording', () => {
   const copy = read('js/home-copy-overrides.js');
   const expected = [
     "landingDeveloperTitle:'اللجنة الأكاديمية في اتحاد شباب الأمة'",
-    "developerStoryPrefix:'طوّرت اللجنة الأكاديمية في اتحاد شباب الأمة، ممثلة بالمسؤول الأكاديمي '",
+    "developerStoryPrefix:'طوّرت اللجنة الأكاديمية في اتحاد شباب الأمة، ممثلة بـ '",
     "developerStorySuffix:'، مشروع دنيا الدورات لخدمة الطلاب والشباب وتسهيل اكتشاف منصات التعلّم ومقارنتها والوصول إلى مصادرها الرسمية بصورة عملية وواضحة.'",
     "developerQuote:'أنشأتُ دنيا الدورات لأنني رأيت حجم التشتت الذي يواجهه الطالب بين عشرات المنصات. أردتُ أن أجمع له أهم المعلومات في مكان واحد، حتى يصل إلى فرصة التعلّم الأنسب له بقرار أوضح وخطوات أبسط.'",
+    "developerRole:'رئيس اللجنة الأكاديمية'",
     "landingDeveloperTitle:'Academic Committee of Ummah Youth Union'",
-    "developerStoryPrefix:'The Academic Committee of Ummah Youth Union, represented by Academic Officer '",
+    "developerStoryPrefix:'The Academic Committee of Ummah Youth Union, represented by '",
     "developerStorySuffix:', developed Dunya Al-Dawrat to serve students and young people by making it easier to discover and compare learning platforms and reach their official sources in a practical and clear way.'",
     "developerQuote:'I created Dunya Al-Dawrat after seeing how easily students can get lost among dozens of learning platforms. I wanted to bring the most important information into one place so they can reach the learning opportunity that fits them with a clearer decision and simpler steps.'",
+    "developerRole:'Academic Committee Chair'",
     "landingDeveloperTitle:'Ümmet Gençleri Birliği Akademik Komitesi'",
-    "developerStoryPrefix:'Ümmet Gençleri Birliği Akademik Komitesi, Akademik Sorumlu '",
+    "developerStoryPrefix:'Ümmet Gençleri Birliği Akademik Komitesi, '",
     "developerStorySuffix:' temsilinde, öğrencilerin ve gençlerin öğrenme platformlarını keşfetmesini, karşılaştırmasını ve resmi kaynaklarına pratik ve açık biçimde ulaşmasını kolaylaştırmak amacıyla Dunya Al-Dawrat’ı geliştirdi.'",
-    "developerQuote:'Dunya Al-Dawrat’ı, öğrencilerin onlarca öğrenme platformu arasında ne kadar kolay kaybolabildiğini gördüğüm için oluşturdum. En önemli bilgileri tek yerde toplayarak öğrencilerin kendilerine uygun öğrenme fırsatına daha net bir kararla ve daha basit adımlarla ulaşmasını istedim.'"
+    "developerQuote:'Dunya Al-Dawrat’ı, öğrencilerin onlarca öğrenme platformu arasında ne kadar kolay kaybolabildiğini gördüğüm için oluşturdum. En önemli bilgileri tek yerde toplayarak öğrencilerin kendilerine uygun öğrenme fırsatına daha net bir kararla ve daha basit adımlarla ulaşmasını istedim.'",
+    "developerRole:'Akademik Komite Başkanı'"
   ];
   expected.forEach(text => assert.ok(copy.includes(text), `missing copy: ${text}`));
+  assert.ok(!copy.includes('المسؤول الأكاديمي'));
+  assert.ok(!copy.includes('Academic Officer'));
+  assert.ok(!copy.includes('Akademik Sorumlu'));
 });
 
 test('founder spotlight uses approved education visual and real portrait without changing stable markup', () => {
@@ -54,6 +60,13 @@ test('visible developer role is chair in Arabic English and Turkish', () => {
   assert.ok(css.includes('content:"رئيس اللجنة الأكاديمية"'));
   assert.ok(css.includes('content:"Academic Committee Chair"'));
   assert.ok(css.includes('content:"Akademik Komite Başkanı"'));
+});
+
+test('developer name shows localized engineer abbreviations in the founder spotlight', () => {
+  const css = read('css/developer-story.css');
+  assert.ok(css.includes('content:"م. "'));
+  assert.ok(css.includes('content:"Eng. "'));
+  assert.ok(css.includes('content:"Müh. "'));
 });
 
 test('founder spotlight has a dark indigo stage, luminous story card, overlapping quote, responsive layout, and dark support', () => {

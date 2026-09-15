@@ -17,6 +17,8 @@
     }
   };
 
+  const PORTRAIT_SRC='assets/union-president.jpg';
+
   function lang(){
     const value=(document.documentElement.lang||'ar').toLowerCase();
     return COPY[value]?value:'ar';
@@ -28,6 +30,9 @@
       document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el=>{
         if(el.textContent!==value)el.textContent=value;
       });
+    });
+    document.querySelectorAll('.union-president-photo').forEach(image=>{
+      if(image.getAttribute('src')!==PORTRAIT_SRC)image.setAttribute('src',PORTRAIT_SRC);
     });
   }
 

@@ -1,39 +1,71 @@
-.developer-section-head{max-width:900px;margin-bottom:1.5rem}
-.developer-section-head h2{font-size:clamp(1.8rem,3vw,2.7rem);line-height:1.25;margin:.35rem 0;color:var(--home-ink)}
-.developer-story-stack{display:grid;gap:1rem}
-.developer-story-card,.developer-quote-card{border:1px solid var(--home-line);background:#fff;border-radius:24px;box-shadow:var(--home-shadow-soft)}
-.developer-story-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.1rem;align-items:center;padding:1.65rem 1.8rem}
-.developer-story-card p{margin:0;color:var(--home-ink);line-height:2;font-size:.92rem;font-weight:800}
-.developer-story-card p strong{color:var(--home-ink);font-weight:900}
-.developer-story-card p strong[data-setting="developerName"]{display:inline;font-weight:900;color:#111827;padding:0 .16em;background:linear-gradient(180deg,transparent 36%,#fde047 36%,#fde047 88%,transparent 88%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
-.developer-story-card .developer-mark{width:58px;height:58px;border-radius:18px;flex:none}
-.developer-quote-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.4rem;align-items:center;padding:1.8rem}
-.developer-avatar-placeholder{width:96px;height:96px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#eef2ff,#e7eaff);border:1px solid #d9def5;color:var(--home-primary);font-size:1.55rem;box-shadow:inset 0 0 0 6px #fff;overflow:hidden}
+.home-proof-section{position:relative;overflow:hidden;padding:clamp(4rem,7vw,6.5rem) 0 clamp(5.25rem,8vw,7.5rem);background:linear-gradient(135deg,#071542 0%,#111c5c 48%,#2f1b69 100%);isolation:isolate}
+.home-proof-section::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;top:-250px;inset-inline-start:-170px;background:radial-gradient(circle,rgba(96,92,246,.45),rgba(96,92,246,0) 68%);filter:blur(6px);z-index:-1;pointer-events:none}
+.home-proof-section::after{content:"";position:absolute;width:460px;height:460px;border-radius:50%;bottom:-260px;inset-inline-end:-120px;background:radial-gradient(circle,rgba(56,189,248,.22),rgba(56,189,248,0) 70%);z-index:-1;pointer-events:none}
+
+.developer-section-head{max-width:1000px;margin:0 auto 2.3rem;text-align:center;color:#fff}
+.developer-section-head .landing-kicker{display:inline-flex;align-items:center;justify-content:center;padding:.48rem 1rem;border:1px solid rgba(167,139,250,.38);border-radius:999px;background:rgba(91,92,246,.16);color:#ddd6fe;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.developer-section-head h2{font-size:clamp(2rem,4vw,3.45rem);line-height:1.18;margin:.9rem 0 0;color:#fff;letter-spacing:-.035em;text-shadow:0 10px 28px rgba(0,0,0,.22)}
+
+.developer-story-stack{position:relative;display:grid;gap:0;max-width:1120px;margin:0 auto;padding-bottom:1.5rem}
+.developer-story-card,.developer-quote-card{border-radius:30px}
+.developer-story-card{position:relative;display:grid;grid-template-columns:minmax(180px,285px) minmax(0,1fr);gap:clamp(1.5rem,3vw,3rem);align-items:center;padding:clamp(1.7rem,3vw,2.8rem);overflow:hidden;background:linear-gradient(135deg,#ffffff,#eef2ff);border:1px solid rgba(224,231,255,.92);box-shadow:0 28px 80px rgba(3,10,45,.28)}
+.developer-story-card::before{content:"";position:absolute;width:290px;height:290px;border-radius:50%;inset-inline-start:-95px;top:-95px;background:radial-gradient(circle,rgba(99,102,241,.18),rgba(99,102,241,0) 70%);pointer-events:none}
+.developer-story-card::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;inset-inline-end:-80px;bottom:-120px;background:radial-gradient(circle,rgba(56,189,248,.13),rgba(56,189,248,0) 72%);pointer-events:none}
+.developer-story-card .developer-mark{position:relative;z-index:1;width:clamp(150px,18vw,210px);height:clamp(150px,18vw,210px);margin:auto;border-radius:50%;display:grid;place-items:center;background:#eef2ff url("../assets/founder-education-visual.webp") center/cover no-repeat;border:1px solid rgba(129,140,248,.32);box-shadow:0 24px 60px rgba(79,70,229,.22),inset 0 0 0 8px rgba(255,255,255,.5);color:#3744a6;font-size:clamp(2.8rem,5vw,4.5rem)}
+.developer-story-card .developer-mark>span{display:none}
+.developer-story-card .developer-mark::before,.developer-story-card .developer-mark::after{position:absolute;display:grid;place-items:center;width:58px;height:58px;border-radius:18px;background:rgba(255,255,255,.86);border:1px solid rgba(129,140,248,.2);box-shadow:0 14px 30px rgba(79,70,229,.18);color:#6366f1;font-size:1.35rem;backdrop-filter:blur(10px)}
+.developer-story-card .developer-mark::before{content:"✦";top:-16px;inset-inline-end:-18px;transform:rotate(7deg)}
+.developer-story-card .developer-mark::after{content:"↗";bottom:-14px;inset-inline-start:-18px;transform:rotate(-7deg)}
+.developer-story-card p{position:relative;z-index:1;margin:0;color:#11183f;line-height:2.08;font-size:clamp(.98rem,1.5vw,1.15rem);font-weight:760}
+.developer-story-card p strong{font-weight:900}
+.developer-story-card p strong[data-setting="developerName"]{display:inline-block;color:#fff;font-weight:900;padding:.08em .58em .13em;margin-inline:.12em;background:linear-gradient(135deg,#5b5cf6,#7c3aed);border-radius:999px;box-shadow:0 8px 22px rgba(91,92,246,.24);white-space:nowrap}
+.developer-story-card [data-i18n="developerStoryPrefix"]{font-size:0}
+.developer-story-card [data-i18n="developerStoryPrefix"]::after{font-size:clamp(.98rem,1.5vw,1.15rem)}
+html[lang="ar"] .developer-story-card [data-i18n="developerStoryPrefix"]::after{content:"طوّرت اللجنة الأكاديمية في اتحاد شباب الأمة، ممثلة بـ "}
+html[lang="en"] .developer-story-card [data-i18n="developerStoryPrefix"]::after{content:"The Academic Committee of Ummah Youth Union, represented by "}
+html[lang="tr"] .developer-story-card [data-i18n="developerStoryPrefix"]::after{content:"Ümmet Gençleri Birliği Akademik Komitesi, "}
+html[lang="ar"] .developer-story-card p strong[data-setting="developerName"]::before,html[lang="ar"] .developer-quote-author strong[data-setting="developerName"]::before{content:"م. "}
+html[lang="en"] .developer-story-card p strong[data-setting="developerName"]::before,html[lang="en"] .developer-quote-author strong[data-setting="developerName"]::before{content:"Eng. "}
+html[lang="tr"] .developer-story-card p strong[data-setting="developerName"]::before,html[lang="tr"] .developer-quote-author strong[data-setting="developerName"]::before{content:"Müh. "}
+
+.developer-quote-card{position:relative;z-index:2;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.25rem,2.8vw,2.5rem);align-items:center;margin:0 clamp(1rem,4vw,3.4rem);padding:clamp(1.5rem,3vw,2.5rem);transform:translateY(-2.1rem);background:linear-gradient(135deg,rgba(37,53,135,.96),rgba(33,29,92,.95));border:1px solid rgba(129,140,248,.38);box-shadow:0 28px 70px rgba(1,6,35,.42),inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(18px);overflow:hidden}
+.developer-quote-card::before{content:"“";position:absolute;top:.15rem;inset-inline-end:1.15rem;font:800 clamp(5rem,9vw,8.5rem)/1 Georgia,serif;color:rgba(165,180,252,.12);pointer-events:none}
+.developer-quote-card::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;inset-inline-start:-120px;bottom:-150px;background:radial-gradient(circle,rgba(56,189,248,.16),rgba(56,189,248,0) 72%);pointer-events:none}
+.developer-avatar-placeholder{position:relative;z-index:1;width:clamp(94px,11vw,132px);height:clamp(94px,11vw,132px);border-radius:50%;display:grid;place-items:center;background:#c7d2fe url("../assets/aasim-mohammed-altomi.webp") center 24%/cover no-repeat;border:1px solid rgba(224,231,255,.95);color:#6366f1;font-size:clamp(1.8rem,3.2vw,2.6rem);box-shadow:0 0 0 9px rgba(129,140,248,.14),0 18px 38px rgba(1,6,35,.3),inset 0 0 0 5px rgba(255,255,255,.36);overflow:visible}
+.developer-avatar-placeholder>span{display:none}
+.developer-avatar-placeholder::after{content:"";position:absolute;inset:-13px;border-radius:50%;border:1px solid rgba(165,180,252,.34);pointer-events:none}
 .developer-avatar-placeholder img{width:100%;height:100%;object-fit:cover;display:block}
-.developer-quote-content{position:relative;padding-inline-end:2.5rem}
-.developer-quote-mark{position:absolute;top:-.55rem;inset-inline-end:.2rem;font:700 4rem/1 Georgia,serif;color:#d8ddff}
-.developer-quote-card blockquote{position:relative;z-index:1;margin:0 0 1rem;color:var(--home-muted);font-size:1rem;line-height:2}
-.developer-quote-author{display:flex;align-items:baseline;gap:.65rem;flex-wrap:wrap}
-.developer-quote-author strong{color:var(--home-ink);font-size:.9rem;font-weight:900}
-.developer-quote-author span{color:var(--home-muted);font-size:.76rem}
+.developer-quote-content{position:relative;z-index:1;padding-inline-end:clamp(1rem,4vw,4rem)}
+.developer-quote-mark{display:none}
+.developer-quote-card blockquote{margin:0 0 1.2rem;color:#f7f8ff;font-size:clamp(1rem,1.6vw,1.16rem);line-height:2.05;font-weight:650;text-wrap:balance}
+.developer-quote-author{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap}
+.developer-quote-author strong{color:#fff;font-size:.98rem;font-weight:900}
+.developer-quote-author span{color:#c7d2fe;font-size:0;font-weight:650}
+.developer-quote-author span::after{font-size:.8rem;font-weight:650}
+html[lang="ar"] .developer-quote-author span::after{content:"رئيس اللجنة الأكاديمية"}
+html[lang="en"] .developer-quote-author span::after{content:"Academic Committee Chair"}
+html[lang="tr"] .developer-quote-author span::after{content:"Akademik Komite Başkanı"}
 
-html[data-theme="dark"] .developer-section-head h2{color:#f6f7fb}
-html[data-theme="dark"] .developer-story-card,
-html[data-theme="dark"] .developer-quote-card{background:#121521;border-color:#262b3d;box-shadow:0 16px 38px rgba(0,0,0,.18)}
-html[data-theme="dark"] .developer-story-card p,
-html[data-theme="dark"] .developer-quote-card blockquote,
-html[data-theme="dark"] .developer-quote-author span{color:#f6f7fb}
-html[data-theme="dark"] .developer-story-card p strong,
-html[data-theme="dark"] .developer-quote-author strong{color:#f6f7fb}
-html[data-theme="dark"] .developer-story-card p strong[data-setting="developerName"]{color:#111827}
-html[data-theme="dark"] .developer-avatar-placeholder{background:#24203f;border-color:#3b3562;color:#a78bfa;box-shadow:inset 0 0 0 6px #171a2b}
-html[data-theme="dark"] .developer-quote-mark{color:#343a5a}
+html[data-theme="dark"] .home-proof-section{background:linear-gradient(135deg,#050b24 0%,#0d153e 46%,#211348 100%)}
+html[data-theme="dark"] .developer-story-card{background:linear-gradient(135deg,#f8faff,#e8edff);border-color:rgba(165,180,252,.34)}
+html[data-theme="dark"] .developer-story-card p{color:#11183f}
+html[data-theme="dark"] .developer-story-card p strong{color:inherit}
+html[data-theme="dark"] .developer-story-card p strong[data-setting="developerName"]{color:#fff}
+html[data-theme="dark"] .developer-quote-card{background:linear-gradient(135deg,rgba(31,43,112,.98),rgba(24,21,73,.98));border-color:rgba(129,140,248,.36)}
 
-@media(max-width:620px){
-  .developer-section-head{margin-bottom:1.1rem}
-  .developer-story-card,.developer-quote-card{grid-template-columns:1fr;padding:1.35rem}
-  .developer-story-card .developer-mark{width:52px;height:52px}
-  .developer-avatar-placeholder{width:82px;height:82px}
-  .developer-quote-content{padding-inline-end:0}
-  .developer-quote-mark{position:static;display:block;margin-bottom:.2rem}
+@media(max-width:760px){
+  .home-proof-section{padding:3.6rem 0 4.5rem}
+  .developer-section-head{margin-bottom:1.6rem;padding-inline:.4rem}
+  .developer-section-head h2{font-size:clamp(1.85rem,8vw,2.5rem)}
+  .developer-story-stack{padding-inline:.15rem}
+  .developer-story-card{grid-template-columns:1fr;gap:1.35rem;padding:1.45rem;border-radius:24px;text-align:start}
+  .developer-story-card .developer-mark{width:148px;height:148px;font-size:3rem}
+  .developer-story-card p{font-size:.95rem;line-height:1.95}
+  .developer-story-card [data-i18n="developerStoryPrefix"]::after{font-size:.95rem}
+  .developer-story-card p strong[data-setting="developerName"]{white-space:normal}
+  .developer-quote-card{grid-template-columns:1fr;margin:0 .8rem;padding:1.4rem;transform:translateY(-1.15rem);border-radius:24px}
+  .developer-avatar-placeholder{width:92px;height:92px;margin-inline:auto}
+  .developer-quote-content{padding-inline-end:0;text-align:start}
+  .developer-quote-card blockquote{font-size:.96rem;line-height:1.95}
+  .developer-quote-author{gap:.45rem}
 }

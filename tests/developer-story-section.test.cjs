@@ -84,7 +84,7 @@ test('union president message appears after the developer cards with portrait an
   const presidentIndex = html.indexOf('union-president-message');
   assert.ok(presidentIndex > quoteCardIndex, 'president message must appear after developer cards');
   assert.ok(html.includes('union-president-photo'));
-  assert.ok(html.includes('assets/union-president-photo.svg'));
+  assert.ok(presidentCopy.includes('assets/union-president-photo.svg'));
   assert.ok(html.includes('data-i18n="unionPresidentTitle"'));
   assert.ok(html.includes('data-i18n="unionPresidentMessage"'));
   assert.ok(html.includes('data-i18n="unionPresidentSignature"'));

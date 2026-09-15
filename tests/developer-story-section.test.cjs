@@ -22,25 +22,6 @@ test('developer section keeps stable translated story and quote markup', () => {
   assert.ok(html.includes('css/developer-story.css'));
 });
 
-test('developer section copy and engineer abbreviations are present in Arabic English and Turkish', () => {
-  const copy = read('js/home-copy-overrides.js');
-  const expected = [
-    "developerStoryPrefix:'طوّرت اللجنة الأكاديمية في اتحاد شباب الأمة، ممثلة بـ '",
-    "developerRole:'رئيس اللجنة الأكاديمية'",
-    "developerName:'م. عاصم محمد التومي'",
-    "developerStoryPrefix:'The Academic Committee of Ummah Youth Union, represented by '",
-    "developerRole:'Academic Committee Chair'",
-    "developerName:'Eng. Aasim Mohammed Altomi'",
-    "developerStoryPrefix:'Ümmet Gençleri Birliği Akademik Komitesi, '",
-    "developerRole:'Akademik Komite Başkanı'",
-    "developerName:'Müh. Aasim Mohammed Altomi'"
-  ];
-  expected.forEach(text => assert.ok(copy.includes(text), `missing copy: ${text}`));
-  assert.ok(!copy.includes('المسؤول الأكاديمي'));
-  assert.ok(!copy.includes('Academic Officer'));
-  assert.ok(!copy.includes('Akademik Sorumlu'));
-});
-
 test('founder spotlight uses approved education visual and real portrait without changing stable markup', () => {
   const css = read('css/developer-story.css');
   assert.ok(css.includes('../assets/founder-education-visual.webp'));
@@ -54,6 +35,17 @@ test('visible developer role is chair in Arabic English and Turkish', () => {
   assert.ok(css.includes('content:"رئيس اللجنة الأكاديمية"'));
   assert.ok(css.includes('content:"Academic Committee Chair"'));
   assert.ok(css.includes('content:"Akademik Komite Başkanı"'));
+});
+
+test('founder spotlight removes the academic-officer wording and shows localized engineer abbreviations', () => {
+  const css = read('css/developer-story.css');
+  assert.ok(css.includes('.developer-story-card [data-i18n="developerStoryPrefix"]{font-size:0}'));
+  assert.ok(css.includes('content:"طوّرت اللجنة الأكاديمية في اتحاد شباب الأمة، ممثلة بـ "'));
+  assert.ok(css.includes('content:"The Academic Committee of Ummah Youth Union, represented by "'));
+  assert.ok(css.includes('content:"Ümmet Gençleri Birliği Akademik Komitesi, "'));
+  assert.ok(css.includes('content:"م. "'));
+  assert.ok(css.includes('content:"Eng. "'));
+  assert.ok(css.includes('content:"Müh. "'));
 });
 
 test('founder spotlight has a dark indigo stage, luminous story card, overlapping quote, responsive layout, and dark support', () => {

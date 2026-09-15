@@ -30,22 +30,27 @@ test('founder spotlight uses approved education visual and real portrait without
   assert.ok(css.includes('.developer-avatar-placeholder>span{display:none}'));
 });
 
-test('visible developer role is chair in Arabic English and Turkish', () => {
+test('first card keeps the academic-officer wording while engineer abbreviations stay localized', () => {
+  const copy = read('js/home-copy-overrides.js');
   const css = read('css/developer-story.css');
-  assert.ok(css.includes('content:"رئيس اللجنة الأكاديمية"'));
-  assert.ok(css.includes('content:"Academic Committee Chair"'));
-  assert.ok(css.includes('content:"Akademik Komite Başkanı"'));
-});
-
-test('founder spotlight removes the academic-officer wording and shows localized engineer abbreviations', () => {
-  const css = read('css/developer-story.css');
-  assert.ok(css.includes('.developer-story-card [data-i18n="developerStoryPrefix"]{font-size:0}'));
-  assert.ok(css.includes('content:"طوّرت اللجنة الأكاديمية في اتحاد شباب الأمة، ممثلة بـ "'));
-  assert.ok(css.includes('content:"The Academic Committee of Ummah Youth Union, represented by "'));
-  assert.ok(css.includes('content:"Ümmet Gençleri Birliği Akademik Komitesi, "'));
+  assert.ok(copy.includes("developerStoryPrefix:'طوّرت اللجنة الأكاديمية في اتحاد شباب الأمة، ممثلة بالمسؤول الأكاديمي '"));
+  assert.ok(copy.includes("developerStoryPrefix:'The Academic Committee of Ummah Youth Union, represented by Academic Officer '"));
+  assert.ok(copy.includes("developerStoryPrefix:'Ümmet Gençleri Birliği Akademik Komitesi, Akademik Sorumlu '"));
+  assert.ok(!css.includes('.developer-story-card [data-i18n="developerStoryPrefix"]{font-size:0}'));
   assert.ok(css.includes('content:"م. "'));
   assert.ok(css.includes('content:"Eng. "'));
   assert.ok(css.includes('content:"Müh. "'));
+});
+
+test('second quote card shows the engineer-prefixed name without a role subtitle', () => {
+  const css = read('css/developer-story.css');
+  assert.ok(css.includes('.developer-quote-author span{display:none}'));
+  assert.ok(!css.includes('content:"رئيس اللجنة الأكاديمية"'));
+  assert.ok(!css.includes('content:"Academic Committee Chair"'));
+  assert.ok(!css.includes('content:"Akademik Komite Başkanı"'));
+  assert.ok(css.includes('html[lang="ar"] .developer-quote-author strong[data-setting="developerName"]::before{content:"م. "}'));
+  assert.ok(css.includes('html[lang="en"] .developer-quote-author strong[data-setting="developerName"]::before{content:"Eng. "}'));
+  assert.ok(css.includes('html[lang="tr"] .developer-quote-author strong[data-setting="developerName"]::before{content:"Müh. "}'));
 });
 
 test('founder spotlight has a dark indigo stage, luminous story card, overlapping quote, responsive layout, and dark support', () => {

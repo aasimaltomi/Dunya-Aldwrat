@@ -8,7 +8,6 @@ const read = file => fs.readFileSync(path.join(ROOT, file), 'utf8');
 
 test('homepage fourth copy round is present in all three languages', () => {
   const copy = read('js/home-copy-overrides.js');
-
   const expected = [
     'اختر المجال الذي تريد تعلّمه، واكتشف المنصات التي توفر محتوى فيه.',
     'مجموعة منصات مختارة لتسهيل الاستكشاف، دون ترتيب أو تفضيل بينها.',
@@ -16,7 +15,7 @@ test('homepage fourth copy round is present in all three languages', () => {
     'نظرة سريعة على دليل دنيا الدورات',
     'دليل عملي لاكتشاف ومقارنة منصات التعلّم',
     'تطوير اللجنة الأكاديمية في اتحاد شباب الأمة',
-    'ممثلّة بالمسؤول الأكاديمي عاصم محمد التومي',
+    'ممثلة بالمسؤول الأكاديمي عاصم محمد التومي',
     'Choose what you want to learn and discover platforms that offer content in that field.',
     'A selection of platforms to make discovery easier, without ranking or favoring them.',
     'Use search, filters, and comparison to find the platform that best fits your needs.',
@@ -32,16 +31,13 @@ test('homepage fourth copy round is present in all three languages', () => {
     'Ümmet Gençleri Birliği Akademik Komitesi tarafından geliştirildi',
     'Akademik Sorumlu Aasim Mohammed Altomi temsilinde'
   ];
-
   expected.forEach(text => assert.ok(copy.includes(text), `missing copy: ${text}`));
 });
 
-test('project and developer settings use the approved public names', () => {
-  const data = JSON.parse(read('data.json'));
-  assert.equal(data.settings.siteName.en, 'Dunya Al-Dawrat');
-  assert.deepEqual(data.settings.developerName, {
-    ar: 'عاصم محمد التومي',
-    en: 'Aasim Mohammed Altomi',
-    tr: 'Aasim Mohammed Altomi'
-  });
+test('homepage runtime overrides public project and developer settings', () => {
+  const copy = read('js/home-copy-overrides.js');
+  assert.ok(copy.includes("siteName:'Dunya Al-Dawrat'"));
+  assert.ok(copy.includes("developerName:'عاصم محمد التومي'"));
+  assert.ok(copy.includes("developerName:'Aasim Mohammed Altomi'"));
+  assert.ok(copy.includes('data-setting'));
 });

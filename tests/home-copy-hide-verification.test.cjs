@@ -14,28 +14,28 @@ test('home and explore no longer render the verification trust line', () => {
   assert.doesNotMatch(explore, /data-i18n="trustCopy"/);
 });
 
-test('explore hides verification controls and verification status from cards and comparisons', () => {
+test('explore removes user-visible verification controls while retaining the internal filter hook', () => {
   const explore = read('explore.html');
-  const app = read('js/app.js');
 
   assert.doesNotMatch(explore, /data-i18n="filterVerification"/);
   assert.doesNotMatch(explore, /data-i18n="sortVerified"/);
-  assert.doesNotMatch(app, /verificationBadge/);
-  assert.doesNotMatch(app, /getText\('verification'\)/);
-  assert.doesNotMatch(app, /getText\('lastVerified'\)/);
+  assert.match(explore, /<select id="filterVerification" hidden aria-hidden="true" tabindex="-1"><\/select>/);
 });
 
-test('platform profile keeps verification data internal but does not render verification status', () => {
+test('verification cleanup removes badges and verification facts from rendered UI only', () => {
+  const cleanup = read('js/verification-ui-cleanup.js');
   const detail = read('js/platform-detail.js');
 
   assert.match(detail, /lastVerified:platform\.lastVerified/);
-  assert.doesNotMatch(detail, /verificationBadge/);
-  assert.doesNotMatch(detail, /fact\(getText\('verification'\)/);
-  assert.doesNotMatch(detail, /fact\(getText\('lastVerified'\)/);
+  assert.match(cleanup, /\.verification-badge/);
+  assert.match(cleanup, /getText\('verification'\)/);
+  assert.match(cleanup, /getText\('lastVerified'\)/);
+  assert.match(cleanup, /\.profile-fact/);
+  assert.match(cleanup, /\.compare-table tr/);
 });
 
 test('homepage uses the approved copy in Arabic, English, and Turkish', () => {
-  const landing = read('js/landing.js');
+  const copy = read('js/home-copy-overrides.js');
 
   for (const text of [
     'ابحث. قارن. واختر منصة التعلّم الأنسب لك.',
@@ -59,5 +59,15 @@ test('homepage uses the approved copy in Arabic, English, and Turkish', () => {
     'قارن منصات التعلّم واكتشف ما يناسبك',
     'Compare learning platforms and find your match',
     'Öğrenme platformlarını karşılaştır, sana uygun olanı bul'
-  ]) assert.match(landing, new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  ]) assert.match(copy, new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+});
+
+test('the presentation helpers are loaded on the pages that need them', () => {
+  const home = read('index.html');
+  const explore = read('explore.html');
+  const platform = read('platform.html');
+
+  assert.match(home, /js\/home-copy-overrides\.js/);
+  assert.match(explore, /js\/verification-ui-cleanup\.js/);
+  assert.match(platform, /js\/verification-ui-cleanup\.js/);
 });

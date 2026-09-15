@@ -17,7 +17,7 @@
     }
   };
 
-  const PORTRAIT_SRC='assets/union-president-photo.svg';
+  const PORTRAIT_SRC='assets/union-president.jpg';
 
   function lang(){
     const value=(document.documentElement.lang||'ar').toLowerCase();

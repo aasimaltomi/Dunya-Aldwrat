@@ -6,10 +6,13 @@ const path = require('node:path');
 const ROOT = path.join(__dirname, '..');
 const read = file => fs.readFileSync(path.join(ROOT, file), 'utf8');
 
-test('developer section uses two long cards with portrait placeholder and personal quote', () => {
+test('developer section uses the approved founder spotlight structure', () => {
   const html = read('index.html');
-  assert.ok(html.includes('developer-story-stack'));
-  assert.ok(html.includes('developer-story-card'));
+  assert.ok(html.includes('developer-spotlight-shell'));
+  assert.ok(html.includes('developer-impact-card'));
+  assert.ok(html.includes('developer-impact-visual'));
+  assert.ok(html.includes('developer-impact-copy'));
+  assert.ok(html.includes('developer-founder-pill'));
   assert.ok(html.includes('developer-quote-card'));
   assert.ok(html.includes('developer-avatar-placeholder'));
   assert.ok(html.includes('data-i18n="developerStoryPrefix"'));
@@ -42,20 +45,22 @@ test('developer section copy is present in Arabic English and Turkish', () => {
   expected.forEach(text => assert.ok(copy.includes(text), `missing copy: ${text}`));
 });
 
-test('developer story cards have dedicated responsive and dark styling', () => {
+test('founder spotlight has premium gradient, overlapping quote card, responsive layout, and dark support', () => {
   const css = read('css/developer-story.css');
-  assert.ok(css.includes('.developer-story-stack'));
-  assert.ok(css.includes('.developer-story-card'));
+  assert.ok(css.includes('.developer-spotlight-shell'));
+  assert.ok(css.includes('.developer-impact-card'));
+  assert.ok(css.includes('.developer-impact-visual'));
+  assert.ok(css.includes('.developer-founder-pill'));
   assert.ok(css.includes('.developer-quote-card'));
-  assert.ok(css.includes('.developer-avatar-placeholder'));
+  assert.ok(css.includes('linear-gradient(135deg'));
+  assert.ok(css.includes('translateY('));
   assert.ok(css.includes('html[data-theme="dark"]'));
-  assert.ok(css.includes('@media(max-width:620px)'));
+  assert.ok(css.includes('@media(max-width:760px)'));
 });
 
-test('first developer story card is fully bold and developer name uses yellow marker highlight', () => {
+test('developer name uses a blue-violet gradient pill instead of the previous yellow marker', () => {
   const css = read('css/developer-story.css');
-  assert.match(css, /\.developer-story-card p\{[^}]*font-weight:800/);
-  assert.ok(css.includes('.developer-story-card p strong[data-setting="developerName"]{'));
-  assert.ok(css.includes('#fde047'));
-  assert.ok(css.includes('linear-gradient'));
+  assert.ok(css.includes('.developer-founder-pill'));
+  assert.ok(css.includes('linear-gradient(135deg,#5b5cf6,#7c3aed)'));
+  assert.ok(!css.includes('#fde047'));
 });

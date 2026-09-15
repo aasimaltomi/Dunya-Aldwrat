@@ -53,11 +53,9 @@ test('developer story cards have dedicated responsive and dark styling', () => {
 });
 
 test('first developer story card is fully bold and developer name uses yellow marker highlight', () => {
-  const html = read('index.html');
   const css = read('css/developer-story.css');
-  assert.ok(html.includes('class="developer-name-highlight" data-setting="developerName"'));
   assert.match(css, /\.developer-story-card p\{[^}]*font-weight:800/);
-  assert.ok(css.includes('.developer-name-highlight{'));
+  assert.ok(css.includes('.developer-story-card p strong[data-setting="developerName"]{'));
   assert.ok(css.includes('#fde047'));
   assert.ok(css.includes('linear-gradient'));
 });

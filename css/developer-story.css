@@ -19,6 +19,14 @@
 .developer-story-card p{position:relative;z-index:1;margin:0;color:#11183f;line-height:2.08;font-size:clamp(.98rem,1.5vw,1.15rem);font-weight:760}
 .developer-story-card p strong{font-weight:900}
 .developer-story-card p strong[data-setting="developerName"]{display:inline-block;color:#fff;font-weight:900;padding:.08em .58em .13em;margin-inline:.12em;background:linear-gradient(135deg,#5b5cf6,#7c3aed);border-radius:999px;box-shadow:0 8px 22px rgba(91,92,246,.24);white-space:nowrap}
+.developer-story-card [data-i18n="developerStoryPrefix"]{font-size:0}
+.developer-story-card [data-i18n="developerStoryPrefix"]::after{font-size:clamp(.98rem,1.5vw,1.15rem)}
+html[lang="ar"] .developer-story-card [data-i18n="developerStoryPrefix"]::after{content:"طوّرت اللجنة الأكاديمية في اتحاد شباب الأمة، ممثلة بـ "}
+html[lang="en"] .developer-story-card [data-i18n="developerStoryPrefix"]::after{content:"The Academic Committee of Ummah Youth Union, represented by "}
+html[lang="tr"] .developer-story-card [data-i18n="developerStoryPrefix"]::after{content:"Ümmet Gençleri Birliği Akademik Komitesi, "}
+html[lang="ar"] .developer-story-card p strong[data-setting="developerName"]::before,html[lang="ar"] .developer-quote-author strong[data-setting="developerName"]::before{content:"م. "}
+html[lang="en"] .developer-story-card p strong[data-setting="developerName"]::before,html[lang="en"] .developer-quote-author strong[data-setting="developerName"]::before{content:"Eng. "}
+html[lang="tr"] .developer-story-card p strong[data-setting="developerName"]::before,html[lang="tr"] .developer-quote-author strong[data-setting="developerName"]::before{content:"Müh. "}
 
 .developer-quote-card{position:relative;z-index:2;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.25rem,2.8vw,2.5rem);align-items:center;margin:0 clamp(1rem,4vw,3.4rem);padding:clamp(1.5rem,3vw,2.5rem);transform:translateY(-2.1rem);background:linear-gradient(135deg,rgba(37,53,135,.96),rgba(33,29,92,.95));border:1px solid rgba(129,140,248,.38);box-shadow:0 28px 70px rgba(1,6,35,.42),inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(18px);overflow:hidden}
 .developer-quote-card::before{content:"“";position:absolute;top:.15rem;inset-inline-end:1.15rem;font:800 clamp(5rem,9vw,8.5rem)/1 Georgia,serif;color:rgba(165,180,252,.12);pointer-events:none}
@@ -53,6 +61,7 @@ html[data-theme="dark"] .developer-quote-card{background:linear-gradient(135deg,
   .developer-story-card{grid-template-columns:1fr;gap:1.35rem;padding:1.45rem;border-radius:24px;text-align:start}
   .developer-story-card .developer-mark{width:148px;height:148px;font-size:3rem}
   .developer-story-card p{font-size:.95rem;line-height:1.95}
+  .developer-story-card [data-i18n="developerStoryPrefix"]::after{font-size:.95rem}
   .developer-story-card p strong[data-setting="developerName"]{white-space:normal}
   .developer-quote-card{grid-template-columns:1fr;margin:0 .8rem;padding:1.4rem;transform:translateY(-1.15rem);border-radius:24px}
   .developer-avatar-placeholder{width:92px;height:92px;margin-inline:auto}

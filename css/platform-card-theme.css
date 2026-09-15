@@ -1,0 +1,131 @@
+:root{
+  --platform-card-body-bg:#141b36;
+  --platform-card-body-text:#f7f8ff;
+  --platform-card-body-muted:#c6cbe8;
+  --platform-card-border:#283254;
+  --platform-card-chip-bg:#1b2342;
+  --platform-card-chip-border:#303b60;
+  --platform-card-chip-text:#eef1ff;
+  --platform-card-divider:#2b3558;
+  --platform-card-link:#7f8cff;
+  --platform-card-link-hover:#aab4ff;
+  --platform-card-shadow:0 16px 38px rgba(20,27,54,.16);
+}
+
+html[data-theme="dark"]{
+  --platform-card-body-bg:#f8f9ff;
+  --platform-card-body-text:#18203d;
+  --platform-card-body-muted:#5f678a;
+  --platform-card-border:#e0e4f0;
+  --platform-card-chip-bg:#eef1fb;
+  --platform-card-chip-border:#dce2f1;
+  --platform-card-chip-text:#28305f;
+  --platform-card-divider:#dde2ee;
+  --platform-card-link:#4f46e5;
+  --platform-card-link-hover:#3730a3;
+  --platform-card-shadow:0 18px 42px rgba(0,0,0,.22);
+}
+
+/* Homepage featured platform cards: dark body in light mode, light body in dark mode. */
+.featured-course-card{
+  background:var(--platform-card-body-bg);
+  color:var(--platform-card-body-text);
+  border-color:var(--platform-card-border);
+  box-shadow:var(--platform-card-shadow);
+}
+.featured-course-card:hover{
+  border-color:color-mix(in srgb,var(--platform-card-link) 46%,var(--platform-card-border));
+  box-shadow:0 20px 46px color-mix(in srgb,var(--platform-card-body-bg) 28%,transparent);
+}
+.featured-course-art{
+  background:linear-gradient(145deg,#17245b 0%,#263b86 58%,#5b5cf6 100%);
+}
+.featured-course-body h3{color:var(--platform-card-body-text)}
+.featured-course-body p{color:var(--platform-card-body-muted)}
+.featured-course-stats>span{
+  background:var(--platform-card-chip-bg);
+  border-color:var(--platform-card-chip-border);
+  color:var(--platform-card-chip-text);
+}
+.featured-course-stats>span>span{color:var(--platform-card-link)}
+.featured-course-footer{border-top-color:var(--platform-card-divider)}
+.featured-course-cta{color:var(--platform-card-link)}
+.featured-course-card:hover .featured-course-cta{color:var(--platform-card-link-hover)}
+.featured-course-rank{color:var(--platform-card-body-muted)}
+
+html[data-theme="dark"] .featured-course-card{
+  background:var(--platform-card-body-bg);
+  color:var(--platform-card-body-text);
+  border-color:var(--platform-card-border);
+}
+html[data-theme="dark"] .featured-course-body h3{color:var(--platform-card-body-text)}
+html[data-theme="dark"] .featured-course-body p{color:var(--platform-card-body-muted)}
+html[data-theme="dark"] .featured-course-stats>span{
+  background:var(--platform-card-chip-bg);
+  border-color:var(--platform-card-chip-border);
+  color:var(--platform-card-chip-text);
+}
+html[data-theme="dark"] .featured-course-footer{border-top-color:var(--platform-card-divider)}
+
+/* Explore platform cards follow the same inverted theme. */
+.platform-card{
+  background:var(--platform-card-body-bg);
+  color:var(--platform-card-body-text);
+  border-color:var(--platform-card-border);
+  box-shadow:var(--platform-card-shadow);
+}
+.platform-card:hover{
+  border-color:color-mix(in srgb,var(--platform-card-link) 46%,var(--platform-card-border));
+  box-shadow:0 20px 46px color-mix(in srgb,var(--platform-card-body-bg) 28%,transparent);
+}
+.platform-card-head{
+  background:linear-gradient(135deg,#22356f,#4f46e5);
+  border-bottom-color:var(--platform-card-border);
+}
+.platform-card-body{
+  background:var(--platform-card-body-bg);
+  color:var(--platform-card-body-text);
+}
+.platform-card h3,.platform-card .title-link{color:var(--platform-card-body-text)}
+.platform-card .platform-desc{color:var(--platform-card-body-muted)}
+.platform-card .tag{
+  background:var(--platform-card-chip-bg);
+  border:1px solid var(--platform-card-chip-border);
+  color:var(--platform-card-chip-text);
+}
+.platform-card .fact-grid>div,.platform-card .official-count{
+  background:var(--platform-card-chip-bg);
+  border-color:var(--platform-card-chip-border);
+  color:var(--platform-card-chip-text);
+}
+.platform-card .fact-grid span,.platform-card .official-count span{color:var(--platform-card-body-muted)}
+.platform-card .fact-grid strong{color:var(--platform-card-body-text)}
+.platform-card .official-count strong{color:var(--platform-card-link)}
+.platform-card .btn-inline{
+  background:transparent;
+  border-color:var(--platform-card-chip-border);
+  color:var(--platform-card-link);
+}
+.platform-card .btn-inline:hover,.platform-card .btn-inline.active{
+  background:var(--platform-card-chip-bg);
+  border-color:var(--platform-card-link);
+  color:var(--platform-card-link-hover);
+}
+
+html[data-theme="dark"] .platform-card{
+  background:var(--platform-card-body-bg);
+  color:var(--platform-card-body-text);
+  border-color:var(--platform-card-border);
+}
+html[data-theme="dark"] .platform-card-body{
+  background:var(--platform-card-body-bg);
+  color:var(--platform-card-body-text);
+}
+html[data-theme="dark"] .platform-card h3,
+html[data-theme="dark"] .platform-card .title-link{color:var(--platform-card-body-text)}
+html[data-theme="dark"] .platform-card .platform-desc{color:var(--platform-card-body-muted)}
+html[data-theme="dark"] .platform-card .fact-grid>div,
+html[data-theme="dark"] .platform-card .official-count{
+  background:var(--platform-card-chip-bg);
+  border-color:var(--platform-card-chip-border);
+}

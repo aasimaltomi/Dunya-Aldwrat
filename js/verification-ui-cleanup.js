@@ -9,6 +9,18 @@
 
   function removeVerificationUI(root=document){
     root.querySelectorAll('.verification-badge').forEach(node=>node.remove());
+    root.querySelectorAll('.trust-line').forEach(node=>node.remove());
+
+    const filter=document.querySelector('#filterVerification');
+    if(filter){
+      const group=filter.closest('.filter-group');
+      if(group)group.hidden=true;
+      filter.setAttribute('aria-hidden','true');
+      filter.tabIndex=-1;
+    }
+    const verifiedSort=document.querySelector('#sortSelect option[value="recently_verified"]');
+    if(verifiedSort)verifiedSort.remove();
+
     const hiddenLabels=labels();
     if(!hiddenLabels.size)return;
 

@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/branding.css">
   <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/developer-story.css">
   <link rel="stylesheet" href="css/inline-editor.css">
   <link rel="stylesheet" href="css/design-runtime.css">
   <link rel="stylesheet" href="css/platform-card-theme.css">
@@ -141,39 +142,31 @@
 
     <section class="landing-section home-proof-section" id="developerSection" data-design-section="developerSection">
       <div class="container" id="learnerTestimonials">
-        <div class="home-section-head"><div><h1 class="landing-kicker" data-i18n="landingDeveloperEyebrow"></h1><h2 data-i18n="landingDeveloperTitle"></h2><p data-i18n="landingDeveloperText"></p></div></div>
-        <div class="testimonial-grid">
-          <article class="testimonial-card"><span class="testimonial-quote">“</span><p data-i18n="landingWhyText"></p><strong data-setting="siteName"></strong></article>
-          <article class="testimonial-card"><span class="testimonial-quote">“</span><p data-i18n="problemCompareText"></p><strong data-i18n="comparePlatforms"></strong></article>
-          <!--->
-          <article class="testimonial-card developer-testimonial"><div class="developer-mark" data-icon="developerMark"></div><p data-i18n="landingDeveloperText"></p><strong data-setting="developerName"></strong></article>
-        <!-->
-          <article class="testimonial-card developer-testimonial developer-feature-card">
-
-  <div class="developer-feature-head">
-    <div class="developer-mark" data-icon="developerMark"></div>
-
-    <div class="developer-feature-heading">
-      <small data-i18n="landingDeveloperEyebrow"></small>
-      <strong class="developer-feature-title"
-              data-i18n="landingDeveloperTitle"></strong>
-    </div>
-  </div>
-
-  <p class="developer-feature-text"
-     data-i18n="landingDeveloperText"></p>
-
-  <div class="developer-feature-quote">
-    <span class="testimonial-quote">“</span>
-
-    <p data-i18n="landingWhyText"></p>
-
-    <strong data-setting="developerName"></strong>
-  </div>
-
-</article>
+        <div class="developer-section-head">
+          <span class="landing-kicker" data-i18n="landingDeveloperEyebrow"></span>
+          <h2 data-i18n="landingDeveloperTitle"></h2>
         </div>
-          
+
+        <div class="developer-story-stack">
+          <article class="developer-story-card">
+            <div class="developer-mark"><span data-icon="developerMark"></span></div>
+            <p>
+              <span data-i18n="developerStoryPrefix"></span><strong data-setting="developerName"></strong><span data-i18n="developerStorySuffix"></span>
+            </p>
+          </article>
+
+          <article class="developer-quote-card">
+            <div class="developer-avatar-placeholder" aria-hidden="true"><span data-icon="developer"></span></div>
+            <div class="developer-quote-content">
+              <span class="developer-quote-mark">“</span>
+              <blockquote data-i18n="developerQuote"></blockquote>
+              <div class="developer-quote-author">
+                <strong data-setting="developerName"></strong>
+                <span data-i18n="developerRole"></span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 

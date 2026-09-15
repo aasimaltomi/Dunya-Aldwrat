@@ -6,20 +6,25 @@ const path = require('node:path');
 const ROOT = path.join(__dirname, '..');
 const read = file => fs.readFileSync(path.join(ROOT, file), 'utf8');
 
-test('home and explore no longer render the verification trust line', () => {
-  const home = read('index.html');
-  const explore = read('explore.html');
+test('public helpers remove the trust copy from home and explore', () => {
+  const homeCopy = read('js/home-copy-overrides.js');
+  const verification = read('js/verification-ui-cleanup.js');
 
-  assert.doesNotMatch(home, /data-i18n="trustCopy"/);
-  assert.doesNotMatch(explore, /data-i18n="trustCopy"/);
+  assert.match(homeCopy, /\.hero-trust/);
+  assert.match(homeCopy, /remove\(\)/);
+  assert.match(verification, /\.trust-line/);
+  assert.match(verification, /remove\(\)/);
 });
 
-test('explore removes user-visible verification controls while retaining the internal filter hook', () => {
-  const explore = read('explore.html');
+test('explore hides verification controls while retaining the internal filter hook', () => {
+  const verification = read('js/verification-ui-cleanup.js');
+  const app = read('js/app.js');
 
-  assert.doesNotMatch(explore, /data-i18n="filterVerification"/);
-  assert.doesNotMatch(explore, /data-i18n="sortVerified"/);
-  assert.match(explore, /<select id="filterVerification" hidden aria-hidden="true" tabindex="-1"><\/select>/);
+  assert.match(app, /filterVerification:\$\('filterVerification'\)/);
+  assert.match(verification, /#filterVerification/);
+  assert.match(verification, /closest\('\.filter-group'\)/);
+  assert.match(verification, /group\.hidden=true/);
+  assert.match(verification, /option\[value="recently_verified"\]/);
 });
 
 test('verification cleanup removes badges and verification facts from rendered UI only', () => {
@@ -62,12 +67,12 @@ test('homepage uses the approved copy in Arabic, English, and Turkish', () => {
   ]) assert.match(copy, new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
 });
 
-test('the presentation helpers are loaded on the pages that need them', () => {
-  const home = read('index.html');
-  const explore = read('explore.html');
-  const platform = read('platform.html');
+test('design runtime loads presentation helpers only on relevant pages', () => {
+  const runtime = read('js/design-runtime.js');
 
-  assert.match(home, /js\/home-copy-overrides\.js/);
-  assert.match(explore, /js\/verification-ui-cleanup\.js/);
-  assert.match(platform, /js\/verification-ui-cleanup\.js/);
+  assert.match(runtime, /js\/home-copy-overrides\.js/);
+  assert.match(runtime, /js\/verification-ui-cleanup\.js/);
+  assert.match(runtime, /home-light-shell/);
+  assert.match(runtime, /explore\.html/);
+  assert.match(runtime, /platform\.html/);
 });

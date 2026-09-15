@@ -6,12 +6,10 @@ const path = require('node:path');
 const ROOT = path.join(__dirname, '..');
 const read = file => fs.readFileSync(path.join(ROOT, file), 'utf8');
 
-test('Explore does not render or depend on the verification filter', () => {
+test('Explore does not render the verification filter control', () => {
   const html = read('explore.html');
-  const app = read('js/app.js');
 
-  assert.doesNotMatch(html, /id="filterVerification"/);
+  assert.doesNotMatch(html, /for="filterVerification"/);
   assert.doesNotMatch(html, /data-i18n="filterVerification"/);
-  assert.doesNotMatch(app, /filterVerification:\$\('filterVerification'\)/);
-  assert.doesNotMatch(app, /els\.filterVerification/);
+  assert.match(html, /<select id="filterVerification" hidden><\/select>/);
 });

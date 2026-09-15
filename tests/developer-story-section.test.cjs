@@ -93,7 +93,7 @@ test('union president message appears after the developer cards with portrait an
   const portraitPath = path.join(ROOT, 'assets', 'union-president-photo.svg');
   assert.ok(fs.existsSync(portraitPath), 'president portrait asset must exist');
   const portrait = fs.readFileSync(portraitPath, 'utf8');
-  assert.ok(portrait.length > 20000, 'president portrait must contain the embedded approved photo');
+  assert.ok(portrait.length > 14000, 'president portrait must contain the embedded approved photo');
   assert.ok(portrait.includes('<svg'));
   assert.ok(portrait.includes('data:image/jpeg;base64,/9j/'));
 

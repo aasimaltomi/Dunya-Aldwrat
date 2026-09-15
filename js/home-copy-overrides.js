@@ -37,6 +37,9 @@
   function setText(el,value){if(el&&el.textContent!==value)el.textContent=value}
 
   function apply(){
+    const trust=document.querySelector('.hero-trust');
+    if(trust)trust.remove();
+
     const copy=COPY[lang()];
     Object.entries(copy).forEach(([key,value])=>{
       document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el=>setText(el,value));

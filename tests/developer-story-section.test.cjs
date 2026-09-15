@@ -51,3 +51,11 @@ test('developer story cards have dedicated responsive and dark styling', () => {
   assert.ok(css.includes('html[data-theme="dark"]'));
   assert.ok(css.includes('@media(max-width:620px)'));
 });
+
+test('first developer story card is fully bold and developer name uses yellow marker highlight', () => {
+  const css = read('css/developer-story.css');
+  assert.match(css, /\.developer-story-card p\{[^}]*font-weight:800/);
+  assert.ok(css.includes('.developer-story-card p strong[data-setting="developerName"]{'));
+  assert.ok(css.includes('#fde047'));
+  assert.ok(css.includes('linear-gradient'));
+});

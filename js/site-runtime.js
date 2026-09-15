@@ -159,3 +159,18 @@
   }
   return{applyContentBindings,applySettings,applyText,applyIcons,applyLinks,applyAssets,applySeo,applyPlatformSeo,applyThemeColor,applyDocument,createManifest,platformCanonicalUrl};
 });
+
+(function(){
+  if(typeof document==='undefined')return;
+  function load(src){
+    if(document.querySelector(`script[data-presentation-helper="${src}"]`))return;
+    const script=document.createElement('script');
+    script.src=src;
+    script.async=true;
+    script.dataset.presentationHelper=src;
+    (document.head||document.documentElement).appendChild(script);
+  }
+  const path=(typeof location!=='undefined'?location.pathname:'').toLowerCase();
+  if(document.body&&document.body.classList.contains('home-light-shell'))load('js/home-copy-overrides.js');
+  if(/(?:^|\/)(?:explore|platform)\.html$/.test(path))load('js/verification-ui-cleanup.js');
+})();

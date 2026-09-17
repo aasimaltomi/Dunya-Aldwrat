@@ -13,6 +13,24 @@
     tr:{eyebrow:'Alana göre keşfet',title:'Alanını seç ve öğrenmeye başla',subtitle:'İlgilendiğin alana göre en uygun platformları ve kursları keşfet.'}
   };
 
+  const HOME_STATS={
+    ar:[
+      {id:'active',value:'38',label:'منصة نشطة'},
+      {id:'freeCertificates',value:'36',label:'منصة بشهادات مجانية'},
+      {id:'languages',value:'4+',label:'لغة متاحة'}
+    ],
+    en:[
+      {id:'active',value:'38',label:'active platforms'},
+      {id:'freeCertificates',value:'36',label:'platforms with free certificates'},
+      {id:'languages',value:'4+',label:'languages available'}
+    ],
+    tr:[
+      {id:'active',value:'38',label:'aktif platform'},
+      {id:'freeCertificates',value:'36',label:'ücretsiz sertifika sunan platform'},
+      {id:'languages',value:'4+',label:'mevcut dil'}
+    ]
+  };
+
   const DISCOVERY_AREA_DEFINITIONS=[
     {
       id:'programming_ai',icon:'⌘',
@@ -55,6 +73,11 @@
   function localized(value,lang='ar'){
     if(value&&typeof value==='object')return value[lang]||value.en||value.ar||value.tr||'';
     return value===null||value===undefined?'':String(value);
+  }
+
+  function homeStats(lang='ar'){
+    const rows=HOME_STATS[lang]||HOME_STATS.ar;
+    return rows.map(row=>({...row}));
   }
 
   function discoveryCountLabel(count,lang='ar'){
@@ -134,9 +157,19 @@
     });
   }
 
-  function renderStats(stats){
-    const map={landingStatPlatforms:stats.platforms,landingStatFree:stats.free,landingStatCert:stats.certificates,landingStatLang:stats.languages};
-    Object.entries(map).forEach(([id,value])=>{const el=document.getElementById(id);if(el)el.textContent=value});
+  function renderStats(){
+    const targets={
+      active:['landingStatActive','landingStatActiveLabel'],
+      freeCertificates:['landingStatFreeCertificates','landingStatFreeCertificatesLabel'],
+      languages:['landingStatLang','landingStatLangLabel']
+    };
+    homeStats(currentLang).forEach(row=>{
+      const [valueId,labelId]=targets[row.id]||[];
+      const valueEl=valueId&&document.getElementById(valueId);
+      const labelEl=labelId&&document.getElementById(labelId);
+      if(valueEl)valueEl.textContent=row.value;
+      if(labelEl)labelEl.textContent=row.label;
+    });
   }
 
   function removeHeroClutter(){
@@ -265,7 +298,7 @@
     renderCategories(data,platforms);
     renderFeatured(platforms);
     renderTopPlatforms(platforms);
-    renderStats(buildStats(platforms));
+    renderStats();
   }
 
   function bindHeroSearch(){
@@ -314,7 +347,7 @@
 
   if(typeof document!=='undefined'){
     ensureDiscoveryStyles(document);
-    document.addEventListener('DOMContentLoaded',()=>initBrowser().catch(err=>{console.error(err);renderStats(buildStats([]))}));
+    document.addEventListener('DOMContentLoaded',()=>initBrowser().catch(err=>{console.error(err);renderStats()}));
   }
-  return{buildStats,withLang,categoryExploreUrl,discoveryAreas,discoverySectionCopy,discoveryAreaExploreUrl};
+  return{buildStats,homeStats,withLang,categoryExploreUrl,discoveryAreas,discoverySectionCopy,discoveryAreaExploreUrl};
 });

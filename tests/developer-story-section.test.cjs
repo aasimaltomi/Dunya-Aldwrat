@@ -98,11 +98,11 @@ test('union president message appears after the developer cards with a valid por
   assert.equal(portrait.subarray(8, 12).toString('ascii'), 'WEBP');
 
   assert.ok(presidentCopy.includes("unionPresidentTitle:'كلمة رئيس الاتحاد'"));
-  assert.ok(presidentCopy.includes("unionPresidentSignature:'رئيس اتحاد شباب الأمة'"));
+  assert.ok(presidentCopy.includes("unionPresidentSignature:'م. بشار محمد الزريقي\\nرئيس اتحاد شباب الأمة'"));
   assert.ok(presidentCopy.includes("unionPresidentTitle:'Message from the Union President'"));
-  assert.ok(presidentCopy.includes("unionPresidentSignature:'President of Ummah Youth Union'"));
+  assert.ok(presidentCopy.includes("unionPresidentSignature:'Eng. Bashar Mohammed Al-Zuraiqi\\nPresident of Ummah Youth Union'"));
   assert.ok(presidentCopy.includes("unionPresidentTitle:'Birlik Başkanının Mesajı'"));
-  assert.ok(presidentCopy.includes("unionPresidentSignature:'Ümmet Gençleri Birliği Başkanı'"));
+  assert.ok(presidentCopy.includes("unionPresidentSignature:'Müh. Bashar Mohammed Al-Zuraiqi\\nÜmmet Gençleri Birliği Başkanı'"));
 
   assert.ok(css.includes('.union-president-message{'));
   assert.ok(css.includes('.union-president-photo{'));

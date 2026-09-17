@@ -88,7 +88,7 @@
       }
       select.replaceChildren(...nodes);
     }else if('innerHTML'in select){
-      const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
+      const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
       select.innerHTML=['ar','en','tr'].map(code=>`<option value="${code}">${esc(names[code]||code)}</option>`).join('');
     }
     select.value=content.getLang();

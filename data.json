@@ -6101,9 +6101,9 @@
         "tr": "Öne çıkan platformlar"
       },
       "chipCertificate": {
-        "ar": "شهادات",
-        "en": "Certificates",
-        "tr": "Sertifikalar"
+        "ar": "شهادات مجانية",
+        "en": "Free certificates",
+        "tr": "Ücretsiz sertifikalar"
       },
       "chipBusiness": {
         "ar": "أعمال",
@@ -6131,9 +6131,9 @@
         "tr": "Dil"
       },
       "withCertificate": {
-        "ar": "يقدم شهادات",
-        "en": "Offers certificates",
-        "tr": "Sertifika sunar"
+        "ar": "يقدم شهادات مجانية",
+        "en": "Offers free certificates",
+        "tr": "Ücretsiz sertifika sunar"
       },
       "heroSearchPlaceholder": {
         "ar": "ابحث عن Coursera، برمجة، ذكاء اصطناعي، لغة...",
@@ -6663,9 +6663,9 @@
         "type": "certificate",
         "targetId": "",
         "label": {
-          "ar": "شهادات",
-          "en": "Certificates",
-          "tr": "Sertifikalar"
+          "ar": "شهادات مجانية",
+          "en": "Free certificates",
+          "tr": "Ücretsiz sertifikalar"
         },
         "icon": "✓"
       },

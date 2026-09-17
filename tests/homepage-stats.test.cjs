@@ -31,6 +31,6 @@ test('homepage stats strip renders exactly three metric slots', () => {
   assert.match(section, /id="landingStatActive"/);
   assert.match(section, /id="landingStatFreeCertificates"/);
   assert.match(section, /id="landingStatLang"/);
-  assert.doesNotMatch(section, /landingStatPlatforms|landingStatFree|landingStatCert/);
+  assert.doesNotMatch(section, /id="landingStat(?:Platforms|Free|Cert)"/);
   assert.equal((section.match(/<strong id="landingStat/g) || []).length, 3);
 });

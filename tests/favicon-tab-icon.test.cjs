@@ -5,6 +5,7 @@ const path = require('node:path');
 
 const ROOT = path.join(__dirname, '..');
 const runtime = require('../js/site-runtime.js');
+const pages = ['index.html', 'explore.html', 'platform.html'];
 
 function assetNode(tagName, asset, id = '') {
   return {
@@ -22,6 +23,22 @@ function assetNode(tagName, asset, id = '') {
     },
   };
 }
+
+test('browser pages point directly to the dedicated SVG favicon', () => {
+  for (const page of pages) {
+    const html = fs.readFileSync(path.join(ROOT, page), 'utf8');
+    assert.match(
+      html,
+      /<link id="appFavicon" rel="icon" type="image\/svg\+xml" href="favicon\.svg\?v=20260917">/,
+      `${page} should point directly to the dedicated favicon`,
+    );
+    assert.doesNotMatch(
+      html,
+      /id="appFavicon"[^>]*data-asset="favicon"/,
+      `${page} should not let CMS assets own the browser-tab favicon`,
+    );
+  }
+});
 
 test('runtime forces the browser tab to use the dedicated SVG favicon', () => {
   const favicon = assetNode('LINK', 'favicon', 'appFavicon');

@@ -40,19 +40,22 @@
     Object.entries(map).forEach(([id,value])=>{const el=document.getElementById(id);if(el)el.textContent=value});
   }
 
+  function removeHeroClutter(){
+    document.querySelectorAll('.hero-kicker,.hero-learning-card,.hero-book-stack,.hero-platform-cloud .landing-core').forEach(node=>node.remove());
+  }
+
   function renderPlatformCloud(platforms){
     const orbit=document.getElementById('homePlatformCloud');
     if(!orbit||!content)return;
-    const core=orbit.querySelector('.landing-core');
     orbit.querySelectorAll('.orbit-chip').forEach(node=>node.remove());
     const byId=new Map((platforms||[]).map(p=>[p.id,p]));
     const ids=Array.isArray(content.rawSetting('homePlatformCloud'))?content.rawSetting('homePlatformCloud'):[];
-    ids.map(id=>byId.get(id)).filter(Boolean).slice(0,6).forEach(p=>{
+    ids.map(id=>byId.get(id)).filter(Boolean).slice(0,4).forEach(p=>{
       const chip=document.createElement('span');
       chip.className='orbit-chip';
       chip.textContent=content.platformName(p);
       chip.dataset.editKind='platform';chip.dataset.editId=p.id;chip.dataset.editField='name';
-      orbit.insertBefore(chip,core);
+      orbit.appendChild(chip);
     });
   }
 
@@ -163,6 +166,7 @@
   }
 
   async function initBrowser(){
+    removeHeroClutter();
     const params=new URLSearchParams(location.search);
     let data=await DataLoader.loadSiteData();
     initContent(data);setLang(params.get('lang')||content.rawSetting('defaultLanguage')||'ar');SiteRuntime.applyDocument(document,content,'home');initTheme();syncExploreLinks();

@@ -79,7 +79,7 @@ test('Explore renders the discovery layer as a broad responsive four-column over
   assert.match(discovery, /activeDiscoveryArea/);
   assert.match(discovery, /renderCategories/);
   assert.match(css, /\.category-grid\{display:grid;grid-template-columns:repeat\(4,1fr\)/);
-  assert.match(css, /\.category-card \.category-examples/);
+  assert.match(css, /\.category-card>\.category-examples/);
   assert.match(css, /@media\(max-width:900px\)[\s\S]*\.category-grid\{grid-template-columns:repeat\(2,1fr\)/);
   assert.match(css, /@media\(max-width:620px\)[\s\S]*\.category-grid\{grid-template-columns:1fr\}/);
 });

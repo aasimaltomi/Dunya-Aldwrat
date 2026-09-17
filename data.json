@@ -2094,9 +2094,9 @@
     {
       "id": "plat-11",
       "name": {
-        "ar": "openlearn.aucegypt.edu",
-        "en": "openlearn.aucegypt.edu",
-        "tr": "openlearn.aucegypt.edu"
+        "ar": "Open Learn AUC",
+        "en": "Open Learn AUC",
+        "tr": "Open Learn AUC"
       },
       "fields": [],
       "languageIds": [

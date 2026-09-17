@@ -66,7 +66,7 @@ test('search matches multilingual CMS fields and misses unrelated terms', () => 
 
 test('filters use stable category and language IDs', () => {
   const platforms=[
-    PlatformCore.normalizeStaticPlatform({id:'a',name:loc('أ','A','A'),description:loc('','',''),categoryId:'technology',languageIds:['English'],pricingModel:'freemium',hasFreeContent:true,certificateAvailable:true,lastVerified:'2026-08-20'}),
+    PlatformCore.normalizeStaticPlatform({id:'a',name:loc('أ','A','A'),description:loc('','',''),categoryId:'technology',languageIds:['English'],pricingModel:'freemium',hasFreeContent:true,certificateAvailable:true,freeCertificate:true,lastVerified:'2026-08-20'}),
     PlatformCore.normalizeStaticPlatform({id:'b',name:loc('ب','B','B'),description:loc('','',''),categoryId:'business',languageIds:['Arabic'],pricingModel:'paid',hasFreeContent:false,certificateAvailable:false,lastVerified:'2026-06-01'})
   ];
   const result=PlatformCore.filterPlatforms(platforms,{category:'technology',language:'English',pricingModel:'freemium',freeOnly:true,certificateOnly:true,verification:'recent',now});

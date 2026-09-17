@@ -207,10 +207,11 @@ test('loadAndApplyDesign leaves compiled CSS untouched when design fetch fails',
   assert.equal(root.style.getPropertyValue('--design-primary'), '');
 });
 
-test('homepage markup registers the exact safe section allowlist and loads design runtime', () => {
+test('homepage markup registers the remaining safe design sections and omits the removed discovery section', () => {
   const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
-  for (const id of DEFAULT_DESIGN.layout.sectionOrder) {
+  for (const id of DEFAULT_DESIGN.layout.sectionOrder.filter((id) => id !== 'courseCategories')) {
     assert.match(html, new RegExp(`id=["']${id}["'][^>]*data-design-section=["']${id}["']|data-design-section=["']${id}["'][^>]*id=["']${id}["']`));
   }
+  assert.doesNotMatch(html, /id=["']courseCategories["']/);
   assert.match(html, /<script[^>]+src=["']js\/design-runtime\.js["']/);
 });

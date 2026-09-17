@@ -195,3 +195,59 @@ html[data-theme="dark"] .landing-stats .stats-grid strong{color:#8b7cff}
 html[data-theme="dark"] .landing-stats .stats-grid span{color:#a2a7b9}
 html[data-theme="dark"] .testimonial-quote{color:#343a5a}
 html[data-theme="dark"] .site-footer{background:#0f111d;border-top-color:#262b3d}
+
+/* Homepage hero refinement: remove visual clutter, raise copy, and make RTL search placement explicit. */
+.hero-kicker,
+.hero-learning-card,
+.hero-book-stack,
+.hero-platform-cloud .landing-core{display:none!important}
+
+.home-light-shell .landing-hero{
+  min-height:590px;
+  align-items:start;
+  padding-top:3rem;
+  padding-bottom:3.6rem;
+}
+.home-light-shell .landing-copy{
+  min-height:0;
+  justify-content:flex-start;
+  padding-top:.25rem;
+}
+.home-light-shell .hero-illustration{
+  height:430px;
+  align-self:start;
+}
+.home-light-shell .hero-glow{width:430px;height:350px}
+.home-light-shell .hero-device-card{width:min(430px,84%);height:300px}
+.home-light-shell .hero-device-screen{height:252px}
+
+.hero-search-button{order:1}
+.hero-search input{order:2}
+.hero-search-icon{order:3}
+[dir="rtl"] .hero-search input{direction:rtl;text-align:right}
+
+.home-light-shell .orbit-chip{padding:.46rem .68rem}
+.home-light-shell .orbit-chip:nth-child(1){top:18px;left:18%}
+.home-light-shell .orbit-chip:nth-child(2){top:56px;right:2%}
+.home-light-shell .orbit-chip:nth-child(3){bottom:42px;left:2%}
+.home-light-shell .orbit-chip:nth-child(4){bottom:12px;right:18%}
+
+@media(max-width:980px){
+  .home-light-shell .landing-hero{min-height:auto;gap:1.25rem;padding-top:2.5rem;padding-bottom:3rem}
+  .home-light-shell .landing-copy{min-height:0;padding-top:0}
+  .home-light-shell .hero-illustration{height:390px}
+  .home-light-shell .hero-glow{width:400px;height:330px}
+}
+
+@media(max-width:620px){
+  .home-light-shell .landing-hero{padding-top:1.8rem;padding-bottom:2.8rem}
+  .home-light-shell .landing-copy{min-height:0}
+  .home-light-shell .hero-illustration{height:320px}
+  .home-light-shell .hero-glow{width:315px;height:275px}
+  .home-light-shell .hero-device-card{width:84%;height:232px}
+  .home-light-shell .hero-device-screen{height:185px}
+  .home-light-shell .orbit-chip:nth-child(1){top:6px;left:12%}
+  .home-light-shell .orbit-chip:nth-child(2){top:34px;right:0}
+  .home-light-shell .orbit-chip:nth-child(3){bottom:30px;left:0}
+  .home-light-shell .orbit-chip:nth-child(4){bottom:4px;right:12%}
+}

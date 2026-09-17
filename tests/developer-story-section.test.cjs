@@ -84,20 +84,18 @@ test('union president message appears after the developer cards with a valid por
   const presidentIndex = html.indexOf('union-president-message');
   assert.ok(presidentIndex > quoteCardIndex, 'president message must appear after developer cards');
   assert.ok(html.includes('union-president-photo'));
-  assert.ok(presidentCopy.includes("const PORTRAIT_SRC='assets/union-president.jpg'"));
+  assert.ok(presidentCopy.includes("const PORTRAIT_SRC='assets/union-president.webp'"));
   assert.ok(html.includes('data-i18n="unionPresidentTitle"'));
   assert.ok(html.includes('data-i18n="unionPresidentMessage"'));
   assert.ok(html.includes('data-i18n="unionPresidentSignature"'));
   assert.ok(html.includes('js/union-president-message.js'));
 
-  const portraitPath = path.join(ROOT, 'assets', 'union-president.jpg');
+  const portraitPath = path.join(ROOT, 'assets', 'union-president.webp');
   assert.ok(fs.existsSync(portraitPath), 'president portrait asset must exist');
   const portrait = fs.readFileSync(portraitPath);
   assert.ok(portrait.length > 3000, 'president portrait must contain a real image payload');
-  assert.equal(portrait[0], 0xff);
-  assert.equal(portrait[1], 0xd8);
-  assert.equal(portrait[portrait.length - 2], 0xff);
-  assert.equal(portrait[portrait.length - 1], 0xd9);
+  assert.equal(portrait.subarray(0, 4).toString('ascii'), 'RIFF');
+  assert.equal(portrait.subarray(8, 12).toString('ascii'), 'WEBP');
 
   assert.ok(presidentCopy.includes("unionPresidentTitle:'كلمة رئيس الاتحاد'"));
   assert.ok(presidentCopy.includes("unionPresidentSignature:'رئيس اتحاد شباب الأمة'"));

@@ -43,10 +43,11 @@
   }
 
   function patchCompareModal(){
-    if(typeof window.buildCompareTable!=='function')return;
-    const originalBuildCompareTable=window.buildCompareTable;
+    const runtime=typeof window!=='undefined'?window:globalThis;
+    if(typeof runtime.buildCompareTable!=='function')return;
+    const originalBuildCompareTable=runtime.buildCompareTable;
 
-    window.buildCompareTable=function(){
+    runtime.buildCompareTable=function(){
       const selected=typeof getCompare==='function'?[...getCompare()]:[];
       if(selected.length<2){
         const table=document.getElementById('compareTable');

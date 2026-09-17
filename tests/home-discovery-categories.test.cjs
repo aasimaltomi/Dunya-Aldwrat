@@ -19,7 +19,6 @@ function samplePlatforms(){
 
 test('homepage exposes the six approved discovery areas with localized labels and examples',()=>{
   assert.equal(typeof Landing.discoveryAreas,'function');
-  if(typeof Landing.discoveryAreas!=='function')return;
   const areas=Landing.discoveryAreas(samplePlatforms(),'ar');
   assert.deepEqual(areas.map(area=>area.id),[
     'programming_ai',
@@ -42,7 +41,6 @@ test('homepage exposes the six approved discovery areas with localized labels an
 
 test('discovery section copy uses the approved wording in all three site languages',()=>{
   assert.equal(typeof Landing.discoverySectionCopy,'function');
-  if(typeof Landing.discoverySectionCopy!=='function')return;
   assert.deepEqual(Landing.discoverySectionCopy('ar'),{
     eyebrow:'استكشف حسب المجال',
     title:'اختر مجالك وابدأ التعلّم',
@@ -55,7 +53,6 @@ test('discovery section copy uses the approved wording in all three site languag
 test('each discovery card produces a direct pre-filtered explore link',()=>{
   assert.equal(typeof Landing.discoveryAreas,'function');
   assert.equal(typeof Landing.discoveryAreaExploreUrl,'function');
-  if(typeof Landing.discoveryAreas!=='function'||typeof Landing.discoveryAreaExploreUrl!=='function')return;
   const areas=Landing.discoveryAreas(samplePlatforms(),'ar');
   const programming=areas.find(area=>area.id==='programming_ai');
   const data=areas.find(area=>area.id==='data_analytics');
@@ -66,8 +63,12 @@ test('each discovery card produces a direct pre-filtered explore link',()=>{
 });
 
 test('homepage discovery grid is a balanced three-by-two layout with richer card metadata',()=>{
-  const css=fs.readFileSync(path.join(root,'css','landing.css'),'utf8');
-  assert.match(css,/\.home-category-grid\s*\{[^}]*grid-template-columns\s*:\s*repeat\(3\s*,\s*(?:minmax\(0\s*,\s*)?1fr\)?\)/s);
+  const css=fs.readFileSync(path.join(root,'css','home-discovery-categories.css'),'utf8');
+  const landing=fs.readFileSync(path.join(root,'js','landing.js'),'utf8');
+  assert.match(landing,/home-discovery-categories\.css/);
+  assert.match(css,/\.home-category-grid\s*\{[^}]*grid-template-columns\s*:\s*repeat\(3\s*,\s*minmax\(0\s*,\s*1fr\)\)/s);
   assert.match(css,/\.discovery-area-examples/);
   assert.match(css,/\.discovery-area-count/);
+  assert.match(css,/@media\(max-width:980px\)[\s\S]*repeat\(2\s*,\s*minmax\(0\s*,\s*1fr\)\)/);
+  assert.match(css,/@media\(max-width:620px\)[\s\S]*grid-template-columns\s*:\s*1fr/);
 });

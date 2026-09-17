@@ -6814,11 +6814,50 @@
       "tr": "Eşleşmeleri göster"
     },
     "learningPaths": {
-      "programming": {
+      "frontend": {
         "label": {
-          "ar": "مطور برمجيات",
-          "en": "Software developer",
-          "tr": "Yazılım geliştirici"
+          "ar": "مطور واجهات أمامية",
+          "en": "Frontend Developer",
+          "tr": "Frontend Geliştirici"
+        },
+        "description": {
+          "ar": "تعلّم HTML وCSS وJavaScript وبناء واجهات ويب حديثة.",
+          "en": "Learn HTML, CSS, JavaScript, and modern web interface development.",
+          "tr": "HTML, CSS, JavaScript ve modern web arayüz geliştirmeyi öğrenin."
+        },
+        "stages": [
+          [
+            "plat-19",
+            "plat-25",
+            "plat-17"
+          ],
+          [
+            "plat-8",
+            "plat-30",
+            "plat-7"
+          ],
+          [
+            "plat-23",
+            "plat-39",
+            "plat-26"
+          ],
+          [
+            "plat-4",
+            "plat-25",
+            "plat-26"
+          ]
+        ]
+      },
+      "backend": {
+        "label": {
+          "ar": "مطور خلفيات",
+          "en": "Backend Developer",
+          "tr": "Backend Geliştirici"
+        },
+        "description": {
+          "ar": "تعلّم البرمجة الخلفية وقواعد البيانات وواجهات API وبناء الخدمات.",
+          "en": "Learn server-side programming, databases, APIs, and service development.",
+          "tr": "Sunucu tarafı programlama, veritabanları, API'ler ve servis geliştirmeyi öğrenin."
         },
         "stages": [
           [
@@ -6827,114 +6866,728 @@
             "plat-17"
           ],
           [
+            "plat-8",
+            "plat-30",
+            "plat-23"
+          ],
+          [
             "plat-39",
+            "plat-26",
+            "plat-7"
+          ],
+          [
+            "plat-4",
             "plat-23",
-            "plat-22"
+            "plat-26"
+          ]
+        ]
+      },
+      "fullstack": {
+        "label": {
+          "ar": "مطور Full-Stack",
+          "en": "Full-Stack Developer",
+          "tr": "Full-Stack Geliştirici"
+        },
+        "description": {
+          "ar": "اجمع بين تطوير الواجهات والخلفيات لبناء تطبيقات ويب متكاملة.",
+          "en": "Combine frontend and backend skills to build complete web applications.",
+          "tr": "Tam web uygulamaları oluşturmak için frontend ve backend becerilerini birleştirin."
+        },
+        "stages": [
+          [
+            "plat-25",
+            "plat-19",
+            "plat-17"
+          ],
+          [
+            "plat-8",
+            "plat-30",
+            "plat-23"
+          ],
+          [
+            "plat-26",
+            "plat-39",
+            "plat-7"
+          ],
+          [
+            "plat-4",
+            "plat-25",
+            "plat-23"
+          ]
+        ]
+      },
+      "mobile": {
+        "label": {
+          "ar": "مطور تطبيقات وموبايل",
+          "en": "Mobile App Developer",
+          "tr": "Mobil Uygulama Geliştirici"
+        },
+        "description": {
+          "ar": "ابنِ أساسًا لتطوير تطبيقات الهاتف والبرمجة متعددة المنصات.",
+          "en": "Build a foundation for mobile apps and cross-platform development.",
+          "tr": "Mobil uygulamalar ve çoklu platform geliştirme için sağlam bir temel oluşturun."
+        },
+        "stages": [
+          [
+            "plat-8",
+            "plat-5",
+            "plat-17"
           ],
           [
             "plat-26",
             "plat-7",
-            "plat-41"
+            "plat-30"
+          ],
+          [
+            "plat-23",
+            "plat-39",
+            "plat-19"
+          ],
+          [
+            "plat-4",
+            "plat-26",
+            "plat-23"
           ]
         ]
       },
-      "ai": {
+      "software-engineering": {
         "label": {
-          "ar": "ذكاء اصطناعي وبيانات",
-          "en": "AI & Data",
-          "tr": "Yapay zeka ve veri"
+          "ar": "مهندس برمجيات",
+          "en": "Software Engineer",
+          "tr": "Yazılım Mühendisi"
+        },
+        "description": {
+          "ar": "طوّر مهارات البرمجة وهندسة البرمجيات والأدوات والمشاريع المهنية.",
+          "en": "Develop programming, software engineering, tooling, and professional project skills.",
+          "tr": "Programlama, yazılım mühendisliği, araçlar ve profesyonel proje becerileri geliştirin."
         },
         "stages": [
           [
-            "plat-22",
-            "plat-34",
-            "plat-25"
+            "plat-25",
+            "plat-8",
+            "plat-17"
           ],
           [
-            "plat-3",
-            "plat-13",
-            "plat-24"
+            "plat-23",
+            "plat-39",
+            "plat-26"
           ],
           [
-            "plat-22",
-            "plat-37",
+            "plat-4",
+            "plat-7",
+            "plat-27"
+          ],
+          [
+            "plat-23",
+            "plat-4",
             "plat-26"
           ]
         ]
       },
-      "cyber": {
+      "data-analyst": {
         "label": {
-          "ar": "أمن سيبراني",
-          "en": "Cybersecurity",
-          "tr": "Siber güvenlik"
+          "ar": "محلل بيانات",
+          "en": "Data Analyst",
+          "tr": "Veri Analisti"
+        },
+        "description": {
+          "ar": "تعلّم تنظيف البيانات وتحليلها وتصويرها واستخراج الرؤى منها.",
+          "en": "Learn to clean, analyze, visualize data, and communicate useful insights.",
+          "tr": "Verileri temizlemeyi, analiz etmeyi, görselleştirmeyi ve içgörü sunmayı öğrenin."
+        },
+        "stages": [
+          [
+            "plat-20",
+            "plat-34",
+            "plat-22"
+          ],
+          [
+            "plat-3",
+            "plat-26",
+            "plat-7"
+          ],
+          [
+            "plat-24",
+            "plat-27",
+            "plat-22"
+          ],
+          [
+            "plat-4",
+            "plat-22",
+            "plat-34"
+          ]
+        ]
+      },
+      "data-scientist": {
+        "label": {
+          "ar": "عالم بيانات",
+          "en": "Data Scientist",
+          "tr": "Veri Bilimci"
+        },
+        "description": {
+          "ar": "تدرّج من الرياضيات والبرمجة إلى النمذجة والمشاريع القائمة على البيانات.",
+          "en": "Progress from math and programming to modeling and data-driven projects.",
+          "tr": "Matematik ve programlamadan modelleme ve veri odaklı projelere ilerleyin."
+        },
+        "stages": [
+          [
+            "plat-20",
+            "plat-34",
+            "plat-22"
+          ],
+          [
+            "plat-26",
+            "plat-3",
+            "plat-13"
+          ],
+          [
+            "plat-34",
+            "plat-24",
+            "plat-37"
+          ],
+          [
+            "plat-22",
+            "plat-4",
+            "plat-26"
+          ]
+        ]
+      },
+      "ai-engineer": {
+        "label": {
+          "ar": "مهندس ذكاء اصطناعي",
+          "en": "AI Engineer",
+          "tr": "Yapay Zeka Mühendisi"
+        },
+        "description": {
+          "ar": "تعلّم بناء حلول الذكاء الاصطناعي من الأساسيات إلى النماذج والتطبيق.",
+          "en": "Learn to build AI solutions from fundamentals through models and deployment.",
+          "tr": "Temellerden modellere ve uygulamaya kadar yapay zeka çözümleri geliştirmeyi öğrenin."
+        },
+        "stages": [
+          [
+            "plat-20",
+            "plat-3",
+            "plat-26"
+          ],
+          [
+            "plat-13",
+            "plat-34",
+            "plat-24"
+          ],
+          [
+            "plat-5",
+            "plat-22",
+            "plat-10"
+          ],
+          [
+            "plat-4",
+            "plat-13",
+            "plat-26"
+          ]
+        ]
+      },
+      "machine-learning": {
+        "label": {
+          "ar": "مهندس تعلم آلي",
+          "en": "Machine Learning Engineer",
+          "tr": "Makine Öğrenmesi Mühendisi"
+        },
+        "description": {
+          "ar": "تعلّم البيانات والخوارزميات وبناء نماذج تعلم آلي قابلة للتطبيق.",
+          "en": "Learn data, algorithms, and how to build practical machine-learning models.",
+          "tr": "Veri, algoritmalar ve uygulanabilir makine öğrenmesi modelleri geliştirmeyi öğrenin."
+        },
+        "stages": [
+          [
+            "plat-20",
+            "plat-34",
+            "plat-26"
+          ],
+          [
+            "plat-13",
+            "plat-22",
+            "plat-3"
+          ],
+          [
+            "plat-24",
+            "plat-37",
+            "plat-5"
+          ],
+          [
+            "plat-4",
+            "plat-22",
+            "plat-26"
+          ]
+        ]
+      },
+      "cybersecurity": {
+        "label": {
+          "ar": "متخصص أمن سيبراني",
+          "en": "Cybersecurity Specialist",
+          "tr": "Siber Güvenlik Uzmanı"
+        },
+        "description": {
+          "ar": "ابدأ بالشبكات والأمن ثم انتقل إلى الحماية السحابية والتطبيق العملي.",
+          "en": "Start with networking and security, then advance to cloud security and practice.",
+          "tr": "Ağ ve güvenlikle başlayın, ardından bulut güvenliği ve uygulamaya ilerleyin."
         },
         "stages": [
           [
             "plat-14",
+            "plat-3",
+            "plat-8"
+          ],
+          [
+            "plat-5",
+            "plat-10",
+            "plat-6"
+          ],
+          [
+            "plat-24",
+            "plat-27",
+            "plat-14"
+          ],
+          [
+            "plat-4",
+            "plat-14",
+            "plat-26"
+          ]
+        ]
+      },
+      "cloud": {
+        "label": {
+          "ar": "مهندس حوسبة سحابية",
+          "en": "Cloud Engineer",
+          "tr": "Bulut Mühendisi"
+        },
+        "description": {
+          "ar": "تعلّم البنية السحابية والخدمات والشبكات والأمن وإدارة الموارد.",
+          "en": "Learn cloud infrastructure, services, networking, security, and resource management.",
+          "tr": "Bulut altyapısı, servisler, ağ, güvenlik ve kaynak yönetimini öğrenin."
+        },
+        "stages": [
+          [
+            "plat-5",
             "plat-10",
             "plat-3"
           ],
           [
-            "plat-5",
             "plat-24",
-            "plat-6"
+            "plat-8",
+            "plat-27"
+          ],
+          [
+            "plat-14",
+            "plat-6",
+            "plat-26"
+          ],
+          [
+            "plat-24",
+            "plat-5",
+            "plat-26"
+          ]
+        ]
+      },
+      "devops": {
+        "label": {
+          "ar": "مهندس DevOps",
+          "en": "DevOps Engineer",
+          "tr": "DevOps Mühendisi"
+        },
+        "description": {
+          "ar": "تعلّم Git والأتمتة والسحابة وممارسات التسليم والتشغيل الحديثة.",
+          "en": "Learn Git, automation, cloud, and modern delivery and operations practices.",
+          "tr": "Git, otomasyon, bulut ve modern teslimat ile operasyon uygulamalarını öğrenin."
+        },
+        "stages": [
+          [
+            "plat-8",
+            "plat-23",
+            "plat-27"
+          ],
+          [
+            "plat-24",
+            "plat-5",
+            "plat-3"
           ],
           [
             "plat-14",
             "plat-10",
             "plat-26"
+          ],
+          [
+            "plat-23",
+            "plat-24",
+            "plat-4"
           ]
         ]
       },
-      "business": {
+      "ui-ux": {
         "label": {
-          "ar": "أعمال وتسويق",
-          "en": "Business & Marketing",
-          "tr": "İş ve pazarlama"
+          "ar": "مصمم UI/UX",
+          "en": "UI/UX Designer",
+          "tr": "UI/UX Tasarımcısı"
+        },
+        "description": {
+          "ar": "تعلّم مبادئ التصميم وتجربة المستخدم وتحويل الأفكار إلى واجهات عملية.",
+          "en": "Learn design and UX principles and turn ideas into practical interfaces.",
+          "tr": "Tasarım ve UX ilkelerini öğrenin, fikirleri uygulanabilir arayüzlere dönüştürün."
+        },
+        "stages": [
+          [
+            "plat-3",
+            "plat-7",
+            "plat-1"
+          ],
+          [
+            "plat-26",
+            "plat-27",
+            "plat-31"
+          ],
+          [
+            "plat-4",
+            "plat-36",
+            "plat-8"
+          ],
+          [
+            "plat-26",
+            "plat-4",
+            "plat-31"
+          ]
+        ]
+      },
+      "digital-marketing": {
+        "label": {
+          "ar": "مسوق رقمي",
+          "en": "Digital Marketer",
+          "tr": "Dijital Pazarlama Uzmanı"
+        },
+        "description": {
+          "ar": "تعلّم التسويق بالمحتوى والإعلانات وSEO والتحليلات وبناء الحملات.",
+          "en": "Learn content marketing, ads, SEO, analytics, and campaign building.",
+          "tr": "İçerik pazarlaması, reklamlar, SEO, analitik ve kampanya oluşturmayı öğrenin."
         },
         "stages": [
           [
             "plat-12",
+            "plat-38",
+            "plat-16"
+          ],
+          [
+            "plat-35",
             "plat-26",
             "plat-28"
           ],
           [
+            "plat-27",
+            "plat-4",
+            "plat-12"
+          ],
+          [
             "plat-38",
             "plat-35",
-            "plat-16"
+            "plat-4"
+          ]
+        ]
+      },
+      "entrepreneurship": {
+        "label": {
+          "ar": "رائد أعمال",
+          "en": "Entrepreneur",
+          "tr": "Girişimci"
+        },
+        "description": {
+          "ar": "تعلّم تحويل الفكرة إلى نموذج عمل وإدارة المشروع والتسويق والنمو.",
+          "en": "Learn to turn an idea into a business model, manage it, market it, and grow.",
+          "tr": "Bir fikri iş modeline dönüştürmeyi, yönetmeyi, pazarlamayı ve büyütmeyi öğrenin."
+        },
+        "stages": [
+          [
+            "plat-12",
+            "plat-31",
+            "plat-1"
+          ],
+          [
+            "plat-26",
+            "plat-28",
+            "plat-29"
+          ],
+          [
+            "plat-6",
+            "plat-27",
+            "plat-2"
           ],
           [
             "plat-4",
-            "plat-41",
+            "plat-12",
             "plat-26"
+          ]
+        ]
+      },
+      "business-analyst": {
+        "label": {
+          "ar": "محلل أعمال",
+          "en": "Business Analyst",
+          "tr": "İş Analisti"
+        },
+        "description": {
+          "ar": "طوّر مهارات تحليل الأعمال والبيانات والعمليات والتواصل مع أصحاب المصلحة.",
+          "en": "Develop business analysis, data, process, and stakeholder communication skills.",
+          "tr": "İş analizi, veri, süreç ve paydaş iletişimi becerilerini geliştirin."
+        },
+        "stages": [
+          [
+            "plat-3",
+            "plat-26",
+            "plat-7"
+          ],
+          [
+            "plat-27",
+            "plat-4",
+            "plat-28"
+          ],
+          [
+            "plat-5",
+            "plat-24",
+            "plat-38"
+          ],
+          [
+            "plat-4",
+            "plat-26",
+            "plat-27"
+          ]
+        ]
+      },
+      "project-management": {
+        "label": {
+          "ar": "مدير مشاريع",
+          "en": "Project Manager",
+          "tr": "Proje Yöneticisi"
+        },
+        "description": {
+          "ar": "تعلّم التخطيط والتنفيذ وإدارة الفرق والمخاطر وتسليم المشاريع.",
+          "en": "Learn planning, execution, team and risk management, and project delivery.",
+          "tr": "Planlama, yürütme, ekip ve risk yönetimi ile proje teslimini öğrenin."
+        },
+        "stages": [
+          [
+            "plat-27",
+            "plat-4",
+            "plat-26"
+          ],
+          [
+            "plat-28",
+            "plat-12",
+            "plat-2"
+          ],
+          [
+            "plat-29",
+            "plat-7",
+            "plat-6"
+          ],
+          [
+            "plat-4",
+            "plat-26",
+            "plat-27"
           ]
         ]
       },
       "english": {
         "label": {
-          "ar": "تطوير الإنجليزية",
-          "en": "Improve English",
-          "tr": "İngilizce geliştir"
+          "ar": "تطوير اللغة الإنجليزية",
+          "en": "English Development",
+          "tr": "İngilizce Geliştirme"
+        },
+        "description": {
+          "ar": "طوّر القراءة والاستماع والكتابة والتواصل باللغة الإنجليزية تدريجيًا.",
+          "en": "Improve reading, listening, writing, and communication in English step by step.",
+          "tr": "İngilizce okuma, dinleme, yazma ve iletişim becerilerinizi adım adım geliştirin."
         },
         "stages": [
           [
             "plat-11",
-            "plat-15",
-            "plat-20"
+            "plat-1",
+            "plat-15"
           ],
           [
             "plat-26",
             "plat-7",
-            "plat-1"
+            "plat-29"
           ],
           [
-            "plat-15",
+            "plat-31",
+            "plat-32",
+            "plat-28"
+          ],
+          [
+            "plat-1",
+            "plat-26",
+            "plat-15"
+          ]
+        ]
+      },
+      "academic-research": {
+        "label": {
+          "ar": "المهارات الأكاديمية والبحث",
+          "en": "Academic & Research Skills",
+          "tr": "Akademik ve Araştırma Becerileri"
+        },
+        "description": {
+          "ar": "تعلّم البحث الأكاديمي والكتابة العلمية والمراجعة والنشر والتواصل البحثي.",
+          "en": "Learn academic research, scholarly writing, peer review, publishing, and communication.",
+          "tr": "Akademik araştırma, bilimsel yazım, hakemlik, yayın ve araştırma iletişimini öğrenin."
+        },
+        "stages": [
+          [
+            "plat-18",
+            "plat-1",
+            "plat-15"
+          ],
+          [
+            "plat-7",
+            "plat-26",
+            "plat-20"
+          ],
+          [
+            "plat-29",
+            "plat-31",
+            "plat-33"
+          ],
+          [
+            "plat-18",
             "plat-26",
             "plat-1"
           ]
         ]
+      },
+      "leadership-career": {
+        "label": {
+          "ar": "القيادة والمهارات المهنية",
+          "en": "Leadership & Career Skills",
+          "tr": "Liderlik ve Kariyer Becerileri"
+        },
+        "description": {
+          "ar": "طوّر القيادة والتواصل والعمل الجماعي والاستعداد لسوق العمل.",
+          "en": "Develop leadership, communication, teamwork, and career-readiness skills.",
+          "tr": "Liderlik, iletişim, ekip çalışması ve kariyer hazırlığı becerilerini geliştirin."
+        },
+        "stages": [
+          [
+            "plat-2",
+            "plat-3",
+            "plat-12"
+          ],
+          [
+            "plat-26",
+            "plat-29",
+            "plat-28"
+          ],
+          [
+            "plat-27",
+            "plat-31",
+            "plat-4"
+          ],
+          [
+            "plat-4",
+            "plat-2",
+            "plat-26"
+          ]
+        ]
       }
-    }
+    },
+    "roadmapGuide": {
+      "title": {
+        "ar": "كيف تستخدم هذا المسار؟",
+        "en": "How to use this roadmap",
+        "tr": "Bu yol haritası nasıl kullanılır?"
+      },
+      "subtitle": {
+        "ar": "اتبع المراحل بالترتيب، وركّز على التعلم والتطبيق بدل فتح كل المصادر دفعة واحدة.",
+        "en": "Follow the stages in order and focus on learning and practice instead of opening every resource at once.",
+        "tr": "Aşamaları sırayla takip edin; tüm kaynakları aynı anda açmak yerine öğrenmeye ve uygulamaya odaklanın."
+      },
+      "steps": [
+        {
+          "ar": "ابدأ من المرحلة الأولى وأكمل أساسياتها قبل التقدم.",
+          "en": "Start with stage one and complete its foundations before moving on.",
+          "tr": "Birinci aşamadan başlayın ve ilerlemeden önce temellerini tamamlayın."
+        },
+        {
+          "ar": "اختر منصة واحدة أساسية في كل مرحلة، واجعل البقية مصادر مساندة.",
+          "en": "Choose one primary platform per stage and keep the others as supporting resources.",
+          "tr": "Her aşamada bir ana platform seçin, diğerlerini destekleyici kaynak olarak kullanın."
+        },
+        {
+          "ar": "طبّق ما تعلمته بتمرين أو مشروع صغير قبل الانتقال.",
+          "en": "Apply what you learn with an exercise or small project before advancing.",
+          "tr": "İlerlemeden önce öğrendiklerinizi bir alıştırma veya küçük projeyle uygulayın."
+        },
+        {
+          "ar": "بعد إتمام المرحلة، انتقل إلى التالية حتى تصل إلى الجاهزية المهنية.",
+          "en": "When a stage is complete, move to the next until you reach career readiness.",
+          "tr": "Bir aşamayı tamamladıktan sonra kariyer hazırlığına ulaşana kadar sıradakine geçin."
+        }
+      ],
+      "flow": [
+        {
+          "ar": "تعلّم",
+          "en": "Learn",
+          "tr": "Öğren"
+        },
+        {
+          "ar": "طبّق",
+          "en": "Practice",
+          "tr": "Uygula"
+        },
+        {
+          "ar": "راجع",
+          "en": "Review",
+          "tr": "Gözden geçir"
+        },
+        {
+          "ar": "انتقل",
+          "en": "Advance",
+          "tr": "İlerle"
+        }
+      ],
+      "platformNote": {
+        "ar": "اختر منصة واحدة كبداية، والبقية مصادر بديلة أو إضافية.",
+        "en": "Start with one platform; use the others as alternatives or extra resources.",
+        "tr": "Başlangıç için bir platform seçin; diğerlerini alternatif veya ek kaynak olarak kullanın."
+      },
+      "startHere": {
+        "ar": "ابدأ من هنا",
+        "en": "Start here",
+        "tr": "Buradan başla"
+      },
+      "startStage": {
+        "ar": "ابدأ هذه المرحلة",
+        "en": "Start this stage",
+        "tr": "Bu aşamaya başla"
+      }
+    },
+    "pathStageLabels": [
+      {
+        "ar": "الأساسيات",
+        "en": "Foundations",
+        "tr": "Temeller"
+      },
+      {
+        "ar": "المهارات الأساسية",
+        "en": "Core skills",
+        "tr": "Temel beceriler"
+      },
+      {
+        "ar": "التطبيق العملي",
+        "en": "Practical application",
+        "tr": "Pratik uygulama"
+      },
+      {
+        "ar": "الجاهزية المهنية",
+        "en": "Career readiness",
+        "tr": "Kariyer hazırlığı"
+      }
+    ]
   },
   "languages": [
     {

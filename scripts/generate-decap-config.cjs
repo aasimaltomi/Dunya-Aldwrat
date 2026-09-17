@@ -109,10 +109,23 @@ function quizFields(indent){
   out.push(localizedField('عنوان النتائج','resultsTitle',indent));
   out.push(localizedField('نص نسبة التوافق','matchLabel',indent));
   out.push(localizedField('زر عرض النتائج','showResultsLabel',indent));
+  out.push(objectStart('دليل استخدام المسار','roadmapGuide',indent,true));
+  out.push(localizedField('العنوان','title',indent+4));
+  out.push(localizedField('الوصف','subtitle',indent+4,{widget:'text'}));
+  out.push(localizedField('ملاحظة اختيار المنصة','platformNote',indent+4,{widget:'text'}));
+  out.push(localizedField('شارة البداية','startHere',indent+4));
+  out.push(localizedField('زر بدء المرحلة','startStage',indent+4));
+  out.push(`${pad(indent+4)}- label: ${q('خطوات الاستخدام')}\n${pad(indent+4)}  name: steps\n${pad(indent+4)}  widget: list\n${pad(indent+4)}  fields:`);
+  for(const [code,langLabel] of langs)out.push(scalar(langLabel,code,'text',indent+8));
+  out.push(`${pad(indent+4)}- label: ${q('تدفق الاستخدام المختصر')}\n${pad(indent+4)}  name: flow\n${pad(indent+4)}  widget: list\n${pad(indent+4)}  fields:`);
+  for(const [code,langLabel] of langs)out.push(scalar(langLabel,code,'string',indent+8));
+  out.push(`${pad(indent)}- label: ${q('عناوين مراحل المسار')}\n${pad(indent)}  name: pathStageLabels\n${pad(indent)}  widget: list\n${pad(indent)}  fields:`);
+  for(const [code,langLabel] of langs)out.push(scalar(langLabel,code,'string',indent+4));
   out.push(objectStart('المسارات التعليمية','learningPaths',indent,true));
   for(const goal of Object.keys(data.quiz.learningPaths||{}).sort()){
     out.push(objectStart(goal,goal,indent+4,true));
     out.push(localizedField('اسم الهدف','label',indent+8));
+    out.push(localizedField('وصف الهدف','description',indent+8,{widget:'text'}));
     out.push(`${pad(indent+8)}- label: ${q('المراحل')}\n${pad(indent+8)}  name: stages\n${pad(indent+8)}  widget: list\n${pad(indent+8)}  field:\n${pad(indent+12)}label: ${q('معرفات المنصات في المرحلة')}\n${pad(indent+12)}name: value\n${pad(indent+12)}widget: list\n${pad(indent+12)}field: { label: ${q('Platform ID')}, name: value, widget: string }`);
   }
   return out.join('\n');

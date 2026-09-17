@@ -116,3 +116,11 @@ kbd{font-size:11px}
 .path-stage-note{font-size:10px}
 .path-stage-action{font-size:10px}
 @media(max-width:680px){.section-heading p{font-size:13px}.platform-desc{font-size:12px}.path-usage-heading p{font-size:10.5px}}
+
+/* Balanced Explore quick actions */
+.quick-actions{align-items:stretch;gap:10px}
+.quick-actions>.mini-btn{min-height:56px;border-radius:16px}
+.quick-actions>.mini-btn:not(.path-premium-trigger){display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:146px;padding:0 18px;font-size:12px;background:color-mix(in srgb,var(--surface) 96%,transparent);box-shadow:0 10px 24px rgba(20,22,50,.06)}
+.quick-actions>.mini-btn:not(.path-premium-trigger)>span:first-child{display:inline-grid;place-items:center;min-width:22px;font-size:15px}
+.path-premium-trigger{min-height:56px;min-width:220px;padding-block:8px;border-radius:16px}
+@media(max-width:640px){.quick-actions>.mini-btn{min-height:54px;flex:1 1 170px}.quick-actions>.mini-btn:not(.path-premium-trigger){min-width:0;padding-inline:14px}.path-premium-trigger{min-width:0}}

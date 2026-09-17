@@ -42,5 +42,29 @@
     filterObserver.observe(filterCategory,{childList:true,subtree:true});
   }
 
+  function patchCompareModal(){
+    const runtime=typeof window!=='undefined'?window:globalThis;
+    if(typeof runtime.buildCompareTable!=='function')return;
+    const originalBuildCompareTable=runtime.buildCompareTable;
+
+    runtime.buildCompareTable=function(){
+      const selected=typeof getCompare==='function'?[...getCompare()]:[];
+      if(selected.length<2){
+        const table=document.getElementById('compareTable');
+        if(!table)return;
+        const limit=typeof maxCompare==='function'?maxCompare():3;
+        table.innerHTML=`<div class="no-results compare-empty-state"><strong>${esc(getText('compareBar'))}</strong><small>${selected.length}/${limit} · ${esc(getText('maxCompare'))}</small><button class="btn btn-primary" id="compareBrowse" type="button">${esc(getText('browsePlatforms'))}</button></div>`;
+        const browse=document.getElementById('compareBrowse');
+        if(browse)browse.onclick=()=>{
+          closeModal('compareModal');
+          document.querySelector('#explore').scrollIntoView({behavior:'smooth'});
+        };
+        return;
+      }
+      return originalBuildCompareTable();
+    };
+  }
+
+  patchCompareModal();
   document.addEventListener('DOMContentLoaded',()=>{syncHome();applyFiltersWhenReady();const lang=document.getElementById('langSwitcher');if(lang)lang.addEventListener('change',()=>setTimeout(syncHome,0))});
 })();

@@ -29,6 +29,10 @@
     Object.entries(copy).forEach(([key,value])=>{
       document.querySelectorAll(`[data-i18n="${key}"]`).forEach(el=>{
         if(el.textContent!==value)el.textContent=value;
+        if(key==='unionPresidentSignature'){
+          el.style.whiteSpace='pre-line';
+          el.style.lineHeight='1.7';
+        }
       });
     });
     document.querySelectorAll('.union-president-photo').forEach(image=>{

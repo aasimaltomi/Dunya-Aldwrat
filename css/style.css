@@ -50,3 +50,69 @@
 
 /* Expanded roadmap guidance */
 .path-goal-copy small{font-size:8px;line-height:1.5;color:var(--muted);margin-top:4px}.path-goal-copy em{font-style:normal;font-size:8px;font-weight:800;color:color-mix(in srgb,var(--primary) 72%,var(--muted));margin-top:5px}.path-usage-guide{margin:18px 20px 0;padding:17px;border:1px solid color-mix(in srgb,var(--primary) 18%,var(--border));border-radius:17px;background:linear-gradient(135deg,color-mix(in srgb,var(--primary-soft) 56%,var(--surface)),color-mix(in srgb,var(--surface) 94%,var(--primary-2)))}.path-usage-heading{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start}.path-usage-heading>span{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--surface);border:1px solid var(--border)}.path-usage-heading h4{margin:0;font-size:13px}.path-usage-heading p{margin:3px 0 0;color:var(--muted);font-size:9px;line-height:1.7}.path-usage-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}.path-usage-steps>div{display:grid;grid-template-columns:25px 1fr;gap:8px;align-items:start;padding:9px;border-radius:11px;background:color-mix(in srgb,var(--surface) 82%,transparent);border:1px solid color-mix(in srgb,var(--border) 82%,transparent)}.path-usage-steps b{width:25px;height:25px;border-radius:8px;display:grid;place-items:center;background:var(--primary);color:#fff;font-size:8px}.path-usage-steps span{font-size:8px;line-height:1.65;color:var(--muted)}.path-usage-flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px;padding-top:11px;border-top:1px dashed color-mix(in srgb,var(--primary) 24%,var(--border))}.path-usage-flow span{font-size:8px;font-weight:900;color:var(--primary);display:flex;align-items:center;gap:8px}.path-usage-flow b{color:var(--muted);opacity:.55}.path-step-heading{justify-content:space-between;align-items:center}.path-step-heading>div{display:flex;align-items:baseline;gap:8px}.path-start-badge{padding:5px 8px;border-radius:999px;background:var(--green-soft);color:var(--green);font-size:8px;font-weight:900}.path-stage-note{margin:0 0 8px;font-size:8px;color:var(--muted);line-height:1.6}.path-stage-action{display:inline-flex;align-items:center;gap:6px;margin-top:9px;padding:7px 10px;border-radius:10px;background:var(--primary-soft);color:var(--primary);font-size:8px;font-weight:900;transition:.18s}.path-stage-action:hover{transform:translateY(-1px);background:color-mix(in srgb,var(--primary-soft) 72%,var(--primary));}.path-stage-action b{font-size:10px}:root[data-theme="dark"] .path-usage-guide{background:linear-gradient(135deg,rgba(139,124,255,.12),rgba(168,85,247,.05));border-color:rgba(139,124,255,.2)}:root[data-theme="dark"] .path-usage-steps>div{background:rgba(18,21,33,.72)}@media(max-width:680px){.path-usage-guide{margin:14px 12px 0;padding:13px}.path-usage-steps{grid-template-columns:1fr}.path-usage-flow{justify-content:flex-start}.path-step-heading{align-items:flex-start}.path-step-heading>div{flex-direction:column;gap:1px}.path-start-badge{white-space:nowrap}}
+
+/* Readability typography pass */
+.brand small{font-size:11px}
+.eyebrow,.section-kicker{font-size:13px}
+kbd{font-size:11px}
+.quick-filter-chips button{font-size:11px}
+.btn.small{font-size:12px}
+.trust-line{font-size:12px}
+.platform-cloud>span{font-size:12px}
+.hero-core small{font-size:11px}
+.stats-grid span{font-size:12px}
+.section-heading p{font-size:14px}
+.category-card small{font-size:12px}
+.mini-btn{font-size:11px}
+.data-status{font-size:11px}
+.tab-btn{font-size:11px}
+.tab-btn b{font-size:10px}
+.filter-group label{font-size:10.5px}
+.filter-group select,.quiz-grid select,.path-controls select{font-size:12px}
+.switch-check{font-size:10.5px}
+.btn-reset{font-size:10.5px}
+.results-bar{font-size:12px}
+.tag,.verification-badge{font-size:10px}
+.platform-desc{font-size:12.5px}
+.fact-grid span,.official-count span{font-size:10px}
+.fact-grid strong{font-size:11px}
+.btn-inline{font-size:11px}
+.card-actions>.btn-inline:nth-child(2){font-size:11px}
+.compare-dock strong{font-size:12px}
+.compare-dock span,.link-btn{font-size:10px}
+.modal-sub{font-size:12.5px}
+.compare-table th,.compare-table td{font-size:11px}
+.quiz-grid label,.path-controls label{font-size:11px}
+.match-card strong{font-size:13px}
+.match-card b{font-size:12px}
+.stage-platforms a{font-size:10px}
+.toast{font-size:11px}
+.footer-grid p{font-size:11px}
+.footer-developer small{font-size:9.5px}
+.footer-developer strong{font-size:12px}
+.path-premium-copy strong{font-size:13px}
+.path-premium-copy small{font-size:10px}
+.path-modal-kicker,.path-builder-kicker{font-size:10.5px}
+.path-modal-hero .modal-sub{font-size:12.5px}
+.path-builder-count{font-size:11px}
+.path-goal-number{font-size:11px}
+.path-goal-copy strong{font-size:13px}
+.path-goal-copy small{font-size:10px}
+.path-goal-copy em{font-size:10px}
+.path-roadmap-head small{font-size:10px}
+.path-roadmap-head>b{font-size:10px}
+.path-step-marker>span{font-size:12px}
+.path-step-heading small{font-size:10px}
+.path-step-heading strong{font-size:12px}
+.path-platform-copy strong{font-size:11.5px}
+.path-platform-copy small{font-size:10px}
+.path-platform-action{font-size:10px}
+.path-usage-heading h4{font-size:14px}
+.path-usage-heading p{font-size:11px}
+.path-usage-steps b{font-size:10px}
+.path-usage-steps span{font-size:10px}
+.path-usage-flow span{font-size:10px}
+.path-start-badge{font-size:10px}
+.path-stage-note{font-size:10px}
+.path-stage-action{font-size:10px}
+@media(max-width:680px){.section-heading p{font-size:13px}.platform-desc{font-size:12px}.path-usage-heading p{font-size:10.5px}}

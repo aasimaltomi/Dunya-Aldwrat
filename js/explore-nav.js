@@ -2,6 +2,24 @@
   const labels={ar:'الرئيسية',en:'Home',tr:'Ana Sayfa'};
   let filterObserver=null;
 
+  function loadExpandedDiscovery(){
+    if(typeof document==='undefined'||typeof document.querySelector!=='function'||typeof document.createElement!=='function'||!document.head)return;
+    if(!document.querySelector('link[data-explore-discovery]')){
+      const link=document.createElement('link');
+      link.rel='stylesheet';
+      link.href='css/explore-discovery.css';
+      link.dataset.exploreDiscovery='style';
+      document.head.appendChild(link);
+    }
+    if(!document.querySelector('script[data-explore-discovery]')){
+      const script=document.createElement('script');
+      script.src='js/explore-discovery.js';
+      script.async=false;
+      script.dataset.exploreDiscovery='runtime';
+      document.head.appendChild(script);
+    }
+  }
+
   function syncHome(){document.querySelectorAll('[data-home-link]').forEach(link=>{link.href=`index.html?lang=${encodeURIComponent(currentLang||'ar')}`;if(link.matches('[data-i18n="navHome"]'))link.textContent=labels[currentLang]||labels.ar})}
 
   function applyFiltersFromQuery(){
@@ -65,6 +83,7 @@
     };
   }
 
+  loadExpandedDiscovery();
   patchCompareModal();
   document.addEventListener('DOMContentLoaded',()=>{syncHome();applyFiltersWhenReady();const lang=document.getElementById('langSwitcher');if(lang)lang.addEventListener('change',()=>setTimeout(syncHome,0))});
 })();

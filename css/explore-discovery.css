@@ -1,0 +1,11 @@
+.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.category-card{min-height:190px;padding:22px;gap:9px;position:relative;overflow:hidden}
+.category-card::after{content:'';position:absolute;width:110px;height:110px;border-radius:999px;background:color-mix(in srgb,var(--primary) 8%,transparent);inset-inline-end:-46px;bottom:-54px;pointer-events:none}
+.category-card:hover{transform:translateY(-5px)}
+.category-card.active{border-color:color-mix(in srgb,var(--primary) 60%,var(--border));background:linear-gradient(145deg,var(--surface),color-mix(in srgb,var(--primary-soft) 52%,var(--surface)));box-shadow:0 16px 38px color-mix(in srgb,var(--primary) 12%,transparent)}
+.category-card .category-icon{width:46px;height:46px;border-radius:14px;font-size:18px;font-weight:900;letter-spacing:-.04em}
+.category-card strong{font-size:15px;line-height:1.45;max-width:92%}
+.category-card .category-examples{font-size:10px;line-height:1.65;color:var(--muted);min-height:34px;max-width:92%}
+.category-card .category-count{margin-top:auto;color:var(--primary);font-size:10px;font-weight:800}
+@media(max-width:900px){.category-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.category-grid{grid-template-columns:1fr}.category-card{min-height:164px}}

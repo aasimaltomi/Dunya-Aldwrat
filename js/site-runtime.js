@@ -3,6 +3,7 @@
   if(typeof module==='object'&&module.exports)module.exports=api;
   if(root)root.SiteRuntime=api;
 })(typeof globalThis!=='undefined'?globalThis:this,function(){
+  const TAB_FAVICON='favicon.svg?v=20260917';
   function each(doc,selector,fn){
     if(!doc||typeof doc.querySelectorAll!=='function')return;
     for(const node of doc.querySelectorAll(selector)||[])fn(node);
@@ -60,8 +61,13 @@
   }
   function applyAssets(doc,content){
     each(doc,'[data-asset]',node=>{
-      const value=content.asset(node.dataset.asset);
       const tag=String(node.tagName||'').toLowerCase();
+      if(tag==='link'&&String(node.id||'')==='appFavicon'){
+        setAttr(node,'href',TAB_FAVICON);
+        setAttr(node,'type','image/svg+xml');
+        return;
+      }
+      const value=content.asset(node.dataset.asset);
       if(tag==='link'){
         if(value.src)setAttr(node,'href',value.src);
         return;

@@ -6,10 +6,11 @@ const read = path => fs.readFileSync(path, 'utf8');
 const data = JSON.parse(read('data.json'));
 
 for (const page of ['index.html','explore.html','platform.html']) {
-  test(`${page} binds the header brand and favicon to CMS assets`, () => {
+  test(`${page} keeps the header brand CMS-managed and the tab favicon dedicated`, () => {
     const html = read(page);
     assert.match(html, /class="brand-logo"[^>]*data-asset="brandLogo"/);
-    assert.match(html, /data-asset="favicon"[^>]*rel="icon"|rel="icon"[^>]*data-asset="favicon"/);
+    assert.match(html, /<link id="appFavicon" rel="icon" type="image\/svg\+xml" href="favicon\.svg\?v=20260917">/);
+    assert.doesNotMatch(html, /id="appFavicon"[^>]*data-asset="favicon"/);
     assert.match(html, /href="css\/branding\.css"/);
     assert.doesNotMatch(html, /<span class="brand-mark">د<\/span>/);
   });

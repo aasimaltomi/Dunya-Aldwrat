@@ -3,7 +3,7 @@
   let filterObserver=null;
 
   function loadExpandedDiscovery(){
-    if(typeof document==='undefined')return;
+    if(typeof document==='undefined'||typeof document.querySelector!=='function'||typeof document.createElement!=='function'||!document.head)return;
     if(!document.querySelector('link[data-explore-discovery]')){
       const link=document.createElement('link');
       link.rel='stylesheet';

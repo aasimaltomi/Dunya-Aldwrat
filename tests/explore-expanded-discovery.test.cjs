@@ -67,13 +67,14 @@ test('Explore discovery matching uses detailed platform fields and returns real 
 
 test('Explore renders the discovery layer as a broad responsive four-column overview', () => {
   const html = fs.readFileSync(path.join(ROOT, 'explore.html'), 'utf8');
-  const app = fs.readFileSync(path.join(ROOT, 'js', 'app.js'), 'utf8');
   const css = fs.readFileSync(path.join(ROOT, 'css', 'style.css'), 'utf8');
+  assert.ok(fs.existsSync(discoveryPath), 'expected js/explore-discovery.js to exist');
+  const discovery = fs.readFileSync(discoveryPath, 'utf8');
 
-  assert.match(html, /js\/explore-discovery\.js/);
-  assert.match(app, /ExploreDiscovery\.areas/);
-  assert.match(app, /data-discovery=/);
-  assert.match(app, /activeDiscoveryArea/);
+  assert.match(html, /js\/app\.js[^<]*<\/script><script src="js\/explore-discovery\.js"><\/script>/);
+  assert.match(discovery, /data-discovery=/);
+  assert.match(discovery, /activeDiscoveryArea/);
+  assert.match(discovery, /renderCategories/);
   assert.match(css, /\.category-grid\{display:grid;grid-template-columns:repeat\(4,1fr\)/);
   assert.match(css, /\.category-card \.category-examples/);
   assert.match(css, /@media\(max-width:900px\)[\s\S]*\.category-grid\{grid-template-columns:repeat\(2,1fr\)/);

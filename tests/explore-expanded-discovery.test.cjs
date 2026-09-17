@@ -79,7 +79,18 @@ test('Explore renders the discovery layer as a broad responsive four-column over
   assert.match(discovery, /activeDiscoveryArea/);
   assert.match(discovery, /renderCategories/);
   assert.match(css, /\.category-grid\{display:grid;grid-template-columns:repeat\(4,1fr\)/);
-  assert.match(css, /\.category-card \.category-examples/);
+  assert.match(css, /\.category-card>\.category-examples/);
   assert.match(css, /@media\(max-width:900px\)[\s\S]*\.category-grid\{grid-template-columns:repeat\(2,1fr\)/);
   assert.match(css, /@media\(max-width:620px\)[\s\S]*\.category-grid\{grid-template-columns:1fr\}/);
+});
+
+test('Explore discovery descriptions use the card width instead of the icon badge box', () => {
+  const css = fs.readFileSync(discoveryCssPath, 'utf8');
+
+  assert.match(css, /\.category-card\{[^}]*align-items:stretch/);
+  assert.match(css, /\.category-card>\.category-examples\{[^}]*width:100%/);
+  assert.match(css, /\.category-card>\.category-examples\{[^}]*height:auto/);
+  assert.match(css, /\.category-card>\.category-examples\{[^}]*display:block/);
+  assert.match(css, /\.category-card>\.category-examples\{[^}]*background:transparent/);
+  assert.match(css, /\.category-card>\.category-examples\{[^}]*border-radius:0/);
 });

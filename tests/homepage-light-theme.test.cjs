@@ -20,10 +20,10 @@ test('homepage exposes the approved light-theme hero structure', () => {
   assert.match(html, /class="hero-illustration"/);
 });
 
-test('homepage includes the approved discovery sections near the top', () => {
+test('homepage keeps the remaining approved discovery sections near the top', () => {
   const html = read('index.html');
 
-  assert.match(html, /id="featuredCourses"/);
+  assert.doesNotMatch(html, /id="featuredCourses"/);
   assert.match(html, /id="topLearningPlatforms"/);
   assert.match(html, /id="learnerTestimonials"/);
 });

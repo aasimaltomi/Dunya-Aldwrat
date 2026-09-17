@@ -7,6 +7,105 @@
   if(!PlatformDirectory)throw new Error('PlatformDirectory is required');
   let inlineEditor=null;
 
+  const DISCOVERY_SECTION_COPY={
+    ar:{eyebrow:'استكشف حسب المجال',title:'اختر مجالك وابدأ التعلّم',subtitle:'استكشف أفضل المنصات والدورات حسب المجال الذي يهمك.'},
+    en:{eyebrow:'Browse by field',title:'Choose your field and start learning',subtitle:'Explore the best platforms and courses for the field that interests you.'},
+    tr:{eyebrow:'Alana göre keşfet',title:'Alanını seç ve öğrenmeye başla',subtitle:'İlgilendiğin alana göre en uygun platformları ve kursları keşfet.'}
+  };
+
+  const DISCOVERY_AREA_DEFINITIONS=[
+    {
+      id:'programming_ai',icon:'⌘',
+      label:{ar:'البرمجة والذكاء الاصطناعي',en:'Programming & Artificial Intelligence',tr:'Programlama ve Yapay Zeka'},
+      examples:{ar:'Python • Web • AI',en:'Python • Web • AI',tr:'Python • Web • Yapay Zeka'},
+      filter:{category:'programming_data'}
+    },
+    {
+      id:'data_analytics',icon:'▥',
+      label:{ar:'البيانات والتحليلات',en:'Data & Analytics',tr:'Veri ve Analitik'},
+      examples:{ar:'Data • SQL • BI',en:'Data • SQL • BI',tr:'Veri • SQL • BI'},
+      filter:{category:'programming_data',query:'data'}
+    },
+    {
+      id:'business_entrepreneurship',icon:'↗',
+      label:{ar:'الأعمال وريادة الأعمال',en:'Business & Entrepreneurship',tr:'İşletme ve Girişimcilik'},
+      examples:{ar:'تسويق • إدارة • ريادة',en:'Marketing • Management • Startups',tr:'Pazarlama • Yönetim • Girişim'},
+      filter:{category:'business_marketing'}
+    },
+    {
+      id:'design_creative',icon:'✦',
+      label:{ar:'التصميم والإبداع',en:'Design & Creativity',tr:'Tasarım ve Yaratıcılık'},
+      examples:{ar:'UI/UX • جرافيك • محتوى',en:'UI/UX • Graphics • Content',tr:'UI/UX • Grafik • İçerik'},
+      filter:{query:'design'}
+    },
+    {
+      id:'education_academic',icon:'◇',
+      label:{ar:'التعليم والمهارات الأكاديمية',en:'Education & Academic Skills',tr:'Eğitim ve Akademik Beceriler'},
+      examples:{ar:'علوم • أكاديمي • شهادات',en:'Science • Academic • Certificates',tr:'Bilim • Akademik • Sertifikalar'},
+      filter:{category:'education'}
+    },
+    {
+      id:'languages_communication',icon:'▦',
+      label:{ar:'اللغات والتواصل',en:'Languages & Communication',tr:'Diller ve İletişim'},
+      examples:{ar:'إنجليزية • تركية • تواصل',en:'English • Turkish • Communication',tr:'İngilizce • Türkçe • İletişim'},
+      filter:{category:'languages'}
+    }
+  ];
+
+  function localized(value,lang='ar'){
+    if(value&&typeof value==='object')return value[lang]||value.en||value.ar||value.tr||'';
+    return value===null||value===undefined?'':String(value);
+  }
+
+  function discoveryCountLabel(count,lang='ar'){
+    const value=Number(count)||0;
+    if(lang==='en')return `${value} platform${value===1?'':'s'}`;
+    if(lang==='tr')return `${value} platform`;
+    return `${value} منصة`;
+  }
+
+  function discoveryAreas(platforms=[],lang='ar'){
+    const list=Array.isArray(platforms)?platforms:[];
+    return DISCOVERY_AREA_DEFINITIONS.map(definition=>{
+      const visible=PlatformDirectory.getVisiblePlatforms(list,{...definition.filter,sort:'recommended'});
+      const count=visible.length;
+      return{
+        id:definition.id,
+        icon:definition.icon,
+        label:localized(definition.label,lang),
+        examples:localized(definition.examples,lang),
+        count,
+        countLabel:discoveryCountLabel(count,lang),
+        filter:{...definition.filter}
+      };
+    });
+  }
+
+  function discoverySectionCopy(lang='ar'){
+    const copy=DISCOVERY_SECTION_COPY[lang]||DISCOVERY_SECTION_COPY.ar;
+    return{...copy};
+  }
+
+  function discoveryAreaExploreUrl(path,lang,area={}){
+    const filter=area&&area.filter||{};
+    const params=[];
+    if(filter.category)params.push(`category=${encodeURIComponent(filter.category)}`);
+    if(filter.query)params.push(`q=${encodeURIComponent(filter.query)}`);
+    params.push(`lang=${encodeURIComponent(lang||'ar')}`);
+    const cleanPath=String(path||'explore.html').replace(/#.*$/,'');
+    const separator=cleanPath.includes('?')?'&':'?';
+    return `${cleanPath}${separator}${params.join('&')}#explore`;
+  }
+
+  function ensureDiscoveryStyles(doc){
+    if(!doc||!doc.head||doc.getElementById('homeDiscoveryCategoriesStyles'))return;
+    const link=doc.createElement('link');
+    link.id='homeDiscoveryCategoriesStyles';
+    link.rel='stylesheet';
+    link.href='css/home-discovery-categories.css';
+    doc.head.appendChild(link);
+  }
+
   function buildStats(platforms){return PlatformDirectory.getStats(Array.isArray(platforms)?platforms:[])}
   function withLang(path,lang){const separator=String(path).includes('?')?'&':'?';return `${path}${separator}lang=${encodeURIComponent(lang||'ar')}`}
   function categoryExploreUrl(path,lang,categoryId){const separator=String(path).includes('?')?'&':'?';return `${path}${separator}category=${encodeURIComponent(categoryId||'')}&lang=${encodeURIComponent(lang||'ar')}#explore`}
@@ -64,22 +163,49 @@
     return PlatformDirectory.getCategoryGroups(platforms).slice(0,8).map(group=>({group,row:categoryMap.get(group.categoryId)||{}}));
   }
 
+  function renderDiscoverySectionCopy(){
+    const section=document.getElementById('categoriesSection');
+    if(!section)return;
+    const copy=discoverySectionCopy(currentLang);
+    const eyebrow=section.querySelector('.landing-kicker');
+    const title=section.querySelector('h2');
+    const subtitle=section.querySelector('p');
+    if(eyebrow)eyebrow.textContent=copy.eyebrow;
+    if(title)title.textContent=copy.title;
+    if(subtitle)subtitle.textContent=copy.subtitle;
+  }
+
   function renderCategories(data,platforms){
     if(!content)return;
     const grid=document.getElementById('landingCategoryGrid');
     const chips=document.getElementById('heroCategoryChips');
     const path=content.link('explore')||'explore.html';
     const groups=categoryGroups(data,platforms);
+    const areas=discoveryAreas(platforms,currentLang);
+
+    renderDiscoverySectionCopy();
 
     if(grid){
       grid.innerHTML='';
-      groups.forEach(({group,row})=>{
+      areas.forEach(area=>{
         const link=document.createElement('a');
-        link.className='category-card';link.href=categoryExploreUrl(path,currentLang,group.categoryId);
-        const icon=document.createElement('span');icon.textContent=row.icon||'';
-        const label=document.createElement('strong');label.textContent=content.categoryLabel(group.categoryId);label.dataset.editKind='category';label.dataset.editId=group.categoryId;label.dataset.editField='label';
-        const count=document.createElement('small');count.textContent=String(group.count);
-        link.append(icon,label,count);grid.appendChild(link);
+        link.className='category-card discovery-area-card';
+        link.href=discoveryAreaExploreUrl(path,currentLang,area);
+        link.setAttribute('aria-label',`${area.label} — ${area.countLabel}`);
+
+        const icon=document.createElement('span');
+        icon.className='discovery-area-icon';
+        icon.setAttribute('aria-hidden','true');
+        icon.textContent=area.icon;
+
+        const copy=document.createElement('div');
+        copy.className='discovery-area-copy';
+        const label=document.createElement('strong');label.textContent=area.label;
+        const examples=document.createElement('small');examples.className='discovery-area-examples';examples.textContent=area.examples;
+        const count=document.createElement('small');count.className='discovery-area-count';count.textContent=area.countLabel;
+        copy.append(label,examples,count);
+        link.append(icon,copy);
+        grid.appendChild(link);
       });
     }
 
@@ -186,6 +312,9 @@
     if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
   }
 
-  if(typeof document!=='undefined')document.addEventListener('DOMContentLoaded',()=>initBrowser().catch(err=>{console.error(err);renderStats(buildStats([]))}));
-  return{buildStats,withLang,categoryExploreUrl};
+  if(typeof document!=='undefined'){
+    ensureDiscoveryStyles(document);
+    document.addEventListener('DOMContentLoaded',()=>initBrowser().catch(err=>{console.error(err);renderStats(buildStats([]))}));
+  }
+  return{buildStats,withLang,categoryExploreUrl,discoveryAreas,discoverySectionCopy,discoveryAreaExploreUrl};
 });

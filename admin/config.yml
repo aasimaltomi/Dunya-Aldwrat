@@ -3416,13 +3416,127 @@ collections:
                   - label: "Türkçe"
                     name: tr
                     widget: string
+              - label: "دليل استخدام المسار"
+                name: roadmapGuide
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "العنوان"
+                    name: title
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
+                  - label: "الوصف"
+                    name: subtitle
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: text
+                      - label: "English"
+                        name: en
+                        widget: text
+                      - label: "Türkçe"
+                        name: tr
+                        widget: text
+                  - label: "ملاحظة اختيار المنصة"
+                    name: platformNote
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: text
+                      - label: "English"
+                        name: en
+                        widget: text
+                      - label: "Türkçe"
+                        name: tr
+                        widget: text
+                  - label: "شارة البداية"
+                    name: startHere
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
+                  - label: "زر بدء المرحلة"
+                    name: startStage
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
+                  - label: "خطوات الاستخدام"
+                    name: steps
+                    widget: list
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: text
+                      - label: "English"
+                        name: en
+                        widget: text
+                      - label: "Türkçe"
+                        name: tr
+                        widget: text
+                  - label: "تدفق الاستخدام المختصر"
+                    name: flow
+                    widget: list
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
+              - label: "عناوين مراحل المسار"
+                name: pathStageLabels
+                widget: list
+                fields:
+                  - label: "العربية"
+                    name: ar
+                    widget: string
+                  - label: "English"
+                    name: en
+                    widget: string
+                  - label: "Türkçe"
+                    name: tr
+                    widget: string
               - label: "المسارات التعليمية"
                 name: learningPaths
                 widget: object
                 collapsed: true
                 fields:
-                  - label: "ai"
-                    name: ai
+                  - label: "academic-research"
+                    name: academic-research
                     widget: object
                     collapsed: true
                     fields:
@@ -3440,6 +3554,20 @@ collections:
                           - label: "Türkçe"
                             name: tr
                             widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
                       - label: "المراحل"
                         name: stages
                         widget: list
@@ -3448,8 +3576,8 @@ collections:
                           name: value
                           widget: list
                           field: { label: "Platform ID", name: value, widget: string }
-                  - label: "business"
-                    name: business
+                  - label: "ai-engineer"
+                    name: ai-engineer
                     widget: object
                     collapsed: true
                     fields:
@@ -3467,6 +3595,20 @@ collections:
                           - label: "Türkçe"
                             name: tr
                             widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
                       - label: "المراحل"
                         name: stages
                         widget: list
@@ -3475,8 +3617,8 @@ collections:
                           name: value
                           widget: list
                           field: { label: "Platform ID", name: value, widget: string }
-                  - label: "cyber"
-                    name: cyber
+                  - label: "backend"
+                    name: backend
                     widget: object
                     collapsed: true
                     fields:
@@ -3494,6 +3636,307 @@ collections:
                           - label: "Türkçe"
                             name: tr
                             widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "business-analyst"
+                    name: business-analyst
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "cloud"
+                    name: cloud
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "cybersecurity"
+                    name: cybersecurity
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "data-analyst"
+                    name: data-analyst
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "data-scientist"
+                    name: data-scientist
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "devops"
+                    name: devops
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "digital-marketing"
+                    name: digital-marketing
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
                       - label: "المراحل"
                         name: stages
                         widget: list
@@ -3521,6 +3964,20 @@ collections:
                           - label: "Türkçe"
                             name: tr
                             widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
                       - label: "المراحل"
                         name: stages
                         widget: list
@@ -3529,8 +3986,8 @@ collections:
                           name: value
                           widget: list
                           field: { label: "Platform ID", name: value, widget: string }
-                  - label: "programming"
-                    name: programming
+                  - label: "entrepreneurship"
+                    name: entrepreneurship
                     widget: object
                     collapsed: true
                     fields:
@@ -3548,6 +4005,348 @@ collections:
                           - label: "Türkçe"
                             name: tr
                             widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "frontend"
+                    name: frontend
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "fullstack"
+                    name: fullstack
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "leadership-career"
+                    name: leadership-career
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "machine-learning"
+                    name: machine-learning
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "mobile"
+                    name: mobile
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "project-management"
+                    name: project-management
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "software-engineering"
+                    name: software-engineering
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
+                      - label: "المراحل"
+                        name: stages
+                        widget: list
+                        field:
+                          label: "معرفات المنصات في المرحلة"
+                          name: value
+                          widget: list
+                          field: { label: "Platform ID", name: value, widget: string }
+                  - label: "ui-ux"
+                    name: ui-ux
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "اسم الهدف"
+                        name: label
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: string
+                          - label: "English"
+                            name: en
+                            widget: string
+                          - label: "Türkçe"
+                            name: tr
+                            widget: string
+                      - label: "وصف الهدف"
+                        name: description
+                        widget: object
+                        collapsed: true
+                        fields:
+                          - label: "العربية"
+                            name: ar
+                            widget: text
+                          - label: "English"
+                            name: en
+                            widget: text
+                          - label: "Türkçe"
+                            name: tr
+                            widget: text
                       - label: "المراحل"
                         name: stages
                         widget: list

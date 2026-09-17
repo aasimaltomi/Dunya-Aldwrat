@@ -42,7 +42,7 @@ test('roadmap usage guide and stage labels are localized in all supported langua
   const guide = data.quiz?.roadmapGuide;
   assert.ok(guide);
   assert.equal(guide.steps?.length, 4);
-  for (const key of ['title','subtitle','platformNote']) {
+  for (const key of ['title','subtitle','platformNote','startHere','startStage']) {
     for (const lang of ['ar','en','tr']) assert.ok(guide[key]?.[lang], `${key} missing ${lang}`);
   }
   guide.steps.forEach((step, index) => {
@@ -59,6 +59,9 @@ test('premium roadmap explains how to use the roadmap before the stages', () => 
   assert.match(app, /roadmapGuide/);
   assert.match(app, /pathStageLabels/);
   assert.match(app, /platformNote/);
+  assert.match(app, /startHere/);
+  assert.match(app, /startStage/);
+  assert.match(app, /value\.description/);
   assert.match(css, /\.path-usage-guide\{/);
   assert.match(css, /\.path-usage-steps\{/);
   assert.match(css, /\.path-stage-note\{/);

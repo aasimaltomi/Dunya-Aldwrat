@@ -9,7 +9,7 @@ const app = fs.readFileSync(path.join(ROOT, 'js', 'app.js'), 'utf8');
 const css = fs.readFileSync(path.join(ROOT, 'css', 'style.css'), 'utf8');
 
 test('Explore promotes the learning-path action as a premium CTA', () => {
-  assert.match(html, /id="pathBtn"[^>]*class="[^"]*path-premium-trigger/);
+  assert.match(html, /<button class="[^"]*path-premium-trigger[^"]*" id="pathBtn"/);
   assert.match(html, /class="modal-card modal-large path-modal-card"/);
   assert.match(html, /class="path-modal-hero"/);
 });

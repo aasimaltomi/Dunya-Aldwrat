@@ -197,7 +197,7 @@
       if(state.language&&!(Array.isArray(p.languageIds)&&p.languageIds.includes(state.language)))return false;
       if(state.pricingModel&&p.pricingModel!==state.pricingModel)return false;
       if(state.freeOnly&&p.hasFreeContent!==true)return false;
-      if(state.certificateOnly&&p.certificateAvailable!==true)return false;
+      if(state.certificateOnly&&p.freeCertificate!==true)return false;
       if(state.verification&&verificationState(p.lastVerified,now)!==state.verification)return false;
       return true;
     });

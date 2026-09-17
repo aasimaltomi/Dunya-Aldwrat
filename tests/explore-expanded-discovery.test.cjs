@@ -5,6 +5,7 @@ const path = require('node:path');
 
 const ROOT = path.join(__dirname, '..');
 const discoveryPath = path.join(ROOT, 'js', 'explore-discovery.js');
+const discoveryCssPath = path.join(ROOT, 'css', 'explore-discovery.css');
 
 test('Explore ships a dedicated twelve-area discovery layer', () => {
   assert.ok(fs.existsSync(discoveryPath), 'expected js/explore-discovery.js to exist');
@@ -66,12 +67,14 @@ test('Explore discovery matching uses detailed platform fields and returns real 
 });
 
 test('Explore renders the discovery layer as a broad responsive four-column overview', () => {
-  const html = fs.readFileSync(path.join(ROOT, 'explore.html'), 'utf8');
-  const css = fs.readFileSync(path.join(ROOT, 'css', 'style.css'), 'utf8');
+  const nav = fs.readFileSync(path.join(ROOT, 'js', 'explore-nav.js'), 'utf8');
   assert.ok(fs.existsSync(discoveryPath), 'expected js/explore-discovery.js to exist');
+  assert.ok(fs.existsSync(discoveryCssPath), 'expected css/explore-discovery.css to exist');
   const discovery = fs.readFileSync(discoveryPath, 'utf8');
+  const css = fs.readFileSync(discoveryCssPath, 'utf8');
 
-  assert.match(html, /js\/app\.js[^<]*<\/script><script src="js\/explore-discovery\.js"><\/script>/);
+  assert.match(nav, /js\/explore-discovery\.js/);
+  assert.match(nav, /css\/explore-discovery\.css/);
   assert.match(discovery, /data-discovery=/);
   assert.match(discovery, /activeDiscoveryArea/);
   assert.match(discovery, /renderCategories/);

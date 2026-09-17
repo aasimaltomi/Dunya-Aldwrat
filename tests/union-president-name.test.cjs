@@ -7,13 +7,11 @@ const ROOT = path.join(__dirname, '..');
 const read = file => fs.readFileSync(path.join(ROOT, file), 'utf8');
 
 test('union president signature shows the president name above the role', () => {
-  const html = read('index.html');
   const copy = read('js/union-president-message.js');
-  const css = read('css/developer-story.css');
 
-  assert.ok(html.includes('data-i18n="unionPresidentName"'));
-  assert.ok(html.includes('union-president-signature-text'));
-  assert.ok(copy.includes("unionPresidentName:'م. بشار محمد الزريقي'"));
-  assert.ok(copy.includes("unionPresidentSignature:'رئيس اتحاد شباب الأمة'"));
-  assert.ok(css.includes('.union-president-signature-text{'));
+  assert.ok(copy.includes("unionPresidentSignature:'م. بشار محمد الزريقي\\nرئيس اتحاد شباب الأمة'"));
+  assert.ok(copy.includes("unionPresidentSignature:'Eng. Bashar Mohammed Al-Zuraiqi\\nPresident of Ummah Youth Union'"));
+  assert.ok(copy.includes("unionPresidentSignature:'Müh. Bashar Mohammed Al-Zuraiqi\\nÜmmet Gençleri Birliği Başkanı'"));
+  assert.ok(copy.includes("if(key==='unionPresidentSignature')"));
+  assert.ok(copy.includes("el.style.whiteSpace='pre-line'"));
 });

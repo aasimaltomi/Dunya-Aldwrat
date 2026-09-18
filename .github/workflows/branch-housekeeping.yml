@@ -1,0 +1,44 @@
+name: Branch housekeeping
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - closed
+
+permissions:
+  contents: write
+
+jobs:
+  initial-sweep:
+    if: github.event_name == 'push' && contains(github.event.head_commit.message, '[initial-branch-cleanup]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete every branch except main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api --paginate "/repos/${GITHUB_REPOSITORY}/branches?per_page=100" --jq '.[].name' |
+          while IFS= read -r branch; do
+            if [ "$branch" = "main" ]; then
+              continue
+            fi
+            echo "Deleting branch: $branch"
+            gh api --method DELETE "/repos/${GITHUB_REPOSITORY}/git/refs/heads/${branch}"
+          done
+
+  delete-merged-branch:
+    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete merged pull-request branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          echo "Deleting merged branch: $BRANCH"
+          gh api --method DELETE "/repos/${GITHUB_REPOSITORY}/git/refs/heads/${BRANCH}" || true

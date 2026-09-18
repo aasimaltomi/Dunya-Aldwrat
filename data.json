@@ -2350,11 +2350,11 @@
           "tr": "Nvidia"
         }
       },
-      "freeCertificate": false,
+      "freeCertificate": true,
       "displayOrder": 13,
       "platformType": "",
       "featured": false,
-      "certificateAvailable": false,
+      "certificateAvailable": true,
       "hasFreeContent": true,
       "catalogUrl": "https://www.nvidia.com/en-us/training/find-training/?Free+Courses=Free",
       "categoryId": "programming_data",

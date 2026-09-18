@@ -84,7 +84,7 @@ test('union president message appears after the developer cards with a valid por
   const presidentIndex = html.indexOf('union-president-message');
   assert.ok(presidentIndex > quoteCardIndex, 'president message must appear after developer cards');
   assert.ok(html.includes('union-president-photo'));
-  assert.ok(presidentCopy.includes("const PORTRAIT_SRC='assets/union-president.webp'"));
+  assert.ok(presidentCopy.includes("const PORTRAIT_SRC='assets/union-president.png'"));
   assert.ok(html.includes('data-i18n="unionPresidentTitle"'));
   assert.ok(html.includes('data-i18n="unionPresidentMessage"'));
   assert.ok(html.includes('data-i18n="unionPresidentSignature"'));
@@ -94,8 +94,8 @@ test('union president message appears after the developer cards with a valid por
   assert.ok(fs.existsSync(portraitPath), 'president portrait asset must exist');
   const portrait = fs.readFileSync(portraitPath);
   assert.ok(portrait.length > 3000, 'president portrait must contain a real image payload');
-  assert.equal(portrait.subarray(0, 4).toString('ascii'), 'RIFF');
-  assert.equal(portrait.subarray(8, 12).toString('ascii'), 'WEBP');
+  assert.equal(portrait.subarray(1, 4).toString('ascii'), 'PNG');
+  assert.equal(portrait.subarray(12, 16).toString('ascii'), 'IHDR');
 
   assert.ok(presidentCopy.includes("unionPresidentTitle:'كلمة رئيس الاتحاد'"));
   assert.ok(presidentCopy.includes("unionPresidentSignature:'م. بشار محمد الزريقي\\nرئيس اتحاد شباب الأمة'"));

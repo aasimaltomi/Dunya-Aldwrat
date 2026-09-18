@@ -19,16 +19,9 @@ test('Explore stats strip contains exactly three public stats', () => {
   assert.equal((strip.match(/<strong id="stat/g) || []).length, 3);
 });
 
-test('certificate stat counts only platforms with free certificates', () => {
-  const sample=[
-    {id:'a',hasFreeContent:true,certificateAvailable:true,freeCertificate:true,languageIds:['English']},
-    {id:'b',hasFreeContent:true,certificateAvailable:true,freeCertificate:false,languageIds:['Arabic']},
-    {id:'c',hasFreeContent:false,certificateAvailable:false,freeCertificate:false,languageIds:['English']}
-  ];
-  const stats=PlatformDirectory.getStats(sample);
-  assert.equal(stats.platforms,3);
-  assert.equal(stats.certificates,1);
-  assert.equal(stats.languages,2);
+test('Explore certificate stat counts free certificates locally without changing shared stats semantics', () => {
+  assert.match(app, /freeCertificates=allPlatforms\.filter\(p=>p\.freeCertificate===true\)\.length/);
+  assert.match(app, /\$\('statCert'\)\.textContent=freeCertificates/);
 });
 
 test('Explore stats copy matches active platforms free certificates and available languages', () => {

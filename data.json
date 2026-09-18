@@ -6663,6 +6663,33 @@
         "en": "Send an Email",
         "tr": "E-posta Gönder"
       }
+    },
+    "notFound": {
+      "notFoundEyebrow": {
+        "ar": "خطأ 404",
+        "en": "404 error",
+        "tr": "404 hatası"
+      },
+      "notFoundTitle": {
+        "ar": "الصفحة غير موجودة",
+        "en": "Page not found",
+        "tr": "Sayfa bulunamadı"
+      },
+      "notFoundMessage": {
+        "ar": "يبدو أن الصفحة التي تبحث عنها غير موجودة أو تم نقلها. يمكنك العودة للرئيسية أو متابعة استكشاف منصات التعلم.",
+        "en": "The page you are looking for may not exist or may have moved. Return home or continue exploring learning platforms.",
+        "tr": "Aradığınız sayfa mevcut olmayabilir veya taşınmış olabilir. Ana sayfaya dönebilir ya da öğrenme platformlarını keşfetmeye devam edebilirsiniz."
+      },
+      "notFoundHome": {
+        "ar": "العودة للرئيسية",
+        "en": "Back to home",
+        "tr": "Ana sayfaya dön"
+      },
+      "notFoundExplore": {
+        "ar": "استكشف المنصات",
+        "en": "Explore platforms",
+        "tr": "Platformları keşfet"
+      }
     }
   },
   "quiz": {

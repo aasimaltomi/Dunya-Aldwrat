@@ -1708,6 +1708,20 @@ collections:
                 widget: object
                 collapsed: true
                 fields:
+                  - label: "contactUs"
+                    name: contactUs
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
                   - label: "developedBy"
                     name: developedBy
                     widget: object

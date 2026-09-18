@@ -84,13 +84,13 @@ test('union president message appears after the developer cards with a valid por
   const presidentIndex = html.indexOf('union-president-message');
   assert.ok(presidentIndex > quoteCardIndex, 'president message must appear after developer cards');
   assert.ok(html.includes('union-president-photo'));
-  assert.ok(presidentCopy.includes("const PORTRAIT_SRC='assets/union-president.png'"));
+  assert.ok(presidentCopy.includes("const PORTRAIT_SRC='assets/union-president.webp'"));
   assert.ok(html.includes('data-i18n="unionPresidentTitle"'));
   assert.ok(html.includes('data-i18n="unionPresidentMessage"'));
   assert.ok(html.includes('data-i18n="unionPresidentSignature"'));
   assert.ok(html.includes('js/union-president-message.js'));
 
-  const portraitPath = path.join(ROOT, 'assets', 'union-president.png');
+  const portraitPath = path.join(ROOT, 'assets', 'union-president.webp');
   assert.ok(fs.existsSync(portraitPath), 'president portrait asset must exist');
   const portrait = fs.readFileSync(portraitPath);
   assert.ok(portrait.length > 3000, 'president portrait must contain a real image payload');

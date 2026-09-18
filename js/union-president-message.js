@@ -18,6 +18,7 @@
   };
 
   const PORTRAIT_SRC='assets/union-president.webp';
+  const PORTRAIT_SELECTOR='.union-president-message img,[data-protected-asset="union-president"],.union-president-photo';
 
   function lang(){
     const value=(document.documentElement.lang||'ar').toLowerCase();
@@ -35,7 +36,9 @@
         }
       });
     });
-    document.querySelectorAll('.union-president-photo').forEach(image=>{
+    document.querySelectorAll(PORTRAIT_SELECTOR).forEach(image=>{
+      if(image.getAttribute('data-protected-asset')!=='union-president')image.setAttribute('data-protected-asset','union-president');
+      if(!image.classList.contains('union-president-photo'))image.classList.add('union-president-photo');
       if(image.getAttribute('src')!==PORTRAIT_SRC)image.setAttribute('src',PORTRAIT_SRC);
     });
   }
@@ -48,7 +51,7 @@
   }
 
   const observer=new MutationObserver(schedule);
-  observer.observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:['lang']});
+  observer.observe(document.documentElement,{subtree:true,childList:true,attributes:true,attributeFilter:['lang','src','class','data-protected-asset']});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply,{once:true});
   else apply();
 })();

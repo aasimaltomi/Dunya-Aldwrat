@@ -1,8 +1,11 @@
 # Dunya Al-Dawrat — دنيا الدورات
 
 A multilingual educational discovery platform that helps students explore and compare learning platforms in one organized place.
+- **Repository:** [devmyskilla.github.io](https://github.com/aasimaltomi/devmyskilla.github.io)
+- **Live site:** [Dunya Al-Dawrat](https://devmyskilla.vercel.app/)
+- ## Preview
 
-🌐 **Live site:** https://aasimaltomi.github.io/devmyskilla.github.io/
+![Dunya Al-Dawrat homepage](assets/readme/homepage.png)
 
 ## Overview
 
@@ -28,6 +31,7 @@ The current public build includes **40 platform profiles** and a dedicated explo
 - **JSON**
 - **Progressive Web App (PWA)**
 - **GitHub Pages**
+- **Vercel**
 
 ## Project Structure
 
@@ -61,9 +65,21 @@ The project combines my interests in **web development, educational technology, 
 
 **Aasim Mohammed Altomi**
 
+## My Role
+
+- Lead development
+- Web development
+- Product structure
+- User experience
+- Content organization
+- Continuous improvement
+
 - GitHub: [@aasimaltomi](https://github.com/aasimaltomi)
 - LinkedIn: [aasimaltomi](https://www.linkedin.com/in/aasimaltomi/)
 
 ---
 
-If you find an issue or have a suggestion, feel free to open an issue in this repository.
+```md
+## Feedback & Contributions
+
+Suggestions, bug reports, and ideas are welcome through GitHub Issues.

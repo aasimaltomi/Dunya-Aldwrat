@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /devmyskilla.github.io/admin/
+Disallow: /admin/
 
-Sitemap: https://aasimaltomi.github.io/devmyskilla.github.io/sitemap.xml
+Sitemap: https://devmyskilla.vercel.app/sitemap.xml

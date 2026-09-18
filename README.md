@@ -3,7 +3,7 @@
 A multilingual educational discovery platform that helps students explore and compare learning platforms in one organized place.
 - **Repository:** [devmyskilla.github.io](https://github.com/aasimaltomi/devmyskilla.github.io)
 - **Live site:** [Dunya Al-Dawrat](https://devmyskilla.vercel.app/)
-- ## Preview
+## Preview
 
 ![Dunya Al-Dawrat homepage](assets/readme/homepages.png)
 
@@ -79,7 +79,6 @@ The project combines my interests in **web development, educational technology, 
 
 ---
 
-```md
 ## Feedback & Contributions
 
 Suggestions, bug reports, and ideas are welcome through GitHub Issues.

@@ -42,7 +42,7 @@ test('all static category pages have category-specific keywords and full social 
   for(const area of discovery.areas){
     const html=read(`categories/${area.id}/index.html`);
     assertSearchMeta(html,area.id);
-    const keywords=(html.match(/meta name="keywords" content="([^"]+)"/)||[])[1]||'';
+    const keywords=((html.match(/meta name="keywords" content="([^"]+)"/)||[])[1]||'').replace(/&amp;/g,'&');
     assert.ok(keywords.includes(area.label.ar),`${area.id} Arabic keyword`);
     assert.ok(keywords.includes(area.label.en),`${area.id} English keyword`);
     assert.ok(keywords.includes(area.label.tr),`${area.id} Turkish keyword`);

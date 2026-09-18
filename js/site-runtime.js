@@ -99,9 +99,14 @@
     if(doc)doc.title=String(seo.title||'');
     setContentMeta(meta(doc,'meta[name="description"]',{name:'description'}),seo.description||'');
     setContentMeta(meta(doc,'meta[property="og:title"]',{property:'og:title'}),seo.ogTitle||seo.title||'');
-    setContentMeta(meta(doc,'meta[property="og:description"]',{property:'og:description'}),seo.ogDescription||seo.description||'');
+    const description=seo.ogDescription||seo.description||'';
+    setContentMeta(meta(doc,'meta[property="og:description"]',{property:'og:description'}),description);
     const image=content.safeUrl(seo.ogImage,{allowRelative:true});
     setContentMeta(meta(doc,'meta[property="og:image"]',{property:'og:image'}),image);
+    setContentMeta(meta(doc,'meta[property="og:site_name"]',{property:'og:site_name'}),'دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası');
+    setContentMeta(meta(doc,'meta[name="twitter:title"]',{name:'twitter:title'}),seo.ogTitle||seo.title||'');
+    setContentMeta(meta(doc,'meta[name="twitter:description"]',{name:'twitter:description'}),description);
+    setContentMeta(meta(doc,'meta[name="twitter:image"]',{name:'twitter:image'}),image);
   }
   function platformCanonicalUrl(doc,content,model){
     try{
@@ -121,10 +126,18 @@
     const name=String(model&&model.name||'');
     const subst=value=>String(value||'').split('{platform}').join(name);
     if(doc)doc.title=subst(seo.title);
-    setContentMeta(meta(doc,'meta[name="description"]',{name:'description'}),subst(seo.description));
-    setContentMeta(meta(doc,'meta[property="og:title"]',{property:'og:title'}),subst(seo.ogTitle||seo.title));
-    setContentMeta(meta(doc,'meta[property="og:description"]',{property:'og:description'}),subst(seo.ogDescription||seo.description));
-    setContentMeta(meta(doc,'meta[property="og:image"]',{property:'og:image'}),content.safeUrl(seo.ogImage,{allowRelative:true}));
+    const description=String(model&&model.description||subst(seo.description)||'');
+    const socialDescription=String(model&&model.description||subst(seo.ogDescription||seo.description)||'');
+    const socialTitle=subst(seo.ogTitle||seo.title);
+    const image=content.safeUrl(seo.ogImage,{allowRelative:true});
+    setContentMeta(meta(doc,'meta[name="description"]',{name:'description'}),description);
+    setContentMeta(meta(doc,'meta[property="og:title"]',{property:'og:title'}),socialTitle);
+    setContentMeta(meta(doc,'meta[property="og:description"]',{property:'og:description'}),socialDescription);
+    setContentMeta(meta(doc,'meta[property="og:image"]',{property:'og:image'}),image);
+    setContentMeta(meta(doc,'meta[property="og:site_name"]',{property:'og:site_name'}),'دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası');
+    setContentMeta(meta(doc,'meta[name="twitter:title"]',{name:'twitter:title'}),socialTitle);
+    setContentMeta(meta(doc,'meta[name="twitter:description"]',{name:'twitter:description'}),socialDescription);
+    setContentMeta(meta(doc,'meta[name="twitter:image"]',{name:'twitter:image'}),image);
     const canonical=platformCanonicalUrl(doc,content,model);
     if(canonical){
       setAttr(link(doc,'link[rel="canonical"]',{rel:'canonical'}),'href',canonical);

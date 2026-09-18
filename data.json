@@ -7738,69 +7738,69 @@
   "seo": {
     "home": {
       "ar": {
-        "title": "دنيا الدورات",
+        "title": "دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
         "description": "بدل أن تضيع بين عشرات المواقع، تساعدك دنيا الدورات على فهم المنصات التعليمية ومقارنتها والوصول إلى الخيار الأنسب لهدفك.",
-        "ogTitle": "دنيا الدورات",
+        "ogTitle": "دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
         "ogDescription": "بدل أن تضيع بين عشرات المواقع، تساعدك دنيا الدورات على فهم المنصات التعليمية ومقارنتها والوصول إلى الخيار الأنسب لهدفك.",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       },
       "en": {
-        "title": "Dunya Al-Dawrat",
+        "title": "دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
         "description": "Instead of getting lost across dozens of websites, Dunya Al-Dawrat helps you understand, compare, and choose learning platforms that fit your goal.",
-        "ogTitle": "Dunya Al-Dawrat",
+        "ogTitle": "دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
         "ogDescription": "Instead of getting lost across dozens of websites, Dunya Al-Dawrat helps you understand, compare, and choose learning platforms that fit your goal.",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       },
       "tr": {
-        "title": "Dunya Al-Dawrat",
+        "title": "دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
         "description": "Onlarca site arasında kaybolmak yerine Dunya Al-Dawrat, hedefinize uygun öğrenme platformlarını anlamanıza, karşılaştırmanıza ve seçmenize yardımcı olur.",
-        "ogTitle": "Dunya Al-Dawrat",
+        "ogTitle": "دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
         "ogDescription": "Onlarca site arasında kaybolmak yerine Dunya Al-Dawrat, hedefinize uygun öğrenme platformlarını anlamanıza, karşılaştırmanıza ve seçmenize yardımcı olur.",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       }
     },
     "explore": {
       "ar": {
-        "title": "اكتشف المنصة التعليمية الأنسب لك — دنيا الدورات",
+        "title": "استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet",
         "description": "ابحث، صفِّ، قارن، ثم افتح ملف المنصة لاتخاذ قرار أفضل.",
-        "ogTitle": "اكتشف المنصة التعليمية الأنسب لك — دنيا الدورات",
+        "ogTitle": "استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet",
         "ogDescription": "ابحث، صفِّ، قارن، ثم افتح ملف المنصة لاتخاذ قرار أفضل.",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       },
       "en": {
-        "title": "Discover the learning platform that fits you — Dunya Al-Dawrat",
+        "title": "استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet",
         "description": "Search, filter, compare, then open a platform profile to make a better decision.",
-        "ogTitle": "Discover the learning platform that fits you — Dunya Al-Dawrat",
+        "ogTitle": "استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet",
         "ogDescription": "Search, filter, compare, then open a platform profile to make a better decision.",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       },
       "tr": {
-        "title": "Size en uygun öğrenme platformunu keşfedin — Dunya Al-Dawrat",
+        "title": "استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet",
         "description": "Arayın, filtreleyin, karşılaştırın ve karar vermek için platform profilini açın.",
-        "ogTitle": "Size en uygun öğrenme platformunu keşfedin — Dunya Al-Dawrat",
+        "ogTitle": "استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet",
         "ogDescription": "Arayın, filtreleyin, karşılaştırın ve karar vermek için platform profilini açın.",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       }
     },
     "platform": {
       "ar": {
-        "title": "{platform} — دنيا الدورات",
+        "title": "{platform} | دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
         "description": "دليلك الذكي لاختيار منصة التعلم المناسبة",
-        "ogTitle": "{platform} — دنيا الدورات",
+        "ogTitle": "{platform} | دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
         "ogDescription": "دليلك الذكي لاختيار منصة التعلم المناسبة",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       },
       "en": {
-        "title": "{platform} — Dunya Al-Dawrat",
+        "title": "{platform} | دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
         "description": "A smarter guide to choosing the right learning platform",
-        "ogTitle": "{platform} — Dunya Al-Dawrat",
+        "ogTitle": "{platform} | دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
         "ogDescription": "A smarter guide to choosing the right learning platform",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       },
       "tr": {
-        "title": "{platform} — Dunya Al-Dawrat",
+        "title": "{platform} | دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
         "description": "Doğru öğrenme platformunu seçmek için akıllı rehber",
-        "ogTitle": "{platform} — Dunya Al-Dawrat",
+        "ogTitle": "{platform} | دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
         "ogDescription": "Doğru öğrenme platformunu seçmek için akıllı rehber",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       }

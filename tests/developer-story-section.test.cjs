@@ -90,7 +90,7 @@ test('union president message appears after the developer cards with a valid por
   assert.ok(html.includes('data-i18n="unionPresidentSignature"'));
   assert.ok(html.includes('js/union-president-message.js'));
 
-  const portraitPath = path.join(ROOT, 'assets', 'union-president.webp');
+  const portraitPath = path.join(ROOT, 'assets', 'union-president.png');
   assert.ok(fs.existsSync(portraitPath), 'president portrait asset must exist');
   const portrait = fs.readFileSync(portraitPath);
   assert.ok(portrait.length > 3000, 'president portrait must contain a real image payload');

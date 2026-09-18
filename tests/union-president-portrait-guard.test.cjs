@@ -6,7 +6,7 @@ const path = require('node:path');
 const ROOT = path.join(__dirname, '..');
 const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
 const script = fs.readFileSync(path.join(ROOT, 'js', 'union-president-message.js'), 'utf8');
-const portraitPath = path.join(ROOT, 'assets', 'union-president.webp');
+const portraitPath = path.join(ROOT, 'assets', 'union-president.png');
 
 test('union president portrait asset exists and is non-empty', () => {
   assert.equal(fs.existsSync(portraitPath), true);
@@ -15,7 +15,7 @@ test('union president portrait asset exists and is non-empty', () => {
 
 test('union president portrait is marked as a protected asset in homepage markup', () => {
   const image = html.match(/<img[^>]*union-president-photo[^>]*>/)?.[0] || '';
-  assert.match(image, /src="assets\/union-president\.webp"/);
+  assert.match(image, /src="assets\/union-president\.png"/);
   assert.match(image, /data-protected-asset="union-president"/);
 });
 

@@ -140,13 +140,59 @@
 
   function install(){
     if(typeof document==='undefined'||install.installed)return;
-    if(typeof renderCategories!=='function'||typeof visiblePlatforms!=='function'||typeof resetFilters!=='function'||typeof bindEvents!=='function')return;
+    if(typeof renderCategories!=='function'||typeof visiblePlatforms!=='function'||typeof resetFilters!=='function'||typeof bindEvents!=='function'||typeof hydrateFilterOptions!=='function'||typeof currentState!=='function'||typeof renderQuickFilters!=='function')return;
     install.installed=true;
 
     let activeDiscoveryArea='';
     const originalVisiblePlatforms=visiblePlatforms;
     const originalResetFilters=resetFilters;
     const originalBindEvents=bindEvents;
+    const originalHydrateFilterOptions=hydrateFilterOptions;
+    const originalCurrentState=currentState;
+
+    function discoveryFilterLabel(id){
+      const area=areaById(id);
+      if(!area)return String(id||'');
+      const label=content.localize(area.label);
+      return area.icon?`${area.icon} ${label}`:label;
+    }
+
+    function appendLegacyCategoryOptions(select){
+      if(!select)return;
+      const existing=new Set([...select.options].map(option=>option.value));
+      const legacy=PlatformDirectory.getFilterOptions(allPlatforms).categories;
+      legacy.forEach(id=>{
+        if(existing.has(id))return;
+        const option=document.createElement('option');
+        option.value=id;
+        option.textContent=content.categoryLabel(id);
+        option.hidden=true;
+        option.dataset.legacyCategory='true';
+        select.appendChild(option);
+      });
+    }
+
+    hydrateFilterOptions=function(){
+      const selected=els&&els.filterCategory?(els.filterCategory.value||activeDiscoveryArea):activeDiscoveryArea;
+      originalHydrateFilterOptions();
+      if(!els||!els.filterCategory)return;
+      populateSelect(els.filterCategory,areas.map(area=>area.id),id=>discoveryFilterLabel(id));
+      appendLegacyCategoryOptions(els.filterCategory);
+      if(selected&&[...els.filterCategory.options].some(option=>option.value===selected))els.filterCategory.value=selected;
+      activeDiscoveryArea=areaById(els.filterCategory.value)?els.filterCategory.value:'';
+    };
+
+    currentState=function(){
+      const state=originalCurrentState();
+      if(areaById(state.category))state.category='';
+      return state;
+    };
+
+    renderQuickFilters=function(){
+      const box=$('quickFilterChips');
+      if(!box)return;
+      box.innerHTML=areas.map(area=>`<button type="button" data-discovery-filter="${esc(area.id)}"><span>${esc(area.icon)}</span> ${esc(content.localize(area.label))}</button>`).join('');
+    };
 
     renderCategories=function(){
       if(!els||!els.categoryGrid)return;
@@ -174,19 +220,45 @@
       return list;
     };
 
-    function bindDiscoveryEvents(){
-      if(!els||!els.categoryGrid)return;
-      els.categoryGrid.onclick=event=>{
-        const button=event.target.closest('[data-discovery]');
-        if(!button)return;
-        activeDiscoveryArea=button.dataset.discovery||'';
-        activeTab='all';
-        if(els.filterCategory)els.filterCategory.value='';
-        renderCategories();
-        renderDirectory();
+    function selectDiscoveryArea(id,{scroll=true}={}){
+      const next=areaById(id)?id:'';
+      activeDiscoveryArea=next;
+      activeTab='all';
+      if(els&&els.filterCategory)els.filterCategory.value=activeDiscoveryArea;
+      renderCategories();
+      renderDirectory();
+      if(scroll){
         const explore=document.querySelector('#explore');
         if(explore)explore.scrollIntoView({behavior:'smooth'});
-      };
+      }
+    }
+
+    function bindDiscoveryEvents(){
+      if(els&&els.categoryGrid){
+        els.categoryGrid.onclick=event=>{
+          const button=event.target.closest('[data-discovery]');
+          if(!button)return;
+          selectDiscoveryArea(button.dataset.discovery||'');
+        };
+      }
+
+      if(els&&els.filterCategory){
+        els.filterCategory.addEventListener('change',()=>{
+          const next=els.filterCategory.value||'';
+          activeDiscoveryArea=areaById(next)?next:'';
+          renderCategories();
+          renderDirectory();
+        });
+      }
+
+      const chips=$('quickFilterChips');
+      if(chips){
+        chips.onclick=event=>{
+          const button=event.target.closest('[data-discovery-filter]');
+          if(!button)return;
+          selectDiscoveryArea(button.dataset.discoveryFilter||'');
+        };
+      }
     }
 
     resetFilters=function(){
@@ -204,6 +276,8 @@
     bindDiscoveryEvents();
     try{
       if(Array.isArray(allPlatforms)&&allPlatforms.length){
+        hydrateFilterOptions();
+        renderQuickFilters();
         renderCategories();
         renderDirectory();
       }

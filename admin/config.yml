@@ -1811,6 +1811,48 @@ collections:
                 widget: object
                 collapsed: true
                 fields:
+                  - label: "landingContactCta"
+                    name: landingContactCta
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
+                  - label: "landingContactText"
+                    name: landingContactText
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: text
+                      - label: "English"
+                        name: en
+                        widget: text
+                      - label: "Türkçe"
+                        name: tr
+                        widget: text
+                  - label: "landingContactTitle"
+                    name: landingContactTitle
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
                   - label: "landingDeveloperEyebrow"
                     name: landingDeveloperEyebrow
                     widget: object

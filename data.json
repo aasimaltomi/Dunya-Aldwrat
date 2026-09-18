@@ -3324,7 +3324,7 @@
       "displayOrder": 20,
       "platformType": "",
       "featured": false,
-      "certificateAvailable": true,
+      "certificateAvailable": false,
       "hasFreeContent": true,
       "catalogUrl": "https://www.khanacademy.org/",
       "categoryId": "education",

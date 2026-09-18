@@ -17,7 +17,7 @@ test('CMS SEO keeps the trilingual brand title across supported languages',()=>{
   for(const lang of ['ar','en','tr']){
     assert.equal(data.seo.home[lang].title,BRAND);
     assert.equal(data.seo.home[lang].ogTitle,BRAND);
-    assert.match(data.seo.explore[lang].title,/Explore Platforms/);
+    assert.match(data.seo.explore[lang].title,/Explore Learning Platforms/);
     assert.match(data.seo.explore[lang].title,/Platformları Keşfet/);
     assert.match(data.seo.platform[lang].title,/\{platform\}/);
     assert.match(data.seo.platform[lang].title,/Dunya Al-Dawrat/);
@@ -41,7 +41,8 @@ test('static category pages expose Arabic English and Turkish in the title',()=>
     const ar=area.label.ar;
     const en=area.label.en;
     const tr=area.label.tr;
-    assert.ok(html.includes(`<title>${ar} | ${en} | ${tr}</title>`),area.id);
-    assert.ok(html.includes(`property="og:title" content="${ar} | ${en} | ${tr}"`),area.id);
+    const title=`${ar} | ${en} | ${tr}`.replace(/&/g,'&amp;');
+    assert.ok(html.includes(`<title>${title}</title>`),area.id);
+    assert.ok(html.includes(`property="og:title" content="${title}"`),area.id);
   }
 });

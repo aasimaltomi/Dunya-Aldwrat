@@ -138,7 +138,7 @@
       "languageIds": [
         "English"
       ],
-      "pricingModel": "free",
+      "pricingModel": "mixed",
       "officialCount": 1683,
       "officialUrl": "https://www.futurelearn.com/courses",
       "editorial": {
@@ -1285,7 +1285,7 @@
       "languageIds": [
         "English"
       ],
-      "pricingModel": "free",
+      "pricingModel": "mixed",
       "officialCount": 3931,
       "officialUrl": "https://www.edx.org/courses",
       "editorial": {
@@ -1674,7 +1674,7 @@
       "languageIds": [
         "English"
       ],
-      "pricingModel": "free",
+      "pricingModel": "freemium",
       "officialCount": 679,
       "officialUrl": "https://www.codecademy.com/catalog",
       "editorial": {
@@ -2322,7 +2322,7 @@
       "languageIds": [
         "English"
       ],
-      "pricingModel": "free",
+      "pricingModel": "mixed",
       "officialCount": 51,
       "officialUrl": "https://www.nvidia.com/en-us/training/self-paced-courses/",
       "editorial": {
@@ -2359,9 +2359,9 @@
       "catalogUrl": "https://www.nvidia.com/en-us/training/find-training/?Free+Courses=Free",
       "categoryId": "programming_data",
       "description": {
-        "ar": "منصة إنفيديا الرائدة في الذكاء الاصطناعي وتعلم الآلة. تقدم دورات مجانية في التعلم العميق، CUDA، معالجة الصور، والذكاء الاصطناعي التوليدي. جميع الدورات مجانية ولكن دورة واحدة فقط بشهادة والباقي بدون شهادات.",
-        "en": "Nvidia's leading platform for AI and machine learning. Offers free courses in deep learning, CUDA, image processing, and generative AI. All courses are free but only one offers a certificate.",
-        "tr": "Yapay zeka ve makine öğreniminde Nvidia'nın öncü platformu. Derin öğrenme, CUDA, görüntü işleme ve üretken yapay zeka alanlarında ücretsiz kurslar sunar. Tüm kurslar ücretsizdir ancak yalnızca biri sertifika verir."
+        "ar": "منصة NVIDIA للتدريب في الذكاء الاصطناعي والحوسبة المتسارعة. تقدم دورات ذاتية بعضها مجاني وبعضها مدفوع، وتشمل موضوعات مثل التعلم العميق وCUDA والذكاء الاصطناعي التوليدي، مع شهادات متاحة لبعض الدورات.",
+        "en": "NVIDIA's training platform for AI and accelerated computing. It offers both free and paid self-paced courses in topics such as deep learning, CUDA, and generative AI, with certificates available for selected courses.",
+        "tr": "NVIDIA'nın yapay zekâ ve hızlandırılmış bilgi işlem eğitim platformu. Derin öğrenme, CUDA ve üretken yapay zekâ gibi konularda ücretsiz ve ücretli kendi hızınızda kurslar sunar; bazı kurslarda sertifika bulunur."
       },
       "officialCountType": "courses",
       "lastVerified": null
@@ -2808,7 +2808,7 @@
       "languageIds": [
         "English"
       ],
-      "pricingModel": "free",
+      "pricingModel": "freemium",
       "officialCount": 50,
       "officialUrl": "https://www.sololearn.com/en/learn",
       "editorial": {
@@ -3154,7 +3154,7 @@
       "languageIds": [
         "English"
       ],
-      "pricingModel": "free",
+      "pricingModel": "mixed",
       "officialCount": 90,
       "officialUrl": "https://www.w3schools.com/where_to_start.asp",
       "editorial": {
@@ -3560,9 +3560,9 @@
     {
       "id": "plat-24",
       "name": {
-        "ar": "Google Cloud",
-        "en": "Google Cloud",
-        "tr": "Google Cloud"
+        "ar": "Google Skills",
+        "en": "Google Skills",
+        "tr": "Google Skills"
       },
       "fields": [
         {
@@ -3650,7 +3650,7 @@
       "languageIds": [
         "Multilingual"
       ],
-      "pricingModel": "free",
+      "pricingModel": "freemium",
       "officialCount": 1471,
       "officialUrl": "https://www.skills.google/",
       "editorial": {
@@ -3671,14 +3671,14 @@
         }
       },
       "logo": {
-        "src": "https://www.google.com/s2/favicons?domain=cloud.google.com&sz=128",
+        "src": "https://www.google.com/s2/favicons?domain=skills.google&sz=128",
         "alt": {
-          "ar": "Google Cloud",
-          "en": "Google Cloud",
-          "tr": "Google Cloud"
+          "ar": "Google Skills",
+          "en": "Google Skills",
+          "tr": "Google Skills"
         }
       },
-      "freeCertificate": true,
+      "freeCertificate": false,
       "displayOrder": 24,
       "platformType": "",
       "featured": false,
@@ -3687,9 +3687,9 @@
       "catalogUrl": "https://www.skills.google/",
       "categoryId": "technology",
       "description": {
-        "ar": "منصة جوجل كلاود التعليمية. تقدم دورات مجانية في الحوسبة السحابية، البيانات الضخمة، التعلم الآلي، وبنية الخدمات السحابية مع شهادات.",
-        "en": "Google Cloud's learning platform. Offers free courses in cloud computing, big data, machine learning, and cloud architecture with certificates.",
-        "tr": "Google Cloud öğrenme platformu. Bulut bilişim, büyük veri, makine öğrenimi ve bulut mimarisi alanlarında ücretsiz kurslar sunar."
+        "ar": "منصة Google Skills تجمع تعلّمًا عمليًا من منتجات وفرق Google، بما في ذلك Google Cloud والذكاء الاصطناعي. توفر وصولًا مجانيًا محدودًا عبر رصيد شهري وخيارات مدفوعة، مع شارات مهارية ومسارات وشهادات مهنية بحسب البرنامج.",
+        "en": "Google Skills brings together hands-on learning from Google products and teams, including Google Cloud and AI. It offers limited free access through monthly credits alongside paid options, with skill badges, learning paths, and professional certificates depending on the program.",
+        "tr": "Google Skills, Google Cloud ve yapay zekâ dâhil Google ürün ve ekiplerinden uygulamalı öğrenmeyi bir araya getirir. Aylık kredilerle sınırlı ücretsiz erişimin yanında ücretli seçenekler sunar; programa göre beceri rozetleri, öğrenme yolları ve profesyonel sertifikalar bulunur."
       },
       "officialCountType": "courses",
       "lastVerified": null
@@ -3926,7 +3926,7 @@
         "Arabic",
         "English"
       ],
-      "pricingModel": "free",
+      "pricingModel": "mixed",
       "officialCount": 21659,
       "officialUrl": "https://www.coursera.org/courses",
       "editorial": {
@@ -3963,9 +3963,9 @@
       "catalogUrl": "https://www.coursera.org/courses",
       "categoryId": "education",
       "description": {
-        "ar": "منصة تعليمية رائدة تقدم دورات من أفضل الجامعات والشركات. المحتوى مجاني بالكامل، ولكن تحتاج للدفع للحصول على الشهادة.",
-        "en": "A leading educational platform from top universities and companies. Content is completely free to access, but you need to pay for the certificate.",
-        "tr": "En iyi üniversitelerden ve şirketlerden kurslar sunan öncü bir platform. İçerik tamamen ücretsizdir ancak sertifika için ödeme yapmanız gerekir."
+        "ar": "منصة تعليمية تقدم دورات وبرامج من جامعات وشركات عالمية. تتيح معاينة مجانية لمحتوى من كثير من الدورات، بينما تتطلب الشهادات ومعظم البرامج الكاملة الدفع أو الاشتراك.",
+        "en": "A learning platform offering courses and programs from leading universities and companies. Many courses provide free preview access to some content, while certificates and most full programs require payment or a subscription.",
+        "tr": "Önde gelen üniversite ve şirketlerden kurslar ve programlar sunan bir öğrenme platformu. Birçok kursta içeriğin bir bölümüne ücretsiz ön izleme erişimi bulunurken sertifikalar ve çoğu tam program ödeme veya abonelik gerektirir."
       },
       "officialCountType": "courses",
       "lastVerified": null
@@ -4108,7 +4108,7 @@
       "languageIds": [
         "English"
       ],
-      "pricingModel": "paid",
+      "pricingModel": "mixed",
       "officialCount": 600,
       "officialUrl": "https://www.simplilearn.com/skillup-free-online-courses",
       "editorial": {

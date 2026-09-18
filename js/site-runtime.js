@@ -1,8 +1,9 @@
 (function(root,factory){
-  const api=factory();
+  const routes=typeof module==='object'&&module.exports?require('./seo-routes.js'):(root&&root.SeoRoutes);
+  const api=factory(routes);
   if(typeof module==='object'&&module.exports)module.exports=api;
   if(root)root.SiteRuntime=api;
-})(typeof globalThis!=='undefined'?globalThis:this,function(){
+})(typeof globalThis!=='undefined'?globalThis:this,function(SeoRoutes){
   const TAB_FAVICON='favicon.svg?v=20260917';
   function each(doc,selector,fn){
     if(!doc||typeof doc.querySelectorAll!=='function')return;
@@ -105,9 +106,8 @@
   function platformCanonicalUrl(doc,content,model){
     try{
       if(!model||!model.id)return'';
-      const routes=typeof globalThis!=='undefined'?globalThis.SeoRoutes:null;
-      if(routes&&typeof routes.platformUrl==='function'){
-        return new URL(routes.platformUrl(model), 'https://devmyskilla.vercel.app/').href;
+      if(SeoRoutes&&typeof SeoRoutes.platformUrl==='function'){
+        return new URL(SeoRoutes.platformUrl(model), 'https://devmyskilla.vercel.app/').href;
       }
       if(!doc||!doc.location||!doc.location.href)return'';
       const url=new URL(doc.location.href);

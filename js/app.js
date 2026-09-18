@@ -15,7 +15,7 @@ function migrateComparisonStorage(){let current=null,hasCurrent=false;try{const 
 function platformById(id){return allPlatforms.find(p=>p.id===id)}
 function nameFor(p){return content?content.platformName(p):''}
 function descriptionFor(p){return content?content.platformDescription(p):''}
-function detailUrl(p){return `platform.html?id=${encodeURIComponent(p.id)}&lang=${encodeURIComponent(currentLang)}`}
+function detailUrl(p){return SeoRoutes.platformUrl(p,currentLang)}
 function languagesLabel(p){return(p.languageIds||[]).map(id=>content.languageLabel(id)).filter(Boolean).join(' · ')}
 function safeExternal(url){return content.safeUrl(url,{allowRelative:false})}
 function fallbackLogo(){return content.asset('platformFallbackLogo')}

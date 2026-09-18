@@ -34,8 +34,9 @@ test('robots and sitemap use Vercel origin and root-level admin path', () => {
 
   assert.ok(sitemap.includes(`<loc>${BASE}/</loc>`));
   assert.ok(sitemap.includes(`<loc>${BASE}/explore.html</loc>`));
-  for(let i=1;i<=40;i++) {
-    assert.ok(sitemap.includes(`<loc>${BASE}/platform.html?id=plat-${i}</loc>`), `missing plat-${i}`);
+  const SeoRoutes=require('../js/seo-routes.js');
+  for(const slug of Object.values(SeoRoutes.PLATFORM_SLUGS)) {
+    assert.ok(sitemap.includes(`<loc>${BASE}/platforms/${slug}/</loc>`), `missing ${slug}`);
   }
   assert.doesNotMatch(sitemap, /aasimaltomi\.github\.io/);
 });

@@ -215,7 +215,7 @@
       areas.forEach(area=>{
         const link=document.createElement('a');
         link.className='category-card discovery-area-card';
-        link.href=discoveryAreaExploreUrl(path,currentLang,area);
+        link.href=SeoRoutes.categoryUrl(area.id,currentLang);
         link.setAttribute('aria-label',`${area.label} — ${area.countLabel}`);
 
         const icon=document.createElement('span');
@@ -246,7 +246,7 @@
     return fallback&&fallback.src?fallback.src:'';
   }
 
-  function detailUrl(platform){return `platform.html?id=${encodeURIComponent(platform.id)}&lang=${encodeURIComponent(currentLang)}`}
+  function detailUrl(platform){return SeoRoutes.platformUrl(platform,currentLang)}
 
   function featuredCard(platform,index){
     const name=content.platformName(platform),description=content.platformDescription(platform),logo=platformLogo(platform);

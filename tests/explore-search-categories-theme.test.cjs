@@ -16,7 +16,7 @@ function functionBody(source, name, nextName) {
 }
 
 test('hero search categories and platform category section use one shared category group source', () => {
-  assert.match(app, /function exploreCategoryGroups\\(\\)\\{return PlatformDirectory\\.getCategoryGroups\\(allPlatforms\\)\\}/);
+  assert.match(app, /function exploreCategoryGroups\(\)\{return PlatformDirectory\.getCategoryGroups\(allPlatforms\)\}/);
 
   const categories = functionBody(app, 'renderCategories', 'renderPlatformCloud');
   const quick = functionBody(app, 'renderQuickFilters', 'updateCompareDock');

@@ -7739,46 +7739,46 @@
     "home": {
       "ar": {
         "title": "دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
-        "description": "بدل أن تضيع بين عشرات المواقع، تساعدك دنيا الدورات على فهم المنصات التعليمية ومقارنتها والوصول إلى الخيار الأنسب لهدفك.",
+        "description": "اكتشف وقارن منصات التعلم والدورات المجانية والمدفوعة في البرمجة والذكاء الاصطناعي وتحليل البيانات واللغات، مع معلومات الشهادات والأسعار والروابط الرسمية.",
         "ogTitle": "دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
-        "ogDescription": "بدل أن تضيع بين عشرات المواقع، تساعدك دنيا الدورات على فهم المنصات التعليمية ومقارنتها والوصول إلى الخيار الأنسب لهدفك.",
+        "ogDescription": "اكتشف وقارن منصات التعلم والدورات المجانية والمدفوعة في البرمجة والذكاء الاصطناعي وتحليل البيانات واللغات، مع معلومات الشهادات والأسعار والروابط الرسمية.",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       },
       "en": {
         "title": "دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
-        "description": "Instead of getting lost across dozens of websites, Dunya Al-Dawrat helps you understand, compare, and choose learning platforms that fit your goal.",
+        "description": "Discover and compare online learning platforms and free or paid courses in programming, AI, data, languages and more, with certificate, pricing and official-link details.",
         "ogTitle": "دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
-        "ogDescription": "Instead of getting lost across dozens of websites, Dunya Al-Dawrat helps you understand, compare, and choose learning platforms that fit your goal.",
+        "ogDescription": "Discover and compare online learning platforms and free or paid courses in programming, AI, data, languages and more, with certificate, pricing and official-link details.",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       },
       "tr": {
         "title": "دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
-        "description": "Onlarca site arasında kaybolmak yerine Dunya Al-Dawrat, hedefinize uygun öğrenme platformlarını anlamanıza, karşılaştırmanıza ve seçmenize yardımcı olur.",
+        "description": "Programlama, yapay zeka, veri, dil ve daha birçok alanda öğrenme platformlarını ve ücretsiz veya ücretli kursları sertifika, fiyat ve resmî bağlantı bilgileriyle karşılaştırın.",
         "ogTitle": "دنيا الدورات | Dunya Al-Dawrat | Kurslar Dünyası",
-        "ogDescription": "Onlarca site arasında kaybolmak yerine Dunya Al-Dawrat, hedefinize uygun öğrenme platformlarını anlamanıza, karşılaştırmanıza ve seçmenize yardımcı olur.",
+        "ogDescription": "Programlama, yapay zeka, veri, dil ve daha birçok alanda öğrenme platformlarını ve ücretsiz veya ücretli kursları sertifika, fiyat ve resmî bağlantı bilgileriyle karşılaştırın.",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       }
     },
     "explore": {
       "ar": {
         "title": "استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet",
-        "description": "ابحث، صفِّ، قارن، ثم افتح ملف المنصة لاتخاذ قرار أفضل.",
+        "description": "استكشف وقارن 40 منصة تعليمية حسب المجال واللغة والسعر والشهادات والمحتوى المجاني للوصول إلى منصة التعلم الأنسب لهدفك.",
         "ogTitle": "استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet",
-        "ogDescription": "ابحث، صفِّ، قارن، ثم افتح ملف المنصة لاتخاذ قرار أفضل.",
+        "ogDescription": "استكشف وقارن 40 منصة تعليمية حسب المجال واللغة والسعر والشهادات والمحتوى المجاني للوصول إلى منصة التعلم الأنسب لهدفك.",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       },
       "en": {
         "title": "استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet",
-        "description": "Search, filter, compare, then open a platform profile to make a better decision.",
+        "description": "Explore and compare 40 learning platforms by subject, language, price, certificates and free content to find the right platform for your goal.",
         "ogTitle": "استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet",
-        "ogDescription": "Search, filter, compare, then open a platform profile to make a better decision.",
+        "ogDescription": "Explore and compare 40 learning platforms by subject, language, price, certificates and free content to find the right platform for your goal.",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       },
       "tr": {
         "title": "استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet",
-        "description": "Arayın, filtreleyin, karşılaştırın ve karar vermek için platform profilini açın.",
+        "description": "Hedefinize en uygun öğrenme platformunu bulmak için 40 eğitim platformunu alan, dil, fiyat, sertifika ve ücretsiz içerik açısından karşılaştırın.",
         "ogTitle": "استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet",
-        "ogDescription": "Arayın, filtreleyin, karşılaştırın ve karar vermek için platform profilini açın.",
+        "ogDescription": "Hedefinize en uygun öğrenme platformunu bulmak için 40 eğitim platformunu alan, dil, fiyat, sertifika ve ücretsiz içerik açısından karşılaştırın.",
         "ogImage": "assets/dunya-logo-hero-v3.webp"
       }
     },

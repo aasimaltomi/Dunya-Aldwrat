@@ -2,7 +2,7 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const read=p=>fs.readFileSync(p,'utf8');
-const BASE='https://aasimaltomi.github.io/devmyskilla.github.io';
+const BASE='https://devmyskilla.vercel.app';
 
 test('crawlable entry pages expose static title description and canonical metadata',()=>{
   const expectations={
@@ -17,7 +17,7 @@ test('crawlable entry pages expose static title description and canonical metada
     assert.ok(html.includes(`rel="canonical" href="${canonical}"`),`${file} canonical`);
     assert.match(html,/property="og:title" content="[^"]+"/);
     assert.match(html,/property="og:description" content="[^"]+"/);
-    assert.match(html,/property="og:url" content="https:\/\/aasimaltomi\.github\.io\/devmyskilla\.github\.io/);
+    assert.match(html,/property="og:url" content="https:\/\/devmyskilla\.vercel\.app/);
   }
 });
 
@@ -27,7 +27,7 @@ test('robots and sitemap expose the current project site and all 40 platform URL
   const robots=read('robots.txt');
   const sitemap=read('sitemap.xml');
   assert.ok(robots.includes(`Sitemap: ${BASE}/sitemap.xml`));
-  assert.ok(robots.includes('Disallow: /devmyskilla.github.io/admin/'));
+  assert.ok(robots.includes('Disallow: /admin/'));
   assert.ok(sitemap.includes(`<loc>${BASE}/</loc>`));
   assert.ok(sitemap.includes(`<loc>${BASE}/explore.html</loc>`));
   for(let i=1;i<=40;i++) assert.ok(sitemap.includes(`<loc>${BASE}/platform.html?id=plat-${i}</loc>`),`missing plat-${i}`);

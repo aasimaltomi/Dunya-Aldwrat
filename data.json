@@ -6647,6 +6647,21 @@
         "ar": "من البحث إلى المنصة المناسبة في خمس خطوات",
         "en": "From search to the right platform in five steps",
         "tr": "Aramadan doğru platforma beş adımda"
+      },
+      "landingContactTitle": {
+        "ar": "اتصل بنا",
+        "en": "Contact Us",
+        "tr": "Bize Ulaşın"
+      },
+      "landingContactText": {
+        "ar": "نسعد باستفساراتكم واقتراحاتكم وملاحظاتكم حول المنصات التعليمية وفرص التعاون.",
+        "en": "We welcome your questions, suggestions, feedback about learning platforms, and collaboration opportunities.",
+        "tr": "Eğitim platformlarıyla ilgili sorularınızı, önerilerinizi, geri bildirimlerinizi ve iş birliği fırsatlarını memnuniyetle karşılıyoruz."
+      },
+      "landingContactCta": {
+        "ar": "إرسال بريد إلكتروني",
+        "en": "Send an Email",
+        "tr": "E-posta Gönder"
       }
     }
   },

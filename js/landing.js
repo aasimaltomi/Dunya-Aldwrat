@@ -13,22 +13,10 @@
     tr:{eyebrow:'Alana göre keşfet',title:'Alanını seç ve öğrenmeye başla',subtitle:'İlgilendiğin alana göre en uygun platformları ve kursları keşfet.'}
   };
 
-  const HOME_STATS={
-    ar:[
-      {id:'active',value:'38',label:'منصة نشطة'},
-      {id:'freeCertificates',value:'36',label:'منصة بشهادات مجانية'},
-      {id:'languages',value:'4+',label:'لغة متاحة'}
-    ],
-    en:[
-      {id:'active',value:'38',label:'active platforms'},
-      {id:'freeCertificates',value:'36',label:'platforms with free certificates'},
-      {id:'languages',value:'4+',label:'languages available'}
-    ],
-    tr:[
-      {id:'active',value:'38',label:'aktif platform'},
-      {id:'freeCertificates',value:'36',label:'ücretsiz sertifika sunan platform'},
-      {id:'languages',value:'4+',label:'mevcut dil'}
-    ]
+  const HOME_STATS_LABELS={
+    ar:{active:'منصة نشطة',freeCertificates:'منصة بشهادات مجانية',languages:'لغة متاحة'},
+    en:{active:'active platforms',freeCertificates:'platforms with free certificates',languages:'languages available'},
+    tr:{active:'aktif platform',freeCertificates:'ücretsiz sertifika sunan platform',languages:'mevcut dil'}
   };
 
   const DISCOVERY_AREA_DEFINITIONS=[
@@ -75,9 +63,13 @@
     return value===null||value===undefined?'':String(value);
   }
 
-  function homeStats(lang='ar'){
-    const rows=HOME_STATS[lang]||HOME_STATS.ar;
-    return rows.map(row=>({...row}));
+  function homeStats(platforms=[],lang='ar'){
+    const list=Array.isArray(platforms)?platforms:[],stats=buildStats(list),labels=HOME_STATS_LABELS[lang]||HOME_STATS_LABELS.ar;
+    return[
+      {id:'active',value:String(stats.platforms),label:labels.active},
+      {id:'freeCertificates',value:String(list.filter(p=>p&&p.freeCertificate===true).length),label:labels.freeCertificates},
+      {id:'languages',value:`${stats.languages}+`,label:labels.languages}
+    ];
   }
 
   function discoveryCountLabel(count,lang='ar'){
@@ -157,13 +149,13 @@
     });
   }
 
-  function renderStats(){
+  function renderStats(platforms=[]){
     const targets={
       active:['landingStatActive','landingStatActiveLabel'],
       freeCertificates:['landingStatFreeCertificates','landingStatFreeCertificatesLabel'],
       languages:['landingStatLang','landingStatLangLabel']
     };
-    homeStats(currentLang).forEach(row=>{
+    homeStats(platforms,currentLang).forEach(row=>{
       const [valueId,labelId]=targets[row.id]||[];
       const valueEl=valueId&&document.getElementById(valueId);
       const labelEl=labelId&&document.getElementById(labelId);
@@ -298,7 +290,7 @@
     renderCategories(data,platforms);
     renderFeatured(platforms);
     renderTopPlatforms(platforms);
-    renderStats();
+    renderStats(platforms);
   }
 
   function bindHeroSearch(){

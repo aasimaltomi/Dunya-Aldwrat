@@ -2516,6 +2516,81 @@ collections:
                       - label: "Türkçe"
                         name: tr
                         widget: string
+              - label: "notFound"
+                name: notFound
+                widget: object
+                collapsed: true
+                fields:
+                  - label: "notFoundExplore"
+                    name: notFoundExplore
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
+                  - label: "notFoundEyebrow"
+                    name: notFoundEyebrow
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
+                  - label: "notFoundHome"
+                    name: notFoundHome
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
+                  - label: "notFoundMessage"
+                    name: notFoundMessage
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: text
+                      - label: "English"
+                        name: en
+                        widget: text
+                      - label: "Türkçe"
+                        name: tr
+                        widget: text
+                  - label: "notFoundTitle"
+                    name: notFoundTitle
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
               - label: "platform"
                 name: platform
                 widget: object

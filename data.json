@@ -3186,7 +3186,7 @@
       "displayOrder": 19,
       "platformType": "",
       "featured": false,
-      "certificateAvailable": false,
+      "certificateAvailable": true,
       "hasFreeContent": true,
       "catalogUrl": "https://www.w3schools.com/where_to_start.asp",
       "categoryId": "programming_data",

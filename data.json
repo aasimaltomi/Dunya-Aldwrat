@@ -4136,12 +4136,12 @@
           "tr": "Simple Learn"
         }
       },
-      "freeCertificate": false,
+      "freeCertificate": true,
       "displayOrder": 27,
       "platformType": "",
       "featured": false,
       "certificateAvailable": true,
-      "hasFreeContent": false,
+      "hasFreeContent": true,
       "catalogUrl": "https://www.simplilearn.com/skillup-free-online-courses",
       "categoryId": "business_marketing",
       "description": {

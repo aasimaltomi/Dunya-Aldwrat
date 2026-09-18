@@ -295,9 +295,9 @@
     {
       "id": "plat-3",
       "name": {
-        "ar": "IBM Skills Build",
-        "en": "IBM Skills Build",
-        "tr": "IBM Skills Build"
+        "ar": "IBM SkillsBuild",
+        "en": "IBM SkillsBuild",
+        "tr": "IBM SkillsBuild"
       },
       "fields": [
         {
@@ -1033,9 +1033,9 @@
     {
       "id": "plat-7",
       "name": {
-        "ar": "EDX",
-        "en": "EDX",
-        "tr": "EDX"
+        "ar": "edX",
+        "en": "edX",
+        "tr": "edX"
       },
       "fields": [
         {
@@ -1332,9 +1332,9 @@
     {
       "id": "plat-8",
       "name": {
-        "ar": "Code Academy",
-        "en": "Code Academy",
-        "tr": "Code Academy"
+        "ar": "Codecademy",
+        "en": "Codecademy",
+        "tr": "Codecademy"
       },
       "fields": [
         {
@@ -2259,9 +2259,9 @@
     {
       "id": "plat-13",
       "name": {
-        "ar": "Nvidia",
-        "en": "Nvidia",
-        "tr": "Nvidia"
+        "ar": "NVIDIA",
+        "en": "NVIDIA",
+        "tr": "NVIDIA"
       },
       "fields": [
         {
@@ -2754,9 +2754,9 @@
     {
       "id": "plat-17",
       "name": {
-        "ar": "Solo Learn",
-        "en": "Solo Learn",
-        "tr": "Solo Learn"
+        "ar": "Sololearn",
+        "en": "Sololearn",
+        "tr": "Sololearn"
       },
       "fields": [
         {
@@ -2956,9 +2956,9 @@
     {
       "id": "plat-19",
       "name": {
-        "ar": "W3 School",
-        "en": "W3 School",
-        "tr": "W3 School"
+        "ar": "W3Schools",
+        "en": "W3Schools",
+        "tr": "W3Schools"
       },
       "fields": [
         {
@@ -3973,9 +3973,9 @@
     {
       "id": "plat-27",
       "name": {
-        "ar": "Simple Learn",
-        "en": "Simple Learn",
-        "tr": "Simple Learn"
+        "ar": "Simplilearn",
+        "en": "Simplilearn",
+        "tr": "Simplilearn"
       },
       "fields": [
         {
@@ -5537,7 +5537,7 @@
     },
     "siteName": {
       "ar": "دنيا الدورات",
-      "en": "The World Of Courses ",
+      "en": "Dunya Al-Dawrat",
       "tr": "Dunya Al-Dawrat"
     },
     "developerName": {

@@ -15,7 +15,7 @@ test('union president portrait asset exists and is non-empty', () => {
 
 test('union president portrait is marked as a protected asset in homepage markup', () => {
   const image = html.match(/<img[^>]*union-president-photo[^>]*>/)?.[0] || '';
-  assert.match(image, /src="assets\/union-president\\.webp"/);
+  assert.match(image, /src="assets\/union-president\.webp"/);
   assert.match(image, /data-protected-asset="union-president"/);
 });
 

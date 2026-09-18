@@ -1702,7 +1702,7 @@
           "tr": "Code Academy"
         }
       },
-      "freeCertificate": true,
+      "freeCertificate": false,
       "displayOrder": 8,
       "platformType": "",
       "featured": false,

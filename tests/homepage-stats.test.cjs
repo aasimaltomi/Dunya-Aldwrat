@@ -3,24 +3,29 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const Landing = require('../js/landing.js');
+const data = require('../data.json');
 
 test('homepage stats expose the approved three metrics in all site languages', () => {
-  assert.deepEqual(Landing.homeStats('ar'), [
-    { id: 'active', value: '38', label: 'منصة نشطة' },
-    { id: 'freeCertificates', value: '36', label: 'منصة بشهادات مجانية' },
-    { id: 'languages', value: '4+', label: 'لغة متاحة' },
+  const active=String(data.platforms.length);
+  const freeCertificates=String(data.platforms.filter(p=>p.freeCertificate===true).length);
+  const languages=new Set(data.platforms.flatMap(p=>p.languageIds||[])).size+'+';
+
+  assert.deepEqual(Landing.homeStats(data.platforms,'ar'), [
+    { id: 'active', value: active, label: 'منصة نشطة' },
+    { id: 'freeCertificates', value: freeCertificates, label: 'منصة بشهادات مجانية' },
+    { id: 'languages', value: languages, label: 'لغة متاحة' },
   ]);
 
-  assert.deepEqual(Landing.homeStats('en'), [
-    { id: 'active', value: '38', label: 'active platforms' },
-    { id: 'freeCertificates', value: '36', label: 'platforms with free certificates' },
-    { id: 'languages', value: '4+', label: 'languages available' },
+  assert.deepEqual(Landing.homeStats(data.platforms,'en'), [
+    { id: 'active', value: active, label: 'active platforms' },
+    { id: 'freeCertificates', value: freeCertificates, label: 'platforms with free certificates' },
+    { id: 'languages', value: languages, label: 'languages available' },
   ]);
 
-  assert.deepEqual(Landing.homeStats('tr'), [
-    { id: 'active', value: '38', label: 'aktif platform' },
-    { id: 'freeCertificates', value: '36', label: 'ücretsiz sertifika sunan platform' },
-    { id: 'languages', value: '4+', label: 'mevcut dil' },
+  assert.deepEqual(Landing.homeStats(data.platforms,'tr'), [
+    { id: 'active', value: active, label: 'aktif platform' },
+    { id: 'freeCertificates', value: freeCertificates, label: 'ücretsiz sertifika sunan platform' },
+    { id: 'languages', value: languages, label: 'mevcut dil' },
   ]);
 });
 

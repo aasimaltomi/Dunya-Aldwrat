@@ -20,7 +20,7 @@
     return{
       platforms:list.length,
       free:list.filter(p=>p.hasFreeContent===true).length,
-      certificates:list.filter(p=>p.freeCertificate===true).length,
+      certificates:list.filter(p=>p.certificateAvailable===true).length,
       languages:new Set(list.flatMap(p=>Array.isArray(p.languageIds)?p.languageIds:[])).size
     };
   }

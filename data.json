@@ -3958,7 +3958,7 @@
       "displayOrder": 26,
       "platformType": "",
       "featured": false,
-      "certificateAvailable": false,
+      "certificateAvailable": true,
       "hasFreeContent": true,
       "catalogUrl": "https://www.coursera.org/courses",
       "categoryId": "education",

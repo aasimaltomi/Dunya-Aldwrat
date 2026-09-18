@@ -18,7 +18,7 @@ test('CMS SEO keeps the trilingual brand title across supported languages',()=>{
     assert.equal(data.seo.home[lang].title,BRAND);
     assert.equal(data.seo.home[lang].ogTitle,BRAND);
     assert.match(data.seo.explore[lang].title,/Explore Learning Platforms/);
-    assert.match(data.seo.explore[lang].title,/Platformları Keşfet/);
+    assert.match(data.seo.explore[lang].title,/Öğrenme Platformlarını Keşfet/);
     assert.match(data.seo.platform[lang].title,/\{platform\}/);
     assert.match(data.seo.platform[lang].title,/Dunya Al-Dawrat/);
     assert.match(data.seo.platform[lang].title,/Kurslar Dünyası/);

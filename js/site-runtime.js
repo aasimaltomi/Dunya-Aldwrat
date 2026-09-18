@@ -104,13 +104,15 @@
   }
   function platformCanonicalUrl(doc,content,model){
     try{
-      if(!doc||!doc.location||!doc.location.href||!model||!model.id)return'';
+      if(!model||!model.id)return'';
+      const routes=typeof globalThis!=='undefined'?globalThis.SeoRoutes:null;
+      if(routes&&typeof routes.platformUrl==='function'){
+        return new URL(routes.platformUrl(model), 'https://devmyskilla.vercel.app/').href;
+      }
+      if(!doc||!doc.location||!doc.location.href)return'';
       const url=new URL(doc.location.href);
       url.hash='';
       url.search='';
-      url.searchParams.set('id',String(model.id));
-      const lang=content&&typeof content.getLang==='function'?String(content.getLang()||''):'';
-      if(lang)url.searchParams.set('lang',lang);
       return url.href;
     }catch(_){return'';}
   }

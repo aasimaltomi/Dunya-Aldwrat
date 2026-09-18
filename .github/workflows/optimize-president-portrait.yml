@@ -1,0 +1,42 @@
+name: Generate optimized president portrait
+
+on:
+  push:
+    branches:
+      - perf/optimize-union-president-image
+    paths:
+      - .github/workflows/optimize-president-portrait.yml
+
+permissions:
+  contents: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: perf/optimize-union-president-image
+      - name: Install WebP tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y webp
+      - name: Convert portrait to real WebP
+        run: |
+          cwebp -quiet -q 88 -m 6 -metadata all assets/union-president.png -o assets/union-president.webp
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('assets/union-president.webp')
+          b=p.read_bytes()
+          assert b[:4] == b'RIFF'
+          assert b[8:12] == b'WEBP'
+          assert len(b) < 900 * 1024, len(b)
+          print(f"optimized_bytes={len(b)}")
+          PY
+      - name: Commit optimized asset
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/union-president.webp
+          git commit -m "perf: generate optimized president portrait"
+          git push origin HEAD:perf/optimize-union-president-image

@@ -15,6 +15,7 @@
     'landingStats',
     'developerSection',
     'landingCta',
+    'contact',
   ]);
 
   const TOP_LEVEL_KEYS = ['version', 'theme', 'typography', 'shape', 'spacing', 'layout'];

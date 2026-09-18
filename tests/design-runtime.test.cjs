@@ -44,6 +44,7 @@ const DEFAULT_DESIGN = {
       'landingStats',
       'developerSection',
       'landingCta',
+      'contact',
     ],
     hiddenSections: [],
   },

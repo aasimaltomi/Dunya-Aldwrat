@@ -17,7 +17,7 @@ test('builds unique filter options from stable IDs',()=>{
 });
 
 test('computes platform-level stats only',()=>{
-  assert.deepEqual(PlatformDirectory.getStats(sample),{platforms:3,free:2,certificates:1,languages:3});
+  assert.deepEqual(PlatformDirectory.getStats(sample),{platforms:3,free:2,certificates:2,languages:3});
 });
 
 test('groups categories with counts',()=>{

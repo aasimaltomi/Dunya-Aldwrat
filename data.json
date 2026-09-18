@@ -250,7 +250,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 792,
-      "officialUrl": "https://agora.unicef.org/local/catalogue/index.php?filters[]=133",
+      "officialUrl": "https://agora.unicef.org/local/catalogue/",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -282,7 +282,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://agora.unicef.org/local/catalogue/index.php?filters[]=133",
+      "catalogUrl": "https://agora.unicef.org/local/catalogue/",
       "categoryId": "education",
       "description": {
         "ar": "منصة تعليمية تابعة لليونيسف (UNICEF) تقدم دورات مجانية في مجالات حماية الطفل، التعليم، الصحة، التنمية المستدامة، والعمل الإنساني.",
@@ -405,7 +405,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 1000,
-      "officialUrl": "https://skillsbuild.org/college-students/course-catalog",
+      "officialUrl": "https://skillsbuild.org/learning-catalog/university-catalog",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -437,7 +437,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://skillsbuild.org/college-students/course-catalog",
+      "catalogUrl": "https://skillsbuild.org/learning-catalog/university-catalog",
       "categoryId": "technology",
       "description": {
         "ar": "منصة IBM المجانية لتطوير المهارات التقنية. تغطي الذكاء الاصطناعي، الحوسبة السحابية، الأمن السيبراني، علوم البيانات، وتقنية المعلومات. تقدم شهادات معتمدة.",
@@ -596,7 +596,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 282,
-      "officialUrl": "https://www.theforage.com/virtual-internships",
+      "officialUrl": "https://www.theforage.com/simulations",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -628,7 +628,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://www.theforage.com/virtual-internships",
+      "catalogUrl": "https://www.theforage.com/simulations",
       "categoryId": "business_marketing",
       "description": {
         "ar": "منصة فريدة تقدم تجارب عمل افتراضية من شركات عالمية مثل JPMorgan وBCG. تمكنك من اكتساب خبرة عملية حقيقية وبناء سيرتك الذاتية.",
@@ -1786,7 +1786,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 494,
-      "officialUrl": "https://event.unitar.org/full-catalog?search=&type%5B3%5D=3&price%5Bmin%5D=0&price%5Bmax%5D=96591&date%5Bmin%5D=&date%5Bmax%5D=&quick_filter=all",
+      "officialUrl": "https://event.unitar.org/full-catalog",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -1818,7 +1818,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://event.unitar.org/full-catalog?search=&type%5B3%5D=3&price%5Bmin%5D=0&price%5Bmax%5D=96591&date%5Bmin%5D=&date%5Bmax%5D=&quick_filter=all",
+      "catalogUrl": "https://event.unitar.org/full-catalog",
       "categoryId": "education",
       "description": {
         "ar": "منصة تعليمية تابعة لمعهد الأمم المتحدة للتدريب والبحث (UNITAR). تقدم دورات في التنمية المستدامة، الدبلوماسية، إدارة الأزمات، والقيادة.",
@@ -3515,7 +3515,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 171,
-      "officialUrl": "https://skills.github.com/",
+      "officialUrl": "https://learn.github.com/skills",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -3547,7 +3547,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://skills.github.com/",
+      "catalogUrl": "https://learn.github.com/skills",
       "categoryId": "programming_data",
       "description": {
         "ar": "منصة جيت هاب التعليمية. تقدم دورات تفاعلية مجانية في Git، GitHub، DevOps، وأتمتة workflows.",
@@ -4422,7 +4422,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 100,
-      "officialUrl": "https://satr.codes",
+      "officialUrl": "https://satr.tuwaiq.edu.sa",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -4454,7 +4454,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://satr.codes",
+      "catalogUrl": "https://satr.tuwaiq.edu.sa",
       "categoryId": "programming_data",
       "description": {
         "ar": "منصة سعودية لتعلم البرمجة والتقنيات الحديثة باللغة العربية. تقدم دورات مجانية في لغات البرمجة والأمن السيبراني وقواعد البيانات.",
@@ -4760,7 +4760,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 86,
-      "officialUrl": "https://www.rwaq.org/courses",
+      "officialUrl": "https://rwaq.org/courses/",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -4792,7 +4792,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://www.rwaq.org/courses",
+      "catalogUrl": "https://rwaq.org/courses/",
       "categoryId": "education",
       "description": {
         "ar": "المنصة العربية للتعليم المفتوح. تقدم مواد أكاديمية مجانية باللغة العربية في شتى المجالات والتخصصات من محاضرين متطوعين. تمنح شهادات إتمام لبعض المواد.",
@@ -4879,7 +4879,7 @@
       ],
       "pricingModel": "paid",
       "officialCount": 775,
-      "officialUrl": "https://www.datacamp.com/courses",
+      "officialUrl": "https://www.datacamp.com/courses-all",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -4911,7 +4911,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": false,
-      "catalogUrl": "https://www.datacamp.com/courses",
+      "catalogUrl": "https://www.datacamp.com/courses-all",
       "categoryId": "programming_data",
       "description": {
         "ar": "منصة متخصصة في تعلم علوم البيانات والذكاء الاصطناعي والتحليل الإحصائي. تقدم مئات الدورات التفاعلية والتمارين العملية بلغة Python وR وSQL وغيرها.",
@@ -5262,7 +5262,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 106,
-      "officialUrl": "https://matlabacademy.mathworks.com/?page=1&fq=course&sort=featured",
+      "officialUrl": "https://matlabacademy.mathworks.com/",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -5294,7 +5294,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://matlabacademy.mathworks.com/?page=1&fq=course&sort=featured",
+      "catalogUrl": "https://matlabacademy.mathworks.com/",
       "categoryId": "programming_data",
       "description": {
         "ar": "أكاديمية MATLAB من MathWorks. تقدم دورات تفاعلية في MATLAB وSimulink ومعالجة الإشارات والصور والتعلم الآلي. بعض الدورات مجانية والأخرى مدفوعة.",

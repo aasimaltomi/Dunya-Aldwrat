@@ -185,7 +185,7 @@
 
   function categoryGroups(data,platforms){
     const categoryMap=new Map((data&&Array.isArray(data.categories)?data.categories:[]).map(row=>[row.id,row]));
-    return PlatformDirectory.getCategoryGroups(platforms).slice(0,8).map(group=>({group,row:categoryMap.get(group.categoryId)||{}}));
+    return PlatformDirectory.getCategoryGroups(platforms).map(group=>({group,row:categoryMap.get(group.categoryId)||{}}));
   }
 
   function renderDiscoverySectionCopy(){
@@ -235,7 +235,7 @@
     }
 
     if(chips){
-      chips.innerHTML=groups.slice(0,6).map(({group,row})=>`<a class="hero-category-chip" href="${esc(categoryExploreUrl(path,currentLang,group.categoryId))}">${row.icon?`<span class="chip-icon">${esc(row.icon)}</span>`:''}<span data-edit-kind="category" data-edit-id="${esc(group.categoryId)}" data-edit-field="label">${esc(content.categoryLabel(group.categoryId))}</span></a>`).join('');
+      chips.innerHTML=groups.map(({group,row})=>`<a class="hero-category-chip" href="${esc(categoryExploreUrl(path,currentLang,group.categoryId))}">${row.icon?`<span class="chip-icon">${esc(row.icon)}</span>`:''}<span data-edit-kind="category" data-edit-id="${esc(group.categoryId)}" data-edit-field="label">${esc(content.categoryLabel(group.categoryId))}</span></a>`).join('');
     }
   }
 

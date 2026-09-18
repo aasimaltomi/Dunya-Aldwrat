@@ -71,7 +71,7 @@ test('platform detail runtime accepts a static-page platform id and preserves it
   const detail=fs.readFileSync(path.join(ROOT,'js','platform-detail.js'),'utf8');
   const runtime=fs.readFileSync(path.join(ROOT,'js','site-runtime.js'),'utf8');
   assert.match(detail,/document\.body\.dataset\.platformId/);
-  assert.match(runtime,/\/platforms\//);
+  assert.match(runtime,/SeoRoutes\.platformUrl\(model\)/);
   assert.doesNotMatch(runtime,/url\.searchParams\.set\('id'/);
 });
 

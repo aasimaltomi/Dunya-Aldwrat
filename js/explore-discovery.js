@@ -224,7 +224,7 @@
       const next=areaById(id)?id:'';
       activeDiscoveryArea=next;
       activeTab='all';
-      if(els&&els.filterCategory)els.filterCategory.value=next;
+      if(els&&els.filterCategory)els.filterCategory.value=activeDiscoveryArea;
       renderCategories();
       renderDirectory();
       if(scroll){

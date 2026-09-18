@@ -5,7 +5,7 @@ A multilingual educational discovery platform that helps students explore and co
 - **Live site:** [Dunya Al-Dawrat](https://devmyskilla.vercel.app/)
 - ## Preview
 
-![Dunya Al-Dawrat homepage](assets/readme/homepage.png)
+![Dunya Al-Dawrat homepage](assets/readme/homepages.png)
 
 ## Overview
 

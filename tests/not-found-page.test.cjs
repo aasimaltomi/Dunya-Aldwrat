@@ -11,7 +11,7 @@ test('custom 404 page exists and preserves the Dunya Al-Dawrat identity', () => 
   assert.match(html, /<meta name="robots" content="noindex,follow">/);
   assert.match(html, /href="favicon\.svg\?v=20260917"/);
   assert.match(html, /class="brand-logo"[^>]*data-asset="brandLogo"/);
-  assert.match(html, /<main[^>]*class="not-found-page"/);
+  assert.match(html, /<main[^>]*class="[^"]*not-found-page[^"]*"/);
   assert.match(html, /<strong class="not-found-code">404<\/strong>/);
 });
 

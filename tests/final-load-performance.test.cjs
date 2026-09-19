@@ -67,11 +67,11 @@ test('all static platform pages keep edit-only assets off the normal visitor pat
   const routes=require('../js/seo-routes.js');
   for(const slug of Object.values(routes.PLATFORM_SLUGS)){
     const html=read(`platforms/${slug}/index.html`);
-    assert.match(html,/js\\/inline-editor-loader\\.js/,`${slug} loader`);
-    assert.doesNotMatch(html,/href="css\\/inline-editor\\.css"/,`${slug} editor css`);
+    assert.ok(html.includes('js/inline-editor-loader.js'),`${slug} loader`);
+    assert.ok(!html.includes('href="css/inline-editor.css"'),`${slug} editor css`);
     for(const asset of ['js/edit-descriptors.js','js/inline-editor-config.js','js/inline-editor-api.js','js/inline-editor.js']){
       assert.doesNotMatch(html,new RegExp(`src="${asset.replaceAll('.','\\\\.')}"`),`${slug} should not load ${asset}`);
     }
-    assert.match(html,/rel="preload"[^>]*href="data\\.json"[^>]*as="fetch"/,`${slug} data preload`);
+    assert.match(html,/rel="preload"[^>]*href="data\.json"[^>]*as="fetch"/,`${slug} data preload`);
   }
 });

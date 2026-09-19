@@ -12,7 +12,7 @@ const platforms = data.platforms;
 test('homepage stats are calculated from current platform data', () => {
   assert.deepEqual(Landing.homeStats(platforms,'ar'), [
     { id:'active', value:String(platforms.length), label:'منصة نشطة' },
-    { id:'freeCertificates', value:`${platforms.filter(p=>p.certificateAvailable===true).length} / ${platforms.filter(p=>p.freeCertificate===true).length}`, label:'منصات بشهادات / مجانية' },
+    { id:'freeCertificates', value:String(platforms.filter(p=>p.freeCertificate===true).length), label:'منصة بشهادات مجانية' },
     { id:'languages', value:new Set(platforms.flatMap(p=>p.languageIds||[])).size + '+', label:'لغة متاحة' }
   ]);
 });
@@ -23,8 +23,8 @@ test('homepage stats localize labels while preserving calculated values', () => 
   const tr=Landing.homeStats(platforms,'tr');
   assert.deepEqual(en.map(x=>x.value),ar.map(x=>x.value));
   assert.deepEqual(tr.map(x=>x.value),ar.map(x=>x.value));
-  assert.deepEqual(en.map(x=>x.label),['active platforms','platforms with certificates / free','languages available']);
-  assert.deepEqual(tr.map(x=>x.label),['aktif platform','sertifika sunan platformlar / ücretsiz','mevcut dil']);
+  assert.deepEqual(en.map(x=>x.label),['active platforms','platforms with free certificates','languages available']);
+  assert.deepEqual(tr.map(x=>x.label),['aktif platform','ücretsiz sertifika sunan platform','mevcut dil']);
 });
 
 test('homepage static fallback matches the current calculated stats', () => {

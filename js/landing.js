@@ -332,8 +332,13 @@
     };
 
     const theme=document.getElementById('themeToggle');if(theme)theme.onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
-    inlineEditor=InlineEditor.create({document,location,data,content,onDataChange(next){data=next;platforms=applyLandingData(data);setTimeout(()=>inlineEditor&&inlineEditor.refreshTargets(),0)}});
-    await inlineEditor.init();
+    if(globalThis.DunyaInlineEditorRequested){
+      await (globalThis.DunyaInlineEditorReady||Promise.resolve(false));
+      if(typeof InlineEditor!=='undefined'){
+        inlineEditor=InlineEditor.create({document,location,data,content,onDataChange(next){data=next;platforms=applyLandingData(data);setTimeout(()=>inlineEditor&&inlineEditor.refreshTargets(),0)}});
+        await inlineEditor.init();
+      }
+    }
     if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
   }
 

@@ -106,6 +106,8 @@ async function init(){const params=new URLSearchParams(location.search);try{site
 document.addEventListener('DOMContentLoaded',init);
 
 async function initInlineEditorApp(){
+  if(!globalThis.DunyaInlineEditorRequested)return;
+  await (globalThis.DunyaInlineEditorReady||Promise.resolve(false));
   if(typeof InlineEditor==='undefined'||!InlineEditor.isEditRequested(location))return;
   for(let i=0;i<100&&(!siteData||!content);i++)await new Promise(resolve=>setTimeout(resolve,25));
   if(!siteData||!content)return;

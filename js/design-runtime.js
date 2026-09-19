@@ -202,7 +202,7 @@
     if (!fetchFn) return null;
 
     try {
-      const response = await fetchFn('design.json', { cache: 'no-store' });
+      const response = await fetchFn('design.json', { cache: 'no-cache' });
       if (!response || !response.ok) return null;
       const design = validateDesign(await response.json());
       applyTheme(design, targetRoot);

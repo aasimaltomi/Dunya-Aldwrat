@@ -4,15 +4,23 @@ const fs=require('node:fs');
 const read=p=>fs.readFileSync(p,'utf8');
 
 for(const page of ['index.html','explore.html','platform.html']){
-  test(`${page} loads inline editor assets in dependency order`,()=>{
+  test(`${page} loads only the lightweight editor loader for normal visitors`,()=>{
     const html=read(page);
-    assert.match(html,/href="css\/inline-editor\.css"/);
-    const order=['js/content-api.js','js/edit-descriptors.js','js/inline-editor-config.js','js/inline-editor-api.js','js/inline-editor.js'];
-    let last=-1;
-    for(const asset of order){const at=html.indexOf(asset);assert.ok(at>last,`${asset} must load in order on ${page}`);last=at;}
+    assert.match(html,/js\/inline-editor-loader\.js/);
+    assert.doesNotMatch(html,/href="css\/inline-editor\.css"/);
+    for(const asset of ['js/edit-descriptors.js','js/inline-editor-config.js','js/inline-editor-api.js','js/inline-editor.js']){
+      assert.doesNotMatch(html,new RegExp(`src="${asset.replaceAll('.','\\.')}"`));
+    }
     assert.doesNotMatch(html,/class="inline-edit-pencil"/,'pencils must never be hardcoded for public visitors');
   });
 }
+
+test('editor loader preserves dependency order when edit mode is requested',()=>{
+  const loader=read('js/inline-editor-loader.js');
+  const order=['js/edit-descriptors.js','js/inline-editor-config.js','js/inline-editor-api.js','js/inline-editor.js'];
+  let last=-1;
+  for(const asset of order){const at=loader.indexOf(asset);assert.ok(at>last,`${asset} must load in order`);last=at;}
+});
 
 test('explore dynamic platform content carries stable edit markers',()=>{
   const src=read('js/app.js');

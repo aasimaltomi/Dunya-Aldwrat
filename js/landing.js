@@ -14,9 +14,9 @@
   };
 
   const HOME_STATS_LABELS={
-    ar:{active:'منصة نشطة',freeCertificates:'منصة بشهادات مجانية',languages:'لغة متاحة'},
-    en:{active:'active platforms',freeCertificates:'platforms with free certificates',languages:'languages available'},
-    tr:{active:'aktif platform',freeCertificates:'ücretsiz sertifika sunan platform',languages:'mevcut dil'}
+    ar:{active:'منصة نشطة',courses:'دورة متاحة',freeCourses:'دورة مجانية',freeCertificates:'منصة بشهادات مجانية',languages:'لغة متاحة'},
+    en:{active:'active platforms',courses:'available courses',freeCourses:'free courses',freeCertificates:'platforms with free certificates',languages:'languages available'},
+    tr:{active:'aktif platform',courses:'mevcut kurs',freeCourses:'ücretsiz kurs',freeCertificates:'ücretsiz sertifika sunan platform',languages:'mevcut dil'}
   };
 
   const DISCOVERY_AREA_DEFINITIONS=[
@@ -63,10 +63,13 @@
     return value===null||value===undefined?'':String(value);
   }
 
+  function formatStatCount(value){return new Intl.NumberFormat('en-US').format(Number(value)||0)}
   function homeStats(platforms=[],lang='ar'){
     const list=Array.isArray(platforms)?platforms:[],stats=buildStats(list),labels=HOME_STATS_LABELS[lang]||HOME_STATS_LABELS.ar;
     return[
       {id:'active',value:String(stats.platforms),label:labels.active},
+      {id:'courses',value:`${formatStatCount(stats.courses)}+`,label:labels.courses},
+      {id:'freeCourses',value:`${formatStatCount(stats.freeCourses)}+`,label:labels.freeCourses},
       {id:'freeCertificates',value:String(list.filter(p=>p&&p.freeCertificate===true).length),label:labels.freeCertificates},
       {id:'languages',value:`${stats.languages}+`,label:labels.languages}
     ];
@@ -152,6 +155,8 @@
   function renderStats(platforms=[]){
     const targets={
       active:['landingStatActive','landingStatActiveLabel'],
+      courses:['landingStatCourses','landingStatCoursesLabel'],
+      freeCourses:['landingStatFreeCourses','landingStatFreeCoursesLabel'],
       freeCertificates:['landingStatFreeCertificates','landingStatFreeCertificatesLabel'],
       languages:['landingStatLang','landingStatLangLabel']
     };

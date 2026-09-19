@@ -19,14 +19,14 @@ test('Explore stats strip contains exactly three public stats', () => {
   assert.equal((strip.match(/<strong id="stat/g) || []).length, 3);
 });
 
-test('Explore certificate stat counts free certificates locally without changing shared stats semantics', () => {
+test('Explore certificate stat shows total certificate platforms and the free subset', () => {
   assert.match(app, /freeCertificates=allPlatforms\.filter\(p=>p\.freeCertificate===true\)\.length/);
-  assert.match(app, /\$\('statCert'\)\.textContent=freeCertificates/);
+  assert.match(app, /\$\('statCert'\)\.textContent=`\$\{s\.certificates\} \/ \$\{freeCertificates\}`/);
 });
 
-test('Explore stats copy matches active platforms free certificates and available languages', () => {
+test('Explore stats copy matches active platforms certificate summary and available languages', () => {
   assert.deepEqual(data.siteText.common.platformCount,{ar:'منصة نشطة',en:'Active platforms',tr:'Aktif platform'});
-  assert.deepEqual(data.siteText.common.certCount,{ar:'منصة بشهادات مجانية',en:'Platforms with free certificates',tr:'Ücretsiz sertifikalı platform'});
+  assert.deepEqual(data.siteText.common.certCount,{ar:'منصات بشهادات / مجانية',en:'Platforms with certificates / free',tr:'Sertifika sunan platformlar / ücretsiz'});
   assert.deepEqual(data.siteText.accessibility.languageCount,{ar:'لغة متاحة',en:'Languages',tr:'Dil'});
 });
 

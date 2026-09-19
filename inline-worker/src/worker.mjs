@@ -2,7 +2,7 @@ import {applyPatch} from './edit-schema.mjs';
 
 const JSON_HEADERS={'content-type':'application/json; charset=utf-8','cache-control':'no-store'};
 function apiFetch(env){return typeof env.FETCH==='function'?env.FETCH:fetch}
-function allowedOrigin(env){return String(env.ALLOWED_ORIGIN||'https://aasimaltomi.github.io').replace(/\/$/,'')}
+function allowedOrigin(env){return String(env.ALLOWED_ORIGIN||'https://devmyskilla.vercel.app').replace(/\/$/,'')}
 function corsHeaders(env,origin){return origin===allowedOrigin(env)?{'access-control-allow-origin':origin,'access-control-allow-methods':'GET,POST,OPTIONS','access-control-allow-headers':'Authorization,Content-Type','access-control-max-age':'600','vary':'Origin'}:{}}
 function json(body,status=200,extra={}){return new Response(JSON.stringify(body),{status,headers:{...JSON_HEADERS,...extra}})}
 function error(message,status,extra={}){return json({error:message},status,extra)}

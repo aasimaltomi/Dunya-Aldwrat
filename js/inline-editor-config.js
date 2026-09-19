@@ -1,7 +1,7 @@
 (function(root){
   root.InlineEditorConfig=Object.freeze({
     apiBase:'https://dunya-inline-editor.atomy8774.workers.dev',
-    siteOrigin:'https://aasimaltomi.github.io',
+    siteOrigin:'https://devmyskilla.vercel.app',
     adminUrl:'admin/',
     sessionKey:'dunya-inline-session'
   });

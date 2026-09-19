@@ -225,8 +225,8 @@ const config=`backend:
   base_url: https://dunya-decap-oauth.atomy8774.workers.dev
   auth_endpoint: auth
 
-site_url: https://aasimaltomi.github.io/devmyskilla.github.io
-logo_url: https://aasimaltomi.github.io/devmyskilla.github.io/assets/dunya-logo-192.png
+site_url: https://devmyskilla.vercel.app
+logo_url: https://devmyskilla.vercel.app/assets/dunya-logo-192.png
 publish_mode: simple
 media_folder: assets/uploads
 public_folder: /assets/uploads

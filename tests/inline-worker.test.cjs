@@ -18,12 +18,12 @@ function env(overrides={}){
   return{
     INLINE_SESSIONS:new FakeKV(),
     GITHUB_OAUTH_ID:'client-id',GITHUB_OAUTH_SECRET:'client-secret',
-    ALLOWED_ORIGIN:'https://devmyskilla.github.io',
-    GITHUB_REPO:'devmyskilla/devmyskilla.github.io',GITHUB_BRANCH:'main',SESSION_TTL_SECONDS:'3600',
+    ALLOWED_ORIGIN:'https://devmyskilla.vercel.app',
+    GITHUB_REPO:'aasimaltomi/devmyskilla.github.io',GITHUB_BRANCH:'main',SESSION_TTL_SECONDS:'3600',
     ...overrides
   };
 }
-function req(path,{method='GET',origin='https://devmyskilla.github.io',headers={},body}={}){
+function req(path,{method='GET',origin='https://devmyskilla.vercel.app',headers={},body}={}){
   const h=new Headers(headers);if(origin!==null)h.set('Origin',origin);
   return new Request(`https://inline.example${path}`,{method,headers:h,body:body===undefined?undefined:JSON.stringify(body)});
 }
@@ -79,6 +79,12 @@ test('full-document validation keeps the 40-platform public and stable-reference
 test('worker rejects API requests from an unapproved origin',async()=>{
   const {default:handler}=await worker();
   const response=await handler.fetch(req('/inline/session',{origin:'https://evil.example'}),env());
+  assert.equal(response.status,403);
+});
+
+test('worker rejects the retired GitHub Pages origin',async()=>{
+  const {default:handler}=await worker();
+  const response=await handler.fetch(req('/inline/session',{origin:'https://aasimaltomi.github.io'}),env());
   assert.equal(response.status,403);
 });
 

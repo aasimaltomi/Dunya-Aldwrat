@@ -3,10 +3,10 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const read=p=>fs.readFileSync(p,'utf8');
 
-const SITE_ORIGIN='https://aasimaltomi.github.io';
-const SITE_URL='https://aasimaltomi.github.io/devmyskilla.github.io';
+const SITE_ORIGIN='https://devmyskilla.vercel.app';
+const SITE_URL='https://devmyskilla.vercel.app';
 const REPO='aasimaltomi/devmyskilla.github.io';
-const LEGACY_ORIGIN='https://devmyskilla.github.io';
+const LEGACY_ORIGIN='https://aasimaltomi.github.io';
 const LEGACY_REPO='devmyskilla/devmyskilla.github.io';
 
 test('Decap targets the current repository and project site',()=>{
@@ -18,7 +18,7 @@ test('Decap targets the current repository and project site',()=>{
   assert.ok(!config.includes(`site_url: ${LEGACY_ORIGIN}`));
 });
 
-test('inline editor browser config uses the deployed GitHub Pages origin',()=>{
+test('inline editor browser config uses the canonical Vercel production origin',()=>{
   const config=read('js/inline-editor-config.js');
   assert.ok(config.includes(`siteOrigin:'${SITE_ORIGIN}'`));
   assert.ok(!config.includes(`siteOrigin:'${LEGACY_ORIGIN}'`));

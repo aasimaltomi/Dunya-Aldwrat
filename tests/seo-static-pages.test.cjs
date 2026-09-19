@@ -5,6 +5,7 @@ const path=require('node:path');
 
 const ROOT=path.join(__dirname,'..');
 const BASE='https://devmyskilla.vercel.app';
+const SITEMAP_BASE='https://devmyskill.vercel.app';
 const data=JSON.parse(fs.readFileSync(path.join(ROOT,'data.json'),'utf8'));
 
 test('stable SEO route map exists for all 40 platforms',()=>{
@@ -81,9 +82,9 @@ test('sitemap lists static platform and category pages instead of query-string p
   const sitemap=fs.readFileSync(path.join(ROOT,'sitemap.xml'),'utf8');
   assert.doesNotMatch(sitemap,/platform\.html\?id=/);
   for(const slug of Object.values(routes.PLATFORM_SLUGS)){
-    assert.ok(sitemap.includes(`<loc>${BASE}/platforms/${slug}/</loc>`),slug);
+    assert.ok(sitemap.includes(`<loc>${SITEMAP_BASE}/platforms/${slug}/</loc>`),slug);
   }
   for(const area of discovery.areas){
-    assert.ok(sitemap.includes(`<loc>${BASE}/categories/${area.id}/</loc>`),area.id);
+    assert.ok(sitemap.includes(`<loc>${SITEMAP_BASE}/categories/${area.id}/</loc>`),area.id);
   }
 });

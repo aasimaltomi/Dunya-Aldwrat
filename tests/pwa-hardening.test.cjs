@@ -9,7 +9,7 @@ test('service worker precaches authoritative category data without legacy mutati
   assert.ok(sw.includes("'./data.json'"));
   assert.ok(sw.includes("'./css/categories-only.css'"));
   for(const name of legacy)assert.equal(sw.includes(name),false,`${name} must not be precached`);
-  assert.match(sw,/dunya-al-dawrat-v16/);
+  assert.match(sw,/dunya-al-dawrat-v17/);
 });
 
 test('offline HTML fallback is limited to navigation requests',()=>{

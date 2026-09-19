@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta name="theme-color" content="#4f46e5">
+  <link rel="preload" href="data.json" as="fetch" crossorigin="anonymous">
 
 
 
@@ -18,7 +19,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://devmyskilla.vercel.app/explore.html">
   <title>استكشف منصات التعلم | Explore Learning Platforms | Öğrenme Platformlarını Keşfet</title>
-  <link id="appFavicon" rel="icon" type="image/svg+xml" href="favicon.svg?v=20260917"><link id="appManifest" rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/branding.css"><link rel="stylesheet" href="css/learning-paths.css"><link rel="stylesheet" href="css/inline-editor.css"><link rel="stylesheet" href="css/design-runtime.css"><link rel="stylesheet" href="css/platform-card-theme.css">
+  <link id="appFavicon" rel="icon" type="image/svg+xml" href="favicon.svg?v=20260917"><link id="appManifest" rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/branding.css"><link rel="stylesheet" href="css/learning-paths.css"><link rel="stylesheet" href="css/design-runtime.css"><link rel="stylesheet" href="css/platform-card-theme.css">
   <script src="js/design-runtime.js"></script>
 </head>
 <body>
@@ -60,5 +61,5 @@
   <div class="modal" id="pathModal" role="dialog" aria-modal="true" aria-labelledby="pathTitle" aria-hidden="true"><div class="modal-card modal-large path-modal-card"><button class="modal-close" data-close="pathModal" type="button" data-i18n-aria-label="close"><span data-icon="close"></span></button><div class="path-modal-hero"><span class="path-modal-icon" data-icon="path" aria-hidden="true"></span><div><span class="path-modal-kicker" data-i18n="buildPath"></span><h2 id="pathTitle" data-i18n="pathTitle"></h2><p class="modal-sub" data-i18n="pathSubtitle"></p></div></div><div id="pathBuilder"></div><div id="pathResults" aria-live="polite"></div></div></div>
   <div class="toast" id="toast" role="status"></div>
   <footer class="site-footer"><div class="container footer-grid"><div><strong data-setting="siteName"></strong><p data-i18n="tagline"></p></div><div class="footer-developer"><span data-icon="developer"></span><div><small data-i18n="developedBy"></small><strong data-setting="developerName"></strong></div></div><p data-setting="copyright"></p></div></footer>
-  <script src="js/content-api.js"></script><script src="js/edit-descriptors.js"></script><script src="js/inline-editor-config.js"></script><script src="js/inline-editor-api.js"></script><script src="js/inline-editor.js"></script><script src="js/i18n.js"></script><script src="js/seo-routes.js"></script><script src="js/site-runtime.js"></script><script src="js/platform-core.js"></script><script src="js/data-loader.js"></script><script src="js/platform-directory.js"></script><script src="js/path-approvals.js"></script><script src="js/app.js"></script><script src="js/learning-paths-section.js"></script><script src="js/accessibility.js"></script><script src="js/explore-nav.js"></script>
+  <script src="js/content-api.js"></script><script src="js/inline-editor-loader.js"></script><script src="js/i18n.js"></script><script src="js/seo-routes.js"></script><script src="js/site-runtime.js"></script><script src="js/platform-core.js"></script><script src="js/data-loader.js"></script><script src="js/platform-directory.js"></script><script src="js/path-approvals.js"></script><script src="js/app.js"></script><script src="js/learning-paths-section.js"></script><script src="js/accessibility.js"></script><script src="js/explore-nav.js"></script>
 </body></html>

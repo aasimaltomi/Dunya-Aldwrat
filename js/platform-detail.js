@@ -113,8 +113,13 @@
     document.getElementById('langSwitcher').onchange=e=>{const url=new URL(location.href);url.searchParams.set('lang',e.target.value);location.href=url.href};
     if(!platform){loading.textContent=getText('platformNotFound');loading.classList.add('error');return}
     loading.remove();recordView(platform);renderProfile(platform,platforms);
-    inlineEditor=InlineEditor.create({document,location,data,content,onDataChange(next){data=next;const rendered=renderFromData(data,platformId);platforms=rendered.platforms;platform=rendered.platform;setTimeout(()=>inlineEditor&&inlineEditor.refreshTargets(),0)}});
-    await inlineEditor.init();
+    if(globalThis.DunyaInlineEditorRequested){
+      await (globalThis.DunyaInlineEditorReady||Promise.resolve(false));
+      if(typeof InlineEditor!=='undefined'){
+        inlineEditor=InlineEditor.create({document,location,data,content,onDataChange(next){data=next;const rendered=renderFromData(data,platformId);platforms=rendered.platforms;platform=rendered.platform;setTimeout(()=>inlineEditor&&inlineEditor.refreshTargets(),0)}});
+        await inlineEditor.init();
+      }
+    }
     if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
   }
   if(typeof document!=='undefined')document.addEventListener('DOMContentLoaded',()=>initBrowser().catch(err=>{console.error(err);const el=document.getElementById('profileLoading');if(el)el.textContent=getText('errorLoading')||'Unable to load content'}));

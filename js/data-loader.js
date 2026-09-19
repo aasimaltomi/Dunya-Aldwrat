@@ -37,7 +37,7 @@
   async function loadSiteData(options = {}){
     const fetchFn = options.fetchFn || ((...args) => fetch(...args));
     const url = options.url || './data.json';
-    const response = await fetchFn(url, { cache: 'no-store' });
+    const response = await fetchFn(url, { cache: 'no-cache' });
     if (!response || !response.ok) {
       const status = response && response.status ? response.status : 'unknown';
       throw new Error(`data.json load failed: ${status}`);

@@ -3,16 +3,17 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const read=p=>fs.readFileSync(p,'utf8');
 
-test('service worker v16 precaches every inline editor browser asset',()=>{
+test('service worker v17 precaches only the lightweight inline editor loader',()=>{
   const sw=read('sw.js');
-  assert.match(sw,/dunya-al-dawrat-v16/);
+  assert.match(sw,/dunya-al-dawrat-v17/);
+  assert.ok(sw.includes("'./js/inline-editor-loader.js'"));
   for(const asset of [
     './css/inline-editor.css',
     './js/edit-descriptors.js',
     './js/inline-editor-config.js',
     './js/inline-editor-api.js',
     './js/inline-editor.js'
-  ]) assert.ok(sw.includes(`'${asset}'`),`missing ${asset} from service worker core cache`);
+  ]) assert.ok(!sw.includes(`'${asset}'`),`edit-only asset should not be in the core cache: ${asset}`);
   assert.match(sw,/isDataRequest \|\| isAdminConfigRequest/);
 });
 

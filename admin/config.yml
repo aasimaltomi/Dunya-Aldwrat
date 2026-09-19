@@ -652,6 +652,20 @@ collections:
                           - label: "Türkçe"
                             name: tr
                             widget: string
+                  - label: "courseCount"
+                    name: courseCount
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
                   - label: "favorite"
                     name: favorite
                     widget: object
@@ -682,6 +696,20 @@ collections:
                         widget: string
                   - label: "freeCount"
                     name: freeCount
+                    widget: object
+                    collapsed: true
+                    fields:
+                      - label: "العربية"
+                        name: ar
+                        widget: string
+                      - label: "English"
+                        name: en
+                        widget: string
+                      - label: "Türkçe"
+                        name: tr
+                        widget: string
+                  - label: "freeCourseCount"
+                    name: freeCourseCount
                     widget: object
                     collapsed: true
                     fields:

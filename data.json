@@ -5728,6 +5728,16 @@
         "en": "Platforms with free certificates",
         "tr": "Ücretsiz sertifikalı platform"
       },
+      "courseCount": {
+        "ar": "دورة متاحة",
+        "en": "Available courses",
+        "tr": "Mevcut kurs"
+      },
+      "freeCourseCount": {
+        "ar": "دورة مجانية",
+        "en": "Free courses",
+        "tr": "Ücretsiz kurs"
+      },
       "verification_outdated": {
         "ar": "يحتاج إعادة تحقق",
         "en": "Verification outdated",

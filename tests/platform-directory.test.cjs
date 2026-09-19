@@ -16,8 +16,8 @@ test('builds unique filter options from stable IDs',()=>{
   assert.deepEqual(options.pricingModels,['free','freemium','paid']);
 });
 
-test('computes platform-level stats only',()=>{
-  assert.deepEqual(PlatformDirectory.getStats(sample),{platforms:3,free:2,certificates:2,languages:3});
+test('computes platform and course-level stats',()=>{
+  assert.deepEqual(PlatformDirectory.getStats(sample),{platforms:3,free:2,certificates:2,courses:100,freeCourses:0,languages:3});
 });
 
 test('groups categories with counts',()=>{

@@ -17,10 +17,13 @@
   }
   function getStats(platforms){
     const list=Array.isArray(platforms)?platforms:[];
+    const courseRows=list.filter(p=>p&&p.officialCountType==='courses'&&typeof p.officialCount==='number'&&Number.isFinite(p.officialCount));
     return{
       platforms:list.length,
       free:list.filter(p=>p.hasFreeContent===true).length,
       certificates:list.filter(p=>p.certificateAvailable===true).length,
+      courses:courseRows.reduce((sum,p)=>sum+p.officialCount,0),
+      freeCourses:courseRows.filter(p=>p.pricingModel==='free').reduce((sum,p)=>sum+p.officialCount,0),
       languages:new Set(list.flatMap(p=>Array.isArray(p.languageIds)?p.languageIds:[])).size
     };
   }

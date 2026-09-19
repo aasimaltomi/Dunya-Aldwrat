@@ -14,9 +14,9 @@
   };
 
   const HOME_STATS_LABELS={
-    ar:{active:'منصة نشطة',certificates:'منصات بشهادات / مجانية',languages:'لغة متاحة'},
-    en:{active:'active platforms',certificates:'platforms with certificates / free',languages:'languages available'},
-    tr:{active:'aktif platform',certificates:'sertifika sunan platformlar / ücretsiz',languages:'mevcut dil'}
+    ar:{active:'منصة نشطة',freeCertificates:'منصة بشهادات مجانية',languages:'لغة متاحة'},
+    en:{active:'active platforms',freeCertificates:'platforms with free certificates',languages:'languages available'},
+    tr:{active:'aktif platform',freeCertificates:'ücretsiz sertifika sunan platform',languages:'mevcut dil'}
   };
 
   const DISCOVERY_AREA_DEFINITIONS=[
@@ -65,10 +65,9 @@
 
   function homeStats(platforms=[],lang='ar'){
     const list=Array.isArray(platforms)?platforms:[],stats=buildStats(list),labels=HOME_STATS_LABELS[lang]||HOME_STATS_LABELS.ar;
-    const freeCertificates=list.filter(p=>p&&p.freeCertificate===true).length;
     return[
       {id:'active',value:String(stats.platforms),label:labels.active},
-      {id:'freeCertificates',value:`${stats.certificates} / ${freeCertificates}`,label:labels.certificates},
+      {id:'freeCertificates',value:String(list.filter(p=>p&&p.freeCertificate===true).length),label:labels.freeCertificates},
       {id:'languages',value:`${stats.languages}+`,label:labels.languages}
     ];
   }

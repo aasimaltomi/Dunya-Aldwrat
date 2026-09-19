@@ -5724,9 +5724,9 @@
         "tr": "Herhangi bir alan"
       },
       "certCount": {
-        "ar": "منصات بشهادات / مجانية",
-        "en": "Platforms with certificates / free",
-        "tr": "Sertifika sunan platformlar / ücretsiz"
+        "ar": "منصة بشهادات مجانية",
+        "en": "Platforms with free certificates",
+        "tr": "Ücretsiz sertifikalı platform"
       },
       "verification_outdated": {
         "ar": "يحتاج إعادة تحقق",

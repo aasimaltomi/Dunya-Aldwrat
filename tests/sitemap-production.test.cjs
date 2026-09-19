@@ -3,7 +3,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 
 const sitemap=fs.readFileSync('sitemap.xml','utf8');
-const PROD='https://devmyskilla.vercel.app/';
+const PROD='https://devmyskill.vercel.app/';
 const TODAY='2026-09-19';
 
 test('sitemap contains exactly 54 unique production URLs',()=>{
@@ -25,8 +25,8 @@ test('every sitemap URL has an accurate lastmod entry for the current release',(
   }
 });
 
-test('sitemap is rooted at the canonical Vercel origin and robots points to it',()=>{
+test('sitemap is rooted at the configured Vercel origin and robots points to it',()=>{
   assert.doesNotMatch(sitemap,/<loc>\/https?:\/\//);
   const robots=fs.readFileSync('robots.txt','utf8');
-  assert.match(robots,/^Sitemap:\s+https:\/\/devmyskilla\.vercel\.app\/sitemap\.xml\s*$/m);
+  assert.match(robots,/^Sitemap:\s+https:\/\/devmyskill\.vercel\.app\/sitemap\.xml\s*$/m);
 });

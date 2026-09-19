@@ -3,6 +3,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const read=p=>fs.readFileSync(p,'utf8');
 const BASE='https://devmyskilla.vercel.app';
+const SITEMAP_BASE='https://devmyskill.vercel.app';
 
 test('crawlable entry pages expose static title description and canonical metadata',()=>{
   const expectations={
@@ -26,10 +27,10 @@ test('robots and sitemap expose the current project site and all 40 platform URL
   assert.equal(fs.existsSync('sitemap.xml'),true);
   const robots=read('robots.txt');
   const sitemap=read('sitemap.xml');
-  assert.ok(robots.includes(`Sitemap: ${BASE}/sitemap.xml`));
+  assert.ok(robots.includes(`Sitemap: ${SITEMAP_BASE}/sitemap.xml`));
   assert.ok(robots.includes('Disallow: /admin/'));
-  assert.ok(sitemap.includes(`<loc>${BASE}/</loc>`));
-  assert.ok(sitemap.includes(`<loc>${BASE}/explore.html</loc>`));
+  assert.ok(sitemap.includes(`<loc>${SITEMAP_BASE}/</loc>`));
+  assert.ok(sitemap.includes(`<loc>${SITEMAP_BASE}/explore.html</loc>`));
   const SeoRoutes=require('../js/seo-routes.js');
-  for(const slug of Object.values(SeoRoutes.PLATFORM_SLUGS)) assert.ok(sitemap.includes(`<loc>${BASE}/platforms/${slug}/</loc>`),`missing ${slug}`);
+  for(const slug of Object.values(SeoRoutes.PLATFORM_SLUGS)) assert.ok(sitemap.includes(`<loc>${SITEMAP_BASE}/platforms/${slug}/</loc>`),`missing ${slug}`);
 });

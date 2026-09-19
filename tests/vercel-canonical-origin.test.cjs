@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 
 const BASE = 'https://devmyskilla.vercel.app';
+const SITEMAP_BASE = 'https://devmyskill.vercel.app';
 const LEGACY = 'https://aasimaltomi.github.io/devmyskilla.github.io';
 
 function read(path){ return fs.readFileSync(path,'utf8'); }
@@ -28,15 +29,15 @@ test('robots and sitemap use Vercel origin and root-level admin path', () => {
   const sitemap = read('sitemap.xml');
 
   assert.ok(robots.includes('Disallow: /admin/'));
-  assert.ok(robots.includes(`Sitemap: ${BASE}/sitemap.xml`));
+  assert.ok(robots.includes(`Sitemap: ${SITEMAP_BASE}/sitemap.xml`));
   assert.doesNotMatch(robots, /devmyskilla\.github\.io\/admin/);
   assert.doesNotMatch(robots, /aasimaltomi\.github\.io/);
 
-  assert.ok(sitemap.includes(`<loc>${BASE}/</loc>`));
-  assert.ok(sitemap.includes(`<loc>${BASE}/explore.html</loc>`));
+  assert.ok(sitemap.includes(`<loc>${SITEMAP_BASE}/</loc>`));
+  assert.ok(sitemap.includes(`<loc>${SITEMAP_BASE}/explore.html</loc>`));
   const SeoRoutes=require('../js/seo-routes.js');
   for(const slug of Object.values(SeoRoutes.PLATFORM_SLUGS)) {
-    assert.ok(sitemap.includes(`<loc>${BASE}/platforms/${slug}/</loc>`), `missing ${slug}`);
+    assert.ok(sitemap.includes(`<loc>${SITEMAP_BASE}/platforms/${slug}/</loc>`), `missing ${slug}`);
   }
   assert.doesNotMatch(sitemap, /aasimaltomi\.github\.io/);
 });

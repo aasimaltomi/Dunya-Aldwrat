@@ -4,10 +4,10 @@ const Landing = require('../js/landing.js');
 
 test('landing stats delegate to platform-level normalized data', () => {
   const stats = Landing.buildStats([
-    {hasFreeContent:true,certificateAvailable:true,languageIds:['Arabic','English']},
-    {hasFreeContent:false,certificateAvailable:true,languageIds:['English']}
+    {hasFreeContent:true,certificateAvailable:true,languageIds:['Arabic','English'],officialCountType:'courses',officialCount:120,pricingModel:'free'},
+    {hasFreeContent:false,certificateAvailable:true,languageIds:['English'],officialCountType:'courses',officialCount:80,pricingModel:'mixed'}
   ]);
-  assert.deepEqual(stats,{platforms:2,free:1,certificates:2,languages:2});
+  assert.deepEqual(stats,{platforms:2,free:1,certificates:2,courses:200,freeCourses:120,languages:2});
 });
 
 test('withLang preserves selected language in cross-page navigation', () => {

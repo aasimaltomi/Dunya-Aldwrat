@@ -55,3 +55,13 @@ test('automatic initialization does not overwrite a user preference while manual
 test('English is the site fallback when no supported preference exists',()=>{
   assert.equal(I18n.resolveLanguagePreference({browserLanguages:['de-DE']}),'en');
 });
+
+
+test('site configuration and page fallbacks default to English',()=>{
+  const data=JSON.parse(fs.readFileSync('data.json','utf8'));
+  assert.equal(data.settings.defaultLanguage,'en');
+  for(const path of ['js/landing.js','js/app.js','js/platform-detail.js','js/404.js','js/detail.js','js/category-page.js']){
+    const source=fs.readFileSync(path,'utf8');
+    assert.doesNotMatch(source,/resolveInitialLanguage\([^\n]*'ar'/,path);
+  }
+});

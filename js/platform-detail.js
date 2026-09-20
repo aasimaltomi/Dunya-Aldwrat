@@ -106,7 +106,7 @@
     return{platforms,platform};
   }
   async function initBrowser(){
-    const params=new URLSearchParams(location.search);let data=await DataLoader.loadSiteData();initContent(data);setLang(resolveInitialLanguage(params.get('lang'),content.rawSetting('defaultLanguage')||'ar'),{persist:false});SiteRuntime.applyDocument(document,content,'platform');
+    const params=new URLSearchParams(location.search);let data=await DataLoader.loadSiteData();initContent(data);setLang(resolveInitialLanguage(params.get('lang'),content.rawSetting('defaultLanguage')||'en'),{persist:false});SiteRuntime.applyDocument(document,content,'platform');
     let saved=null;try{saved=localStorage.getItem('dunya-theme-v2')}catch(_){}setTheme(saved||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
     let platforms=data.platforms.map(PlatformCore.normalizeStaticPlatform),platformId=params.get('id')||(document.body&&document.body.dataset?document.body.dataset.platformId:''),platform=findPlatform(platforms,platformId),loading=document.getElementById('profileLoading');
     document.getElementById('themeToggle').onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');

@@ -74,7 +74,7 @@
     const footerText=document.querySelector('.site-footer p');
     if(footerText)footerText.textContent=getText('tagline')||description;
     document.querySelectorAll('a[href="index.html"],a[href="explore.html"]').forEach(link=>{
-      const target=new URL(link.getAttribute('href'),location.href);
+      const target=new URL(link.getAttribute('href'),document.baseURI);
       target.searchParams.set('lang',lang);
       link.href=target.href;
     });

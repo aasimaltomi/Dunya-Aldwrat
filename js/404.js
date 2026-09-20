@@ -46,7 +46,7 @@
       const params=new URLSearchParams(location.search);
       const data=await DataLoader.loadSiteData();
       initContent(data);
-      setLang(resolveInitialLanguage(params.get('lang'),content.rawSetting('defaultLanguage')||'ar'),{persist:false});
+      setLang(resolveInitialLanguage(params.get('lang'),content.rawSetting('defaultLanguage')||'en'),{persist:false});
       SiteRuntime.applyContentBindings(document,content);
       initTheme();
       applyPageContent();

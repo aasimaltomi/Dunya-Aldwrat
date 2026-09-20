@@ -325,7 +325,7 @@
     removeHeroClutter();
     const params=new URLSearchParams(location.search);
     let data=await DataLoader.loadSiteData();
-    initContent(data);setLang(resolveInitialLanguage(params.get('lang'),content.rawSetting('defaultLanguage')||'ar'),{persist:false});SiteRuntime.applyDocument(document,content,'home');initTheme();syncExploreLinks();
+    initContent(data);setLang(resolveInitialLanguage(params.get('lang'),content.rawSetting('defaultLanguage')||'en'),{persist:false});SiteRuntime.applyDocument(document,content,'home');initTheme();syncExploreLinks();
     let platforms=data.platforms.map(PlatformCore.normalizeStaticPlatform);
     renderHome(data,platforms);bindHeroSearch();
 

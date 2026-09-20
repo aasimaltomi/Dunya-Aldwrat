@@ -31,8 +31,8 @@ test('language preference order is URL then saved choice then browser then site 
 
   assert.equal(I18n.resolveLanguagePreference({
     browserLanguages:['de-DE'],
-    defaultLanguage:'ar'
-  }),'ar');
+    defaultLanguage:'en'
+  }),'en');
 });
 
 test('main runtime pages use the shared automatic language resolver',()=>{
@@ -48,5 +48,20 @@ test('automatic initialization does not overwrite a user preference while manual
   for(const path of ['js/landing.js','js/app.js','js/platform-detail.js','js/404.js','js/detail.js']){
     const page=fs.readFileSync(path,'utf8');
     assert.match(page,/resolveInitialLanguage\([\s\S]*?\),\{persist:false\}/,path);
+  }
+});
+
+
+test('English is the site fallback when no supported preference exists',()=>{
+  assert.equal(I18n.resolveLanguagePreference({browserLanguages:['de-DE']}),'en');
+});
+
+
+test('site configuration and page fallbacks default to English',()=>{
+  const data=JSON.parse(fs.readFileSync('data.json','utf8'));
+  assert.equal(data.settings.defaultLanguage,'en');
+  for(const path of ['js/landing.js','js/app.js','js/platform-detail.js','js/404.js','js/detail.js','js/category-page.js']){
+    const source=fs.readFileSync(path,'utf8');
+    assert.doesNotMatch(source,/resolveInitialLanguage\([^\n]*'ar'/,path);
   }
 });

@@ -90,7 +90,7 @@
       const params=new URLSearchParams(location.search);
       const data=await DataLoader.loadSiteData();
       initContent(data);
-      setLang(resolveInitialLanguage(params.get('lang'),content.rawSetting('defaultLanguage')||'ar'),{persist:false});
+      setLang(resolveInitialLanguage(params.get('lang'),content.rawSetting('defaultLanguage')||'en'),{persist:false});
       ensureLanguageSwitcher();
       renderPage(data);
       const select=document.getElementById('langSwitcher');

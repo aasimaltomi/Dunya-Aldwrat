@@ -40,7 +40,7 @@ function initTheme(){let s;try{s=localStorage.getItem(STORAGE.theme)}catch(_){} 
 function changeLang(lang){setLang(lang);applyTranslations();document.querySelector('.logo-link').href='index.html?lang='+lang;document.querySelector('.back-link').href='index.html?lang='+lang+'#explore';if(currentPlatform)renderPlatform(currentPlatform,true);}
 
 document.addEventListener('DOMContentLoaded',()=>{
-  const params=new URLSearchParams(window.location.search), lp=params.get('lang'); if(lp)setLang(lp);else setLang(currentLang); initTheme();applyTranslations();langSwitcher.value=currentLang;
+  const params=new URLSearchParams(window.location.search), lp=params.get('lang'); setLang(resolveInitialLanguage(lp,'ar'),{persist:false}); initTheme();applyTranslations();langSwitcher.value=currentLang;
   $('themeToggle').onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'); langSwitcher.onchange=e=>changeLang(e.target.value);
   const platform=PLATFORMS_DATA.find(p=>p.id===params.get('id')); if(!platform){detailLoading.textContent='⚠️ '+getText('platformNotFound');return;} recordView(platform);renderPlatform(platform,true);
   if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));

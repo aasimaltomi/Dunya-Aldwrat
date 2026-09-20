@@ -17,12 +17,12 @@ function detectBrowserLanguage(languages){
   }
   return'';
 }
-function resolveLanguagePreference({urlLanguage='',savedLanguage='',browserLanguages=[],defaultLanguage='ar'}={}){
+function resolveLanguagePreference({urlLanguage='',savedLanguage='',browserLanguages=[],defaultLanguage='en'}={}){
   return normalizeSupportedLanguage(urlLanguage)
     ||normalizeSupportedLanguage(savedLanguage)
     ||detectBrowserLanguage(browserLanguages)
     ||normalizeSupportedLanguage(defaultLanguage)
-    ||'ar';
+    ||'en';
 }
 function readSavedLanguage(){
   try{
@@ -35,7 +35,7 @@ function browserLanguagePreferences(){
   if(Array.isArray(navigator.languages)&&navigator.languages.length)return navigator.languages;
   return navigator.language?[navigator.language]:[];
 }
-function resolveInitialLanguage(urlLanguage='',defaultLanguage='ar'){
+function resolveInitialLanguage(urlLanguage='',defaultLanguage='en'){
   return resolveLanguagePreference({
     urlLanguage,
     savedLanguage:readSavedLanguage(),
@@ -44,7 +44,7 @@ function resolveInitialLanguage(urlLanguage='',defaultLanguage='ar'){
   });
 }
 
-let currentLang=resolveInitialLanguage('','ar');
+let currentLang=resolveInitialLanguage('','en');
 let content=null;
 
 function contentApiModule(){
@@ -68,7 +68,7 @@ function getText(path){
   return TECHNICAL_FALLBACK[path]||'';
 }
 function setLang(lang,{persist=true}={}){
-  lang=normalizeSupportedLanguage(lang)||'ar';
+  lang=normalizeSupportedLanguage(lang)||'en';
   currentLang=lang;
   if(content)content.setLang(lang);
   try{if(persist&&typeof localStorage!=='undefined')localStorage.setItem(LANGUAGE_STORAGE_KEY,lang)}catch(_){}

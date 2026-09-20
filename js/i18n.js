@@ -1,13 +1,51 @@
 const ContentAPIModule = typeof module === 'object' && module.exports ? require('./content-api.js') : null;
 const SUPPORTED_LANGS = ['ar','en','tr'];
+const LANGUAGE_STORAGE_KEY = 'dunya-lang';
 const TECHNICAL_FALLBACK = { errorLoading:'Unable to load content', platformNotFound:'Content not found' };
 
-let currentLang='ar';
+function normalizeSupportedLanguage(value){
+  const raw=String(value||'').trim().toLowerCase();
+  if(!raw)return'';
+  const base=raw.split(/[-_]/)[0];
+  return SUPPORTED_LANGS.includes(base)?base:'';
+}
+function detectBrowserLanguage(languages){
+  const values=Array.isArray(languages)?languages:[languages];
+  for(const value of values){
+    const lang=normalizeSupportedLanguage(value);
+    if(lang)return lang;
+  }
+  return'';
+}
+function resolveLanguagePreference({urlLanguage='',savedLanguage='',browserLanguages=[],defaultLanguage='ar'}={}){
+  return normalizeSupportedLanguage(urlLanguage)
+    ||normalizeSupportedLanguage(savedLanguage)
+    ||detectBrowserLanguage(browserLanguages)
+    ||normalizeSupportedLanguage(defaultLanguage)
+    ||'ar';
+}
+function readSavedLanguage(){
+  try{
+    const saved=typeof localStorage!=='undefined'?localStorage.getItem(LANGUAGE_STORAGE_KEY):null;
+    return normalizeSupportedLanguage(saved);
+  }catch(_){return''}
+}
+function browserLanguagePreferences(){
+  if(typeof navigator==='undefined')return[];
+  if(Array.isArray(navigator.languages)&&navigator.languages.length)return navigator.languages;
+  return navigator.language?[navigator.language]:[];
+}
+function resolveInitialLanguage(urlLanguage='',defaultLanguage='ar'){
+  return resolveLanguagePreference({
+    urlLanguage,
+    savedLanguage:readSavedLanguage(),
+    browserLanguages:browserLanguagePreferences(),
+    defaultLanguage
+  });
+}
+
+let currentLang=resolveInitialLanguage('','ar');
 let content=null;
-try{
-  const saved=typeof localStorage!=='undefined'?localStorage.getItem('dunya-lang'):null;
-  if(SUPPORTED_LANGS.includes(saved))currentLang=saved;
-}catch(_){}
 
 function contentApiModule(){
   if(ContentAPIModule)return ContentAPIModule;
@@ -29,11 +67,11 @@ function getText(path){
   if(value)return value;
   return TECHNICAL_FALLBACK[path]||'';
 }
-function setLang(lang){
-  if(!SUPPORTED_LANGS.includes(lang))lang='ar';
+function setLang(lang,{persist=true}={}){
+  lang=normalizeSupportedLanguage(lang)||'ar';
   currentLang=lang;
   if(content)content.setLang(lang);
-  try{if(typeof localStorage!=='undefined')localStorage.setItem('dunya-lang',lang)}catch(_){}
+  try{if(persist&&typeof localStorage!=='undefined')localStorage.setItem(LANGUAGE_STORAGE_KEY,lang)}catch(_){}
   if(typeof document!=='undefined'){
     document.documentElement.lang=lang;
     document.documentElement.dir=lang==='ar'?'rtl':'ltr';
@@ -59,5 +97,14 @@ function pf(platform,field){
 }
 
 if(typeof module==='object'&&module.exports){
-  module.exports={initContent,mergeSiteText,getText,setLang,applyTranslations,translateCat,translateLang,translatePricing,translateVerification,pf,get currentLang(){return currentLang},get content(){return content}};
+  module.exports={
+    SUPPORTED_LANGS,
+    normalizeSupportedLanguage,
+    detectBrowserLanguage,
+    resolveLanguagePreference,
+    resolveInitialLanguage,
+    initContent,mergeSiteText,getText,setLang,applyTranslations,translateCat,translateLang,translatePricing,translateVerification,pf,
+    get currentLang(){return currentLang},
+    get content(){return content}
+  };
 }

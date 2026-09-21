@@ -18,7 +18,7 @@ test('crawlable entry pages expose static title description and canonical metada
     assert.ok(html.includes(`rel="canonical" href="${canonical}"`),`${file} canonical`);
     assert.match(html,/property="og:title" content="[^"]+"/);
     assert.match(html,/property="og:description" content="[^"]+"/);
-    assert.match(html,/property="og:url" content="https:\/\/devmyskilla\.vercel\.app/);
+    assert.match(html,/property="og:url" content="https:\/\/devmyskill\.vercel\.app/);
   }
 });
 

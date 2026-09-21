@@ -126,7 +126,22 @@
 
   function buildStats(platforms){return PlatformDirectory.getStats(Array.isArray(platforms)?platforms:[])}
   function withLang(path,lang){const separator=String(path).includes('?')?'&':'?';return `${path}${separator}lang=${encodeURIComponent(lang||'ar')}`}
-  function categoryExploreUrl(path,lang,categoryId){const separator=String(path).includes('?')?'&':'?';return `${path}${separator}category=${encodeURIComponent(categoryId||'')}&lang=${encodeURIComponent(lang||'ar')}#explore`}
+  function buildExploreUrl(path,lang,params={}){
+    const clean=String(path||'explore.html').replace(/#.*$/,'');
+    const parts=clean.split('?');
+    const pathname=parts.shift()||'explore.html';
+    const search=new URLSearchParams(parts.join('?'));
+    Object.entries(params).forEach(([key,value])=>{
+      const normalized=String(value??'').trim();
+      if(normalized)search.set(key,normalized);
+      else search.delete(key);
+    });
+    search.set('lang',lang||'ar');
+    const query=search.toString();
+    return `${pathname}${query?`?${query}`:''}#explore`;
+  }
+  function categoryExploreUrl(path,lang,categoryId){return buildExploreUrl(path,lang,{category:categoryId})}
+  function platformFinderUrl(path,lang){return buildExploreUrl(path,lang,{finder:'1'})}
   function esc(value=''){return String(value).replace(/[&<>'"]/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]))}
 
   function setTheme(theme){
@@ -220,7 +235,7 @@
       areas.forEach(area=>{
         const link=document.createElement('a');
         link.className='category-card discovery-area-card';
-        link.href=SeoRoutes.categoryUrl(area.id,currentLang);
+        link.href=discoveryAreaExploreUrl(path,currentLang,area);
         link.setAttribute('aria-label',`${area.label} — ${area.countLabel}`);
 
         const icon=document.createElement('span');
@@ -242,6 +257,8 @@
     if(chips){
       chips.innerHTML=groups.map(({group,row})=>`<a class="hero-category-chip" href="${esc(categoryExploreUrl(path,currentLang,group.categoryId))}">${row.icon?`<span class="chip-icon">${esc(row.icon)}</span>`:''}<span data-edit-kind="category" data-edit-id="${esc(group.categoryId)}" data-edit-field="label">${esc(content.categoryLabel(group.categoryId))}</span></a>`).join('');
     }
+    const finder=document.getElementById('heroPlatformFinder');
+    if(finder)finder.href=platformFinderUrl(path,currentLang);
   }
 
   function platformLogo(platform){
@@ -351,5 +368,5 @@
     ensureDiscoveryStyles(document);
     document.addEventListener('DOMContentLoaded',()=>initBrowser().catch(err=>{console.error(err);renderStats()}));
   }
-  return{buildStats,homeStats,withLang,categoryExploreUrl,discoveryAreas,discoverySectionCopy,discoveryAreaExploreUrl};
+  return{buildStats,homeStats,withLang,buildExploreUrl,categoryExploreUrl,platformFinderUrl,discoveryAreas,discoverySectionCopy,discoveryAreaExploreUrl};
 });

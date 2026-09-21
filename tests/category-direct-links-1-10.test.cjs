@@ -10,11 +10,10 @@ test('platforms 2-10 store authoritative HTTPS category destinations in data.jso
     const platform=byId(`plat-${n}`);
     assert.ok(platform.fields.length>0,`${platform.id} should have approved categories`);
     for(const item of platform.fields)assert.match(item.officialUrl||'',/^https:\/\//,`${platform.id}/${item.id}`);
-    if(n!==2)assert.ok(new Set(platform.fields.map(item=>item.officialUrl)).size>1,`${platform.id} should not reuse one URL for every category`);
+    assert.ok(new Set(platform.fields.map(item=>item.officialUrl)).size>1,`${platform.id} should not reuse one URL for every category`);
   }
   const agora=byId('plat-2');
-  assert.equal(new Set(agora.fields.map(item=>item.officialUrl)).size,1,'Agora exposes one stable public Browse by topic page for these topic groups');
-  assert.equal(agora.fields[0].officialUrl,'https://agora.unicef.org/mod/page/view.php?id=36648&lang=en');
+  assert.equal(new Set(agora.fields.map(item=>item.officialUrl)).size,6,'Agora category groups should use distinct official destinations');
 });
 
 test('known direct category destinations are materialized exactly',()=>{

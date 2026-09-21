@@ -197,7 +197,7 @@
             "en": "Focus areas",
             "tr": "Odak alanları"
           },
-          "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
+          "officialUrl": "https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-3&facets=coursetopic_is-3"
         },
         {
           "id": "strategies",
@@ -206,7 +206,7 @@
             "en": "Strategies",
             "tr": "Stratejiler"
           },
-          "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
+          "officialUrl": "https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-4&facets=coursetopic_is-4"
         },
         {
           "id": "leading-managing",
@@ -215,7 +215,7 @@
             "en": "Leading and managing",
             "tr": "Liderlik ve yönetim"
           },
-          "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
+          "officialUrl": "https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-8&facets=coursetopic_is-27"
         },
         {
           "id": "operational-support",
@@ -224,7 +224,7 @@
             "en": "Operational support",
             "tr": "Operasyonel destek"
           },
-          "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
+          "officialUrl": "https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-6&facets=coursetopic_is-6"
         },
         {
           "id": "communication-languages",
@@ -242,7 +242,7 @@
             "en": "Career support",
             "tr": "Kariyer desteği"
           },
-          "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
+          "officialUrl": "https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-8&facets=coursetopic_is-25"
         }
       ],
       "languageIds": [
@@ -250,7 +250,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 792,
-      "officialUrl": "https://agora.unicef.org/local/catalogue/",
+      "officialUrl": "https://agora.unicef.org/course/index.php",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -282,7 +282,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://agora.unicef.org/local/catalogue/",
+      "catalogUrl": "https://agora.unicef.org/course/index.php",
       "categoryId": "education",
       "description": {
         "ar": "منصة تعليمية تابعة لليونيسف (UNICEF) تقدم دورات مجانية في مجالات حماية الطفل، التعليم، الصحة، التنمية المستدامة، والعمل الإنساني.",
@@ -2049,7 +2049,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 292,
-      "officialUrl": "https://e.huawei.com/en/talent/learning/#/home",
+      "officialUrl": "https://e.huawei.com/en/talent/learning/",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -2081,7 +2081,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://e.huawei.com/en/talent/learning/#/home",
+      "catalogUrl": "https://e.huawei.com/en/talent/learning/",
       "categoryId": "technology",
       "description": {
         "ar": "أكاديمية هواوي الرسمية. تقدم دورات مجانية في الشبكات، الذكاء الاصطناعي، الحوسبة السحابية، الأمن السيبراني، وإنترنت الأشياء مع شهادات معتمدة.",
@@ -2104,7 +2104,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 13,
-      "officialUrl": "https://openlearn.aucegypt.edu/course/index.php?categoryid=2",
+      "officialUrl": "https://www.aucegypt.edu/academics/free-english-courses",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -2136,7 +2136,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://openlearn.aucegypt.edu/course/index.php?categoryid=2",
+      "catalogUrl": "https://www.aucegypt.edu/academics/free-english-courses",
       "categoryId": "languages",
       "description": {
         "ar": "تقدم الصفحة مساراً تعليمياً متكاملاً لتعلم اللغة الإنجليزية، مُصمم ليغطي جميع المستويات من المبتدئ حتى المتقدم، مع تركيز خاص على التحضير للدراسة الجامعية. وكذلك لديها دورات في مجالات أخرى مثل التعليم والحضارات.",
@@ -3709,7 +3709,7 @@
             "en": "Certified Full Stack Developer",
             "tr": "Sertifikalı Full Stack Geliştirici"
           },
-          "officialUrl": "https://www.freecodecamp.org/learn/full-stack-developer/"
+          "officialUrl": "https://www.freecodecamp.org/learn/full-stack-developer-v9"
         },
         {
           "id": "responsive-web-design",
@@ -5207,7 +5207,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 425,
-      "officialUrl": "https://www.btkakademi.gov.tr/portal/courses",
+      "officialUrl": "https://www.btkakademi.gov.tr/portal/catalog",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -5239,7 +5239,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://www.btkakademi.gov.tr/portal/courses",
+      "catalogUrl": "https://www.btkakademi.gov.tr/portal/catalog",
       "categoryId": "technology",
       "description": {
         "ar": "منصة التعليم التركية الرسمية من هيئة تقنية المعلومات والاتصالات. تقدم دورات مجانية في البرمجة، الأمن السيبراني، علم البيانات، الذكاء الاصطناعي، وتقنية المعلومات مع شهادات معتمدة.",

@@ -29,12 +29,17 @@ test('Sololearn categories use the closest verified official destination',()=>{
   for(const [id,url] of Object.entries(exact))assert.equal(field(byId('plat-17'),id).officialUrl,url);
 });
 
-test('Agora topic cards use UNICEF official topic browsing instead of keyword-search URLs',()=>{
-  const expected='https://agora.unicef.org/mod/page/view.php?id=36648&lang=en';
-  for(const item of byId('plat-2').fields){
-    assert.equal(item.officialUrl,expected);
-    assert.doesNotMatch(item.officialUrl,/local\/catalogue\/index\.php\?query=/);
-  }
+test('Agora topic cards use current UNICEF topic destinations instead of brittle keyword-search URLs',()=>{
+  const expected={
+    'focus-areas':'https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-3&facets=coursetopic_is-3',
+    'strategies':'https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-4&facets=coursetopic_is-4',
+    'leading-managing':'https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-8&facets=coursetopic_is-27',
+    'operational-support':'https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-6&facets=coursetopic_is-6',
+    'communication-languages':'https://agora.unicef.org/mod/page/view.php?id=36648&lang=en',
+    'career-support':'https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-8&facets=coursetopic_is-25'
+  };
+  for(const [id,url] of Object.entries(expected))assert.equal(field(byId('plat-2'),id).officialUrl,url);
+  for(const item of byId('plat-2').fields)assert.doesNotMatch(item.officialUrl,/local\/catalogue\/index\.php\?query=/);
 });
 
 test('Edraak uses exact official category filters where verified',()=>{

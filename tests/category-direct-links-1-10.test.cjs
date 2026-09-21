@@ -5,13 +5,16 @@ const data=require('../data.json');
 const byId=id=>data.platforms.find(p=>p.id===id);
 const field=(id,fieldId)=>byId(id).fields.find(f=>f.id===fieldId);
 
-test('platforms 2-10 store category-specific authoritative URLs in data.json',()=>{
+test('platforms 2-10 store authoritative HTTPS category destinations in data.json',()=>{
   for(let n=2;n<=10;n++){
     const platform=byId(`plat-${n}`);
     assert.ok(platform.fields.length>0,`${platform.id} should have approved categories`);
     for(const item of platform.fields)assert.match(item.officialUrl||'',/^https:\/\//,`${platform.id}/${item.id}`);
-    assert.ok(new Set(platform.fields.map(item=>item.officialUrl)).size>1,`${platform.id} should not reuse one URL for every category`);
+    if(n!==2)assert.ok(new Set(platform.fields.map(item=>item.officialUrl)).size>1,`${platform.id} should not reuse one URL for every category`);
   }
+  const agora=byId('plat-2');
+  assert.equal(new Set(agora.fields.map(item=>item.officialUrl)).size,1,'Agora exposes one stable public Browse by topic page for these topic groups');
+  assert.equal(agora.fields[0].officialUrl,'https://agora.unicef.org/mod/page/view.php?id=36648&lang=en');
 });
 
 test('known direct category destinations are materialized exactly',()=>{

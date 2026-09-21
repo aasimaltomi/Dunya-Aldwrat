@@ -112,7 +112,7 @@
     try{
       if(!model||!model.id)return'';
       if(SeoRoutes&&typeof SeoRoutes.platformUrl==='function'){
-        return new URL(SeoRoutes.platformUrl(model), 'https://devmyskilla.vercel.app/').href;
+        return new URL(SeoRoutes.platformUrl(model), 'https://devmyskill.vercel.app/').href;
       }
       if(!doc||!doc.location||!doc.location.href)return'';
       const url=new URL(doc.location.href);

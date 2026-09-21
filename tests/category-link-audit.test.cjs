@@ -18,8 +18,23 @@ test('NVIDIA categories point to self-paced course filters rather than learning 
   }
 });
 
-test('Sololearn categories do not masquerade as a single course or learning path',()=>{
-  for(const item of byId('plat-17').fields)assert.equal(item.officialUrl,'https://www.sololearn.com/en/learn/');
+test('Sololearn categories use the closest verified official destination',()=>{
+  const exact={
+    'programming-foundations':'https://www.sololearn.com/en/learn/courses/coding-foundations',
+    'data-analytics':'https://www.sololearn.com/en/learn/courses/data-programming',
+    'web-app-development':'https://www.sololearn.com/en/learn/courses/web-development',
+    'advanced-programming-frameworks':'https://www.sololearn.com/en/learn/courses/python-developer',
+    'ai-generative-technologies':'https://ai.sololearn.com/en/learn'
+  };
+  for(const [id,url] of Object.entries(exact))assert.equal(field(byId('plat-17'),id).officialUrl,url);
+});
+
+test('Agora topic cards use UNICEF official topic browsing instead of keyword-search URLs',()=>{
+  const expected='https://agora.unicef.org/mod/page/view.php?id=36648&lang=en';
+  for(const item of byId('plat-2').fields){
+    assert.equal(item.officialUrl,expected);
+    assert.doesNotMatch(item.officialUrl,/local\/catalogue\/index\.php\?query=/);
+  }
 });
 
 test('Edraak uses exact official category filters where verified',()=>{

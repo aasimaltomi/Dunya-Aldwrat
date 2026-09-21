@@ -135,7 +135,7 @@
         "en": "Focus areas",
         "tr": "Odak alanları"
       },
-      "officialUrl": "https://agora.unicef.org/local/catalogue/index.php?query=Focus%20areas"
+      "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
     },
     {
       "id": "strategies",
@@ -144,7 +144,7 @@
         "en": "Strategies",
         "tr": "Stratejiler"
       },
-      "officialUrl": "https://agora.unicef.org/local/catalogue/index.php?query=Strategies"
+      "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
     },
     {
       "id": "leading-managing",
@@ -153,7 +153,7 @@
         "en": "Leading and managing",
         "tr": "Liderlik ve yönetim"
       },
-      "officialUrl": "https://agora.unicef.org/local/catalogue/index.php?query=Leading%20and%20managing"
+      "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
     },
     {
       "id": "operational-support",
@@ -162,7 +162,7 @@
         "en": "Operational support",
         "tr": "Operasyonel destek"
       },
-      "officialUrl": "https://agora.unicef.org/local/catalogue/index.php?query=Operational%20support"
+      "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
     },
     {
       "id": "communication-languages",
@@ -171,7 +171,7 @@
         "en": "Communication & languages",
         "tr": "İletişim ve diller"
       },
-      "officialUrl": "https://agora.unicef.org/local/catalogue/index.php?query=Communication%20%26%20languages"
+      "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
     },
     {
       "id": "career-support",
@@ -180,7 +180,7 @@
         "en": "Career support",
         "tr": "Kariyer desteği"
       },
-      "officialUrl": "https://agora.unicef.org/local/catalogue/index.php?query=Career%20support"
+      "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
     }
   ],
   "plat-3": [
@@ -1892,7 +1892,7 @@
         "en": "Programming Foundations",
         "tr": "Programlama Temelleri"
       },
-      "officialUrl": "https://www.sololearn.com/en/learn/"
+      "officialUrl": "https://www.sololearn.com/en/learn/courses/coding-foundations"
     },
     {
       "id": "data-analytics",
@@ -1901,7 +1901,7 @@
         "en": "Data & Analytics",
         "tr": "Veri ve Analitik"
       },
-      "officialUrl": "https://www.sololearn.com/en/learn/"
+      "officialUrl": "https://www.sololearn.com/en/learn/courses/data-programming"
     },
     {
       "id": "web-app-development",
@@ -1910,7 +1910,7 @@
         "en": "Web & App Development",
         "tr": "Web ve Uygulama Geliştirme"
       },
-      "officialUrl": "https://www.sololearn.com/en/learn/"
+      "officialUrl": "https://www.sololearn.com/en/learn/courses/web-development"
     },
     {
       "id": "advanced-programming-frameworks",
@@ -1919,7 +1919,7 @@
         "en": "Advanced Programming & Frameworks",
         "tr": "İleri Programlama ve Frameworkler"
       },
-      "officialUrl": "https://www.sololearn.com/en/learn/"
+      "officialUrl": "https://www.sololearn.com/en/learn/courses/python-developer"
     },
     {
       "id": "ai-generative-technologies",
@@ -1928,7 +1928,7 @@
         "en": "AI & Generative Technologies",
         "tr": "Yapay Zekâ ve Üretken Teknolojiler"
       },
-      "officialUrl": "https://www.sololearn.com/en/learn/"
+      "officialUrl": "https://ai.sololearn.com/en/learn"
     }
   ],
   "plat-18": [

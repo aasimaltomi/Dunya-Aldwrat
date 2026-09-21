@@ -2,7 +2,7 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const read=p=>fs.readFileSync(p,'utf8');
-const BASE='https://devmyskilla.vercel.app';
+const BASE='https://devmyskill.vercel.app';
 const SITEMAP_BASE='https://devmyskill.vercel.app';
 
 test('crawlable entry pages expose static title description and canonical metadata',()=>{

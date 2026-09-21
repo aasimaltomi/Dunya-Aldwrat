@@ -13,7 +13,7 @@ function assertSearchMeta(html,label){
   assert.match(html,/meta property="og:site_name" content="دنيا الدورات \| Dunya Al-Dawrat \| Kurslar Dünyası"/,label+' og:site_name');
   assert.match(html,/meta name="twitter:title" content="[^"]+"/,label+' twitter:title');
   assert.match(html,/meta name="twitter:description" content="[^"]+"/,label+' twitter:description');
-  assert.match(html,/meta name="twitter:image" content="https:\/\/devmyskilla\.vercel\.app\/assets\/dunya-logo-hero-v3\.webp"/,label+' twitter:image');
+  assert.match(html,/meta name="twitter:image" content="https:\/\/devmyskill\.vercel\.app\/assets\/dunya-logo-hero-v3\.webp"/,label+' twitter:image');
 }
 
 test('homepage ships a complete multilingual search metadata pack',()=>{

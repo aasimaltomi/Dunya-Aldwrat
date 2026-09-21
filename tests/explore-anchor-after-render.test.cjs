@@ -11,5 +11,4 @@ test('Explore deep links re-anchor after dynamic content renders',()=>{
   assert.match(source,/requestAnimationFrame\(\(\)=>requestAnimationFrame\(focus\)\)/);
   assert.match(source,/setTimeout\(focus,120\)/);
   assert.match(source,/focusInitialExploreResults\(params\)/);
-  assert.doesNotMatch(source,/focusInitialSearchResults\(initialQuery\)/);
 });

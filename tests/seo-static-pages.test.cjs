@@ -4,7 +4,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 
 const ROOT=path.join(__dirname,'..');
-const BASE='https://devmyskilla.vercel.app';
+const BASE='https://devmyskill.vercel.app';
 const SITEMAP_BASE='https://devmyskill.vercel.app';
 const data=JSON.parse(fs.readFileSync(path.join(ROOT,'data.json'),'utf8'));
 

@@ -2,7 +2,7 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const read=p=>fs.readFileSync(p,'utf8');
-const BASE='https://devmyskilla.vercel.app';
+const BASE='https://devmyskill.vercel.app';
 const SITEMAP_BASE='https://devmyskill.vercel.app';
 
 test('crawlable entry pages expose static title description and canonical metadata',()=>{
@@ -18,7 +18,7 @@ test('crawlable entry pages expose static title description and canonical metada
     assert.ok(html.includes(`rel="canonical" href="${canonical}"`),`${file} canonical`);
     assert.match(html,/property="og:title" content="[^"]+"/);
     assert.match(html,/property="og:description" content="[^"]+"/);
-    assert.match(html,/property="og:url" content="https:\/\/devmyskilla\.vercel\.app/);
+    assert.match(html,/property="og:url" content="https:\/\/devmyskill\.vercel\.app/);
   }
 });
 

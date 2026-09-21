@@ -81,6 +81,6 @@ test('platform SEO substitutes the platform token and self-canonicalizes the res
   SiteRuntime.applyPlatformSeo(doc,api,{id:'plat-7',name:'Example <b>'});
   assert.equal(doc.title,'Example <b> — Name');
   assert.equal(doc.metas['meta[name="description"]'].content,'Profile for Example <b>');
-  assert.equal(doc.links['link[rel="canonical"]'].href,'https://devmyskilla.vercel.app/platforms/edx/');
-  assert.equal(doc.metas['meta[property="og:url"]'].content,'https://devmyskilla.vercel.app/platforms/edx/');
+  assert.equal(doc.links['link[rel="canonical"]'].href,'https://devmyskill.vercel.app/platforms/edx/');
+  assert.equal(doc.metas['meta[property="og:url"]'].content,'https://devmyskill.vercel.app/platforms/edx/');
 });

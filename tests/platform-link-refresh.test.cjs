@@ -7,7 +7,7 @@ const data = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data.json'),
 const byId = new Map(data.platforms.map(platform => [platform.id, platform]));
 
 const expected = {
-  'plat-2': 'https://agora.unicef.org/local/catalogue/index.php',
+  'plat-2': 'https://agora.unicef.org/course/index.php',
   'plat-3': 'https://skillsbuild.org/learning-catalog/university-catalog',
   'plat-4': 'https://www.theforage.com/simulations',
   'plat-9': 'https://event.unitar.org/full-catalog',

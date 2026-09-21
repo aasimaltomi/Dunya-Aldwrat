@@ -250,7 +250,7 @@
       ],
       "pricingModel": "free",
       "officialCount": 792,
-      "officialUrl": "https://agora.unicef.org/local/catalogue/index.php",
+      "officialUrl": "https://agora.unicef.org/course/index.php",
       "editorial": {
         "bestFor": {
           "ar": [],
@@ -282,7 +282,7 @@
       "featured": false,
       "certificateAvailable": true,
       "hasFreeContent": true,
-      "catalogUrl": "https://agora.unicef.org/local/catalogue/index.php",
+      "catalogUrl": "https://agora.unicef.org/course/index.php",
       "categoryId": "education",
       "description": {
         "ar": "منصة تعليمية تابعة لليونيسف (UNICEF) تقدم دورات مجانية في مجالات حماية الطفل، التعليم، الصحة، التنمية المستدامة، والعمل الإنساني.",

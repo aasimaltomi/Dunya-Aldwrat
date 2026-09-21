@@ -135,7 +135,7 @@
         "en": "Focus areas",
         "tr": "Odak alanları"
       },
-      "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
+      "officialUrl": "https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-3&facets=coursetopic_is-3"
     },
     {
       "id": "strategies",
@@ -144,7 +144,7 @@
         "en": "Strategies",
         "tr": "Stratejiler"
       },
-      "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
+      "officialUrl": "https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-4&facets=coursetopic_is-4"
     },
     {
       "id": "leading-managing",
@@ -153,7 +153,7 @@
         "en": "Leading and managing",
         "tr": "Liderlik ve yönetim"
       },
-      "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
+      "officialUrl": "https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-8&facets=coursetopic_is-27"
     },
     {
       "id": "operational-support",
@@ -162,7 +162,7 @@
         "en": "Operational support",
         "tr": "Operasyonel destek"
       },
-      "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
+      "officialUrl": "https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-6&facets=coursetopic_is-6"
     },
     {
       "id": "communication-languages",
@@ -180,7 +180,7 @@
         "en": "Career support",
         "tr": "Kariyer desteği"
       },
-      "officialUrl": "https://agora.unicef.org/mod/page/view.php?id=36648&lang=en"
+      "officialUrl": "https://agora.unicef.org/local/search/index.php?expanded=coursetopic_is-8&facets=coursetopic_is-25"
     }
   ],
   "plat-3": [
@@ -2401,7 +2401,7 @@
         "en": "Certified Full Stack Developer",
         "tr": "Sertifikalı Full Stack Geliştirici"
       },
-      "officialUrl": "https://www.freecodecamp.org/learn/full-stack-developer/"
+      "officialUrl": "https://www.freecodecamp.org/learn/full-stack-developer-v9"
     },
     {
       "id": "responsive-web-design",

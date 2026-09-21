@@ -2,7 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 
-const BASE = 'https://devmyskilla.vercel.app';
+const BASE = 'https://devmyskill.vercel.app';
 const SITEMAP_BASE = 'https://devmyskill.vercel.app';
 const LEGACY = 'https://aasimaltomi.github.io/devmyskilla.github.io';
 

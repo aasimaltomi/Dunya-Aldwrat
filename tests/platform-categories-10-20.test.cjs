@@ -2,7 +2,7 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const data=require('../data.json');
 const byId=id=>data.platforms.find(p=>p.id===id);
-const expected={'plat-10':23,'plat-11':0,'plat-12':6,'plat-13':6,'plat-14':9,'plat-15':9,'plat-16':6,'plat-17':5,'plat-18':5,'plat-19':21,'plat-20':9};
+const expected={'plat-10':23,'plat-11':4,'plat-12':6,'plat-13':6,'plat-14':9,'plat-15':9,'plat-16':6,'plat-17':5,'plat-18':5,'plat-19':21,'plat-20':9};
 
 test('authoritative category counts match the reviewed 10-20 batch',()=>{
   for(const [id,count] of Object.entries(expected))assert.equal((byId(id).fields||[]).length,count,`${id} category count`);
@@ -18,4 +18,8 @@ test('every visible 10-20 category is trilingual with an HTTPS destination',()=>
   }
 });
 
-test('AUC OpenLearn remains intentionally empty',()=>assert.deepEqual(byId('plat-11').fields||[],[]));
+test('AUC Open Learn exposes the four reviewed English-learning groups',()=>{
+  assert.deepEqual(byId('plat-11').fields.map(field=>field.id),[
+    'foundations-of-english','integrated-english','college-prep-english','thematic-courses'
+  ]);
+});

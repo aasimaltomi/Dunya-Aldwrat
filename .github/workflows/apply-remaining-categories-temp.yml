@@ -1,0 +1,34 @@
+name: Apply remaining platform categories
+
+on:
+  push:
+    branches:
+      - complete-remaining-platform-categories
+    paths:
+      - scripts/apply-remaining-categories-temp.cjs
+      - .github/workflows/apply-remaining-categories-temp.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: complete-remaining-platform-categories
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply reviewed category data
+        run: node scripts/apply-remaining-categories-temp.cjs
+      - name: Commit generated data changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json research-data.json tests/fixtures/category-effective-baseline.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Complete remaining platform categories"
+          git push origin HEAD:complete-remaining-platform-categories

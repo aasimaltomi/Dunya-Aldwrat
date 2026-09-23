@@ -20,9 +20,9 @@ const legacyFiles = [
   'category-direct-links.js',
 ];
 
-test('frozen effective baseline covers exactly the 40 public platforms and 363 fields', () => {
+test('frozen effective baseline covers exactly the 40 public platforms and 438 fields', () => {
   assert.equal(Object.keys(baseline).length, 40);
-  assert.equal(Object.values(baseline).reduce((n, fields) => n + fields.length, 0), 363);
+  assert.equal(Object.values(baseline).reduce((n, fields) => n + fields.length, 0), 438);
   assert.deepEqual(Object.keys(baseline), Array.from({length: 40}, (_, i) => `plat-${i + 1}`));
 });
 

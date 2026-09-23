@@ -7,7 +7,7 @@ const field=(platform,id)=>platform.fields.find(f=>f.id===id);
 
 test('all public approved categories have absolute HTTPS URLs',()=>{
   const fields=publicPlatforms.flatMap(p=>p.fields||[]);
-  assert.equal(fields.length,363,'approved public category total');
+  assert.equal(fields.length,438,'approved public category total');
   for(const item of fields)assert.match(item.officialUrl||'',/^https:\/\//);
 });
 

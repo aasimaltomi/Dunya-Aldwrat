@@ -869,7 +869,7 @@
       "id": "plat-11",
       "officialPaths": [],
       "pathResearch": {
-        "lastVerified": "2026-09-04",
+        "lastVerified": "2026-09-23",
         "fieldsSourceUrl": "https://www.aucegypt.edu/academics/free-english-courses",
         "pathsSourceUrl": "https://openlearn.aucegypt.edu/"
       }
@@ -1346,7 +1346,7 @@
       "id": "plat-22",
       "officialPaths": [],
       "pathResearch": {
-        "lastVerified": "2026-09-04",
+        "lastVerified": "2026-09-23",
         "fieldsSourceUrl": "https://www.kaggle.com/learn",
         "pathsSourceUrl": "https://www.kaggle.com/learn"
       }
@@ -1355,8 +1355,8 @@
       "id": "plat-23",
       "officialPaths": [],
       "pathResearch": {
-        "lastVerified": "2026-09-04",
-        "fieldsSourceUrl": "https://skills.github.com/",
+        "lastVerified": "2026-09-23",
+        "fieldsSourceUrl": "https://github.com/skills.html",
         "pathsSourceUrl": "https://skills.github.com/"
       }
     },
@@ -1556,8 +1556,8 @@
       "id": "plat-30",
       "officialPaths": [],
       "pathResearch": {
-        "lastVerified": "2026-09-04",
-        "fieldsSourceUrl": "https://satr.codes/",
+        "lastVerified": "2026-09-23",
+        "fieldsSourceUrl": "https://satr.tuwaiq.edu.sa",
         "pathsSourceUrl": "https://satr.codes/"
       }
     },
@@ -1583,7 +1583,7 @@
       "id": "plat-33",
       "officialPaths": [],
       "pathResearch": {
-        "lastVerified": "2026-09-04",
+        "lastVerified": "2026-09-23",
         "fieldsSourceUrl": "https://www.rwaq.org/courses",
         "pathsSourceUrl": "https://www.rwaq.org/courses"
       }
@@ -1794,8 +1794,8 @@
         }
       ],
       "pathResearch": {
-        "lastVerified": "2026-09-04",
-        "fieldsSourceUrl": "https://matlabacademy.mathworks.com/?page=1&fq=course&sort=featured",
+        "lastVerified": "2026-09-23",
+        "fieldsSourceUrl": "https://matlabacademy.mathworks.com/",
         "pathsSourceUrl": "https://matlabacademy.mathworks.com/"
       }
     },
@@ -1856,7 +1856,7 @@
         }
       ],
       "pathResearch": {
-        "lastVerified": "2026-09-04",
+        "lastVerified": "2026-09-23",
         "fieldsSourceUrl": "https://www.hackerrank.com/skills-verification",
         "pathsSourceUrl": "https://www.hackerrank.com/interview/preparation-kits"
       }
@@ -1865,7 +1865,7 @@
       "id": "plat-40",
       "officialPaths": [],
       "pathResearch": {
-        "lastVerified": "2026-09-04",
+        "lastVerified": "2026-09-23",
         "fieldsSourceUrl": "https://www.coursat.org/categories",
         "pathsSourceUrl": "https://www.coursat.org/categories"
       }

@@ -2098,7 +2098,44 @@
         "en": "Open Learn AUC",
         "tr": "Open Learn AUC"
       },
-      "fields": [],
+      "fields": [
+        {
+          "id": "foundations-of-english",
+          "name": {
+            "ar": "أسس اللغة الإنجليزية",
+            "en": "Foundations of English",
+            "tr": "İngilizce Temelleri"
+          },
+          "officialUrl": "https://www.aucegypt.edu/academics/free-english-courses"
+        },
+        {
+          "id": "integrated-english",
+          "name": {
+            "ar": "الإنجليزية المتكاملة",
+            "en": "Integrated English",
+            "tr": "Bütünleşik İngilizce"
+          },
+          "officialUrl": "https://www.aucegypt.edu/academics/free-english-courses"
+        },
+        {
+          "id": "college-prep-english",
+          "name": {
+            "ar": "الإنجليزية للإعداد الجامعي",
+            "en": "College Prep English",
+            "tr": "Üniversite Hazırlık İngilizcesi"
+          },
+          "officialUrl": "https://www.aucegypt.edu/academics/free-english-courses"
+        },
+        {
+          "id": "thematic-courses",
+          "name": {
+            "ar": "الدورات الموضوعية",
+            "en": "Thematic Courses",
+            "tr": "Tematik Kurslar"
+          },
+          "officialUrl": "https://www.aucegypt.edu/academics/free-english-courses"
+        }
+      ],
       "languageIds": [
         "English"
       ],
@@ -3454,7 +3491,80 @@
         "en": "Kaggle",
         "tr": "Kaggle"
       },
-      "fields": [],
+      "fields": [
+        {
+          "id": "python",
+          "name": {
+            "ar": "بايثون",
+            "en": "Python",
+            "tr": "Python"
+          },
+          "officialUrl": "https://www.kaggle.com/learn/python"
+        },
+        {
+          "id": "intro-machine-learning",
+          "name": {
+            "ar": "مقدمة في تعلم الآلة",
+            "en": "Intro to Machine Learning",
+            "tr": "Makine Öğrenmesine Giriş"
+          },
+          "officialUrl": "https://www.kaggle.com/learn/intro-to-machine-learning"
+        },
+        {
+          "id": "pandas",
+          "name": {
+            "ar": "Pandas",
+            "en": "Pandas",
+            "tr": "Pandas"
+          },
+          "officialUrl": "https://www.kaggle.com/learn/pandas"
+        },
+        {
+          "id": "data-visualization",
+          "name": {
+            "ar": "تصور البيانات",
+            "en": "Data Visualization",
+            "tr": "Veri Görselleştirme"
+          },
+          "officialUrl": "https://www.kaggle.com/learn/data-visualization"
+        },
+        {
+          "id": "intro-sql",
+          "name": {
+            "ar": "مقدمة في SQL",
+            "en": "Intro to SQL",
+            "tr": "SQL’e Giriş"
+          },
+          "officialUrl": "https://www.kaggle.com/learn/intro-to-sql"
+        },
+        {
+          "id": "intro-deep-learning",
+          "name": {
+            "ar": "مقدمة في التعلم العميق",
+            "en": "Intro to Deep Learning",
+            "tr": "Derin Öğrenmeye Giriş"
+          },
+          "officialUrl": "https://www.kaggle.com/learn/intro-to-deep-learning"
+        },
+        {
+          "id": "computer-vision",
+          "name": {
+            "ar": "الرؤية الحاسوبية",
+            "en": "Computer Vision",
+            "tr": "Bilgisayarlı Görü"
+          },
+          "officialUrl": "https://www.kaggle.com/learn/computer-vision"
+        },
+        {
+          "id": "time-series",
+          "name": {
+            "ar": "السلاسل الزمنية",
+            "en": "Time Series",
+            "tr": "Zaman Serileri"
+          },
+          "officialUrl": "https://www.kaggle.com/learn/time-series"
+        }
+      ],
       "languageIds": [
         "English"
       ],
@@ -3509,7 +3619,62 @@
         "en": "GitHub Learn",
         "tr": "GitHub Learn"
       },
-      "fields": [],
+      "fields": [
+        {
+          "id": "introduction-to-github",
+          "name": {
+            "ar": "مقدمة إلى GitHub",
+            "en": "Introduction to GitHub",
+            "tr": "GitHub’a Giriş"
+          },
+          "officialUrl": "https://github.com/skills/introduction-to-github"
+        },
+        {
+          "id": "communicate-using-markdown",
+          "name": {
+            "ar": "التواصل باستخدام Markdown",
+            "en": "Communicate Using Markdown",
+            "tr": "Markdown ile İletişim"
+          },
+          "officialUrl": "https://github.com/skills/communicate-using-markdown"
+        },
+        {
+          "id": "github-pages",
+          "name": {
+            "ar": "GitHub Pages",
+            "en": "GitHub Pages",
+            "tr": "GitHub Pages"
+          },
+          "officialUrl": "https://github.com/skills/github-pages"
+        },
+        {
+          "id": "review-pull-requests",
+          "name": {
+            "ar": "مراجعة طلبات السحب",
+            "en": "Review Pull Requests",
+            "tr": "Pull Request İnceleme"
+          },
+          "officialUrl": "https://github.com/skills/review-pull-requests"
+        },
+        {
+          "id": "resolve-merge-conflicts",
+          "name": {
+            "ar": "حل تعارضات الدمج",
+            "en": "Resolve Merge Conflicts",
+            "tr": "Birleştirme Çakışmalarını Çözme"
+          },
+          "officialUrl": "https://github.com/skills/resolve-merge-conflicts"
+        },
+        {
+          "id": "hello-github-actions",
+          "name": {
+            "ar": "مقدمة إلى GitHub Actions",
+            "en": "Hello GitHub Actions",
+            "tr": "GitHub Actions’a Giriş"
+          },
+          "officialUrl": "https://github.com/skills/hello-github-actions"
+        }
+      ],
       "languageIds": [
         "English"
       ],
@@ -4416,7 +4581,80 @@
         "en": "سطر Satr",
         "tr": "سطر Satr"
       },
-      "fields": [],
+      "fields": [
+        {
+          "id": "full-stack-javascript",
+          "name": {
+            "ar": "تطوير الويب المتكامل بـ JavaScript",
+            "en": "Full-Stack JavaScript",
+            "tr": "Full-Stack JavaScript"
+          },
+          "officialUrl": "https://satr.tuwaiq.edu.sa/path/ecbAGsuqOQ/view"
+        },
+        {
+          "id": "full-stack-python",
+          "name": {
+            "ar": "تطوير الويب المتكامل بـ Python",
+            "en": "Full-Stack Python",
+            "tr": "Full-Stack Python"
+          },
+          "officialUrl": "https://satr.tuwaiq.edu.sa/path/OTZExaETAH/view"
+        },
+        {
+          "id": "data-science-ai",
+          "name": {
+            "ar": "علم البيانات والذكاء الاصطناعي",
+            "en": "Data Science & AI",
+            "tr": "Veri Bilimi ve Yapay Zekâ"
+          },
+          "officialUrl": "https://satr.tuwaiq.edu.sa/path/zaNuCyeqGx/view"
+        },
+        {
+          "id": "data-analysis",
+          "name": {
+            "ar": "تحليل البيانات",
+            "en": "Data Analysis",
+            "tr": "Veri Analizi"
+          },
+          "officialUrl": "https://satr.tuwaiq.edu.sa/path/GeI4P6aBSK/view"
+        },
+        {
+          "id": "cybersecurity",
+          "name": {
+            "ar": "أساسيات الأمن السيبراني",
+            "en": "Cybersecurity Fundamentals",
+            "tr": "Siber Güvenlik Temelleri"
+          },
+          "officialUrl": "https://satr.tuwaiq.edu.sa/path/E0v6z0oS6R/view"
+        },
+        {
+          "id": "ios-development",
+          "name": {
+            "ar": "تطوير تطبيقات iOS",
+            "en": "iOS Development",
+            "tr": "iOS Geliştirme"
+          },
+          "officialUrl": "https://satr.tuwaiq.edu.sa/path/TxrppJSrgx/view"
+        },
+        {
+          "id": "android-development",
+          "name": {
+            "ar": "تطوير تطبيقات Android",
+            "en": "Android Development",
+            "tr": "Android Geliştirme"
+          },
+          "officialUrl": "https://satr.tuwaiq.edu.sa/path/KGYLmAVZWT/view"
+        },
+        {
+          "id": "flutter-development",
+          "name": {
+            "ar": "تطوير تطبيقات Flutter",
+            "en": "Flutter Development",
+            "tr": "Flutter Geliştirme"
+          },
+          "officialUrl": "https://satr.tuwaiq.edu.sa/path/OHarLRCHae/view"
+        }
+      ],
       "languageIds": [
         "Arabic"
       ],
@@ -4754,7 +4992,179 @@
         "en": "رواق Rwaq",
         "tr": "رواق Rwaq"
       },
-      "fields": [],
+      "fields": [
+        {
+          "id": "economics-management-marketing",
+          "name": {
+            "ar": "الاقتصاد والإدارة والتسويق",
+            "en": "Economics, Management & Marketing",
+            "tr": "Ekonomi, Yönetim ve Pazarlama"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "computer-science-digitalization",
+          "name": {
+            "ar": "علوم الحاسب والرّقمنة",
+            "en": "Computer Science & Digitalization",
+            "tr": "Bilgisayar Bilimleri ve Dijitalleşme"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "education",
+          "name": {
+            "ar": "التربية",
+            "en": "Education",
+            "tr": "Eğitim"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "islamic-studies",
+          "name": {
+            "ar": "الدراسات الإسلامية",
+            "en": "Islamic Studies",
+            "tr": "İslami İlimler"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "social-humanities",
+          "name": {
+            "ar": "العلوم الاجتماعية والإنسانية",
+            "en": "Social Sciences & Humanities",
+            "tr": "Sosyal ve Beşeri Bilimler"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "arabic-language-literature",
+          "name": {
+            "ar": "الآداب واللغة العربية",
+            "en": "Arabic Language & Literature",
+            "tr": "Arap Dili ve Edebiyatı"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "medicine-public-health",
+          "name": {
+            "ar": "الطب والصحة العامة",
+            "en": "Medicine & Public Health",
+            "tr": "Tıp ve Halk Sağlığı"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "languages-translation",
+          "name": {
+            "ar": "اللغات والترجمة",
+            "en": "Languages & Translation",
+            "tr": "Diller ve Çeviri"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "curriculum-teaching-methods",
+          "name": {
+            "ar": "مناهج وطرق التدريس",
+            "en": "Curriculum & Teaching Methods",
+            "tr": "Müfredat ve Öğretim Yöntemleri"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "creativity-innovation",
+          "name": {
+            "ar": "الإبداع والابتكار",
+            "en": "Creativity & Innovation",
+            "tr": "Yaratıcılık ve İnovasyon"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "law",
+          "name": {
+            "ar": "القانون",
+            "en": "Law",
+            "tr": "Hukuk"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "mathematics-science",
+          "name": {
+            "ar": "الرياضيات والعلوم",
+            "en": "Mathematics & Science",
+            "tr": "Matematik ve Fen Bilimleri"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "culture-media",
+          "name": {
+            "ar": "الثقافة والإعلام",
+            "en": "Culture & Media",
+            "tr": "Kültür ve Medya"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "podcasts",
+          "name": {
+            "ar": "بودكاست رواق",
+            "en": "Rwaq Podcasts",
+            "tr": "Rwaq Podcastleri"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "skills-hobbies",
+          "name": {
+            "ar": "مهارات وهوايات",
+            "en": "Skills & Hobbies",
+            "tr": "Beceriler ve Hobiler"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "engineering",
+          "name": {
+            "ar": "الهندسة",
+            "en": "Engineering",
+            "tr": "Mühendislik"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "tourism-archaeology",
+          "name": {
+            "ar": "السياحة والآثار",
+            "en": "Tourism & Archaeology",
+            "tr": "Turizm ve Arkeoloji"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "environment-agriculture",
+          "name": {
+            "ar": "البيئة والزراعة",
+            "en": "Environment & Agriculture",
+            "tr": "Çevre ve Tarım"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        },
+        {
+          "id": "rwaq-programs",
+          "name": {
+            "ar": "برامج رواق",
+            "en": "Rwaq Programs",
+            "tr": "Rwaq Programları"
+          },
+          "officialUrl": "https://www.rwaq.org/courses"
+        }
+      ],
       "languageIds": [
         "Arabic"
       ],
@@ -5256,7 +5666,80 @@
         "en": "MATLAB Academy",
         "tr": "MATLAB Academy"
       },
-      "fields": [],
+      "fields": [
+        {
+          "id": "matlab-onramp",
+          "name": {
+            "ar": "أساسيات MATLAB",
+            "en": "MATLAB Onramp",
+            "tr": "MATLAB Temelleri"
+          },
+          "officialUrl": "https://matlabacademy.mathworks.com/details/matlab-onramp/gettingstarted"
+        },
+        {
+          "id": "simulink-onramp",
+          "name": {
+            "ar": "أساسيات Simulink",
+            "en": "Simulink Onramp",
+            "tr": "Simulink Temelleri"
+          },
+          "officialUrl": "https://matlabacademy.mathworks.com/details/simulink-onramp/simulink"
+        },
+        {
+          "id": "machine-learning-onramp",
+          "name": {
+            "ar": "أساسيات تعلم الآلة",
+            "en": "Machine Learning Onramp",
+            "tr": "Makine Öğrenmesi Temelleri"
+          },
+          "officialUrl": "https://matlabacademy.mathworks.com/details/machine-learning-onramp/machinelearning"
+        },
+        {
+          "id": "deep-learning-onramp",
+          "name": {
+            "ar": "أساسيات التعلم العميق",
+            "en": "Deep Learning Onramp",
+            "tr": "Derin Öğrenme Temelleri"
+          },
+          "officialUrl": "https://matlabacademy.mathworks.com/details/deep-learning-onramp/deeplearning"
+        },
+        {
+          "id": "image-processing-onramp",
+          "name": {
+            "ar": "أساسيات معالجة الصور",
+            "en": "Image Processing Onramp",
+            "tr": "Görüntü İşleme Temelleri"
+          },
+          "officialUrl": "https://matlabacademy.mathworks.com/details/image-processing-onramp/imageprocessing"
+        },
+        {
+          "id": "signal-processing-onramp",
+          "name": {
+            "ar": "أساسيات معالجة الإشارات",
+            "en": "Signal Processing Onramp",
+            "tr": "Sinyal İşleme Temelleri"
+          },
+          "officialUrl": "https://matlabacademy.mathworks.com/details/signal-processing-onramp/signalprocessing"
+        },
+        {
+          "id": "statistics-onramp",
+          "name": {
+            "ar": "أساسيات الإحصاء",
+            "en": "Statistics Onramp",
+            "tr": "İstatistik Temelleri"
+          },
+          "officialUrl": "https://matlabacademy.mathworks.com/details/statistics-onramp/orst"
+        },
+        {
+          "id": "app-building-onramp",
+          "name": {
+            "ar": "أساسيات بناء التطبيقات",
+            "en": "App Building Onramp",
+            "tr": "Uygulama Geliştirme Temelleri"
+          },
+          "officialUrl": "https://matlabacademy.mathworks.com/details/app-building-onramp/orab"
+        }
+      ],
       "languageIds": [
         "English"
       ],
@@ -5404,7 +5887,80 @@
         "en": "HackerRank",
         "tr": "HackerRank"
       },
-      "fields": [],
+      "fields": [
+        {
+          "id": "problem-solving-basic",
+          "name": {
+            "ar": "حل المشكلات - أساسي",
+            "en": "Problem Solving (Basic)",
+            "tr": "Problem Çözme (Temel)"
+          },
+          "officialUrl": "https://www.hackerrank.com/skills-verification/problem_solving_basic"
+        },
+        {
+          "id": "python-basic",
+          "name": {
+            "ar": "Python - أساسي",
+            "en": "Python (Basic)",
+            "tr": "Python (Temel)"
+          },
+          "officialUrl": "https://www.hackerrank.com/skills-verification/python_basic"
+        },
+        {
+          "id": "sql-intermediate",
+          "name": {
+            "ar": "SQL - متوسط",
+            "en": "SQL (Intermediate)",
+            "tr": "SQL (Orta)"
+          },
+          "officialUrl": "https://www.hackerrank.com/skills-verification/sql_intermediate"
+        },
+        {
+          "id": "java-basic",
+          "name": {
+            "ar": "Java - أساسي",
+            "en": "Java (Basic)",
+            "tr": "Java (Temel)"
+          },
+          "officialUrl": "https://www.hackerrank.com/skills-verification/java_basic"
+        },
+        {
+          "id": "javascript-basic",
+          "name": {
+            "ar": "JavaScript - أساسي",
+            "en": "JavaScript (Basic)",
+            "tr": "JavaScript (Temel)"
+          },
+          "officialUrl": "https://www.hackerrank.com/skills-verification/javascript_basic"
+        },
+        {
+          "id": "react-basic",
+          "name": {
+            "ar": "React - أساسي",
+            "en": "React (Basic)",
+            "tr": "React (Temel)"
+          },
+          "officialUrl": "https://www.hackerrank.com/skills-verification/react_basic"
+        },
+        {
+          "id": "rest-api-intermediate",
+          "name": {
+            "ar": "REST API - متوسط",
+            "en": "REST API (Intermediate)",
+            "tr": "REST API (Orta)"
+          },
+          "officialUrl": "https://www.hackerrank.com/skills-verification/rest_api_intermediate"
+        },
+        {
+          "id": "angular-basic",
+          "name": {
+            "ar": "Angular - أساسي",
+            "en": "Angular (Basic)",
+            "tr": "Angular (Temel)"
+          },
+          "officialUrl": "https://www.hackerrank.com/skills-verification/angular_basic"
+        }
+      ],
       "languageIds": [
         "English"
       ],
@@ -5459,7 +6015,134 @@
         "en": "كورسات",
         "tr": "كورسات"
       },
-      "fields": [],
+      "fields": [
+        {
+          "id": "programming",
+          "name": {
+            "ar": "البرمجة",
+            "en": "Programming",
+            "tr": "Programlama"
+          },
+          "officialUrl": "https://www.coursat.org/category/programming"
+        },
+        {
+          "id": "design",
+          "name": {
+            "ar": "التصميم",
+            "en": "Design",
+            "tr": "Tasarım"
+          },
+          "officialUrl": "https://www.coursat.org/category/design"
+        },
+        {
+          "id": "languages",
+          "name": {
+            "ar": "اللغات",
+            "en": "Languages",
+            "tr": "Diller"
+          },
+          "officialUrl": "https://www.coursat.org/category/languages"
+        },
+        {
+          "id": "networks",
+          "name": {
+            "ar": "الشبكات",
+            "en": "Networks",
+            "tr": "Ağlar"
+          },
+          "officialUrl": "https://www.coursat.org/category/networks"
+        },
+        {
+          "id": "security",
+          "name": {
+            "ar": "الأمن والحماية",
+            "en": "Security",
+            "tr": "Güvenlik"
+          },
+          "officialUrl": "https://www.coursat.org/category/security"
+        },
+        {
+          "id": "database",
+          "name": {
+            "ar": "قواعد البيانات",
+            "en": "Databases",
+            "tr": "Veritabanları"
+          },
+          "officialUrl": "https://www.coursat.org/category/database"
+        },
+        {
+          "id": "os",
+          "name": {
+            "ar": "أنظمة التشغيل",
+            "en": "Operating Systems",
+            "tr": "İşletim Sistemleri"
+          },
+          "officialUrl": "https://www.coursat.org/category/os"
+        },
+        {
+          "id": "webdev",
+          "name": {
+            "ar": "تطوير الويب",
+            "en": "Web Development",
+            "tr": "Web Geliştirme"
+          },
+          "officialUrl": "https://www.coursat.org/category/webdev"
+        },
+        {
+          "id": "management-economy",
+          "name": {
+            "ar": "الإدارة والاقتصاد",
+            "en": "Management & Economy",
+            "tr": "Yönetim ve Ekonomi"
+          },
+          "officialUrl": "https://www.coursat.org/category/management-economy"
+        },
+        {
+          "id": "computer-science",
+          "name": {
+            "ar": "علوم الحاسب",
+            "en": "Computer Science",
+            "tr": "Bilgisayar Bilimleri"
+          },
+          "officialUrl": "https://www.coursat.org/category/computer-science"
+        },
+        {
+          "id": "science",
+          "name": {
+            "ar": "العلوم",
+            "en": "Science",
+            "tr": "Fen Bilimleri"
+          },
+          "officialUrl": "https://www.coursat.org/category/science"
+        },
+        {
+          "id": "math",
+          "name": {
+            "ar": "الرياضيات",
+            "en": "Mathematics",
+            "tr": "Matematik"
+          },
+          "officialUrl": "https://www.coursat.org/category/math"
+        },
+        {
+          "id": "software",
+          "name": {
+            "ar": "البرامج والتطبيقات",
+            "en": "Software",
+            "tr": "Yazılım"
+          },
+          "officialUrl": "https://www.coursat.org/category/software"
+        },
+        {
+          "id": "self-development",
+          "name": {
+            "ar": "تطوير الذات",
+            "en": "Self Development",
+            "tr": "Kişisel Gelişim"
+          },
+          "officialUrl": "https://www.coursat.org/category/self-development"
+        }
+      ],
       "languageIds": [
         "Arabic"
       ],

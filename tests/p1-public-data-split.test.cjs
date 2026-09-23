@@ -32,8 +32,8 @@ test('public platform records do not ship research-only keys', () => {
   assert.deepEqual(leaked, []);
 });
 
-test('approved 363 public fields remain identical to the frozen baseline', () => {
-  assert.equal(Object.values(baseline).reduce((n, fields) => n + fields.length, 0), 363);
+test('approved 438 public fields remain identical to the frozen baseline', () => {
+  assert.equal(Object.values(baseline).reduce((n, fields) => n + fields.length, 0), 438);
   const byId = Object.fromEntries(data.platforms.map(p => [p.id, p]));
   for (const id of publicIds) assert.deepEqual(byId[id]?.fields || [], baseline[id], `${id} fields changed during P1 split`);
 });
